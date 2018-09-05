@@ -1,24 +1,30 @@
 body {
-    /* background-image: linear-gradient(to left top, #17a2b8, #14abc4, #12b3d1, #11bcde, #12c5eb); */
-   background: #ffdad9;
-    height: 100vh;
-  }
-  #login .container #login-row #login-column .login-box {
-    margin-top: 50px;
-    max-width: 600px;    
-    border: 1px solid #9C9C9C;
-    border-radius: 4px;
-    -moz-border-radius:4px;
-    -webkit-border-radius:4px;
-    background:#ffffff;
-    padding: 25px;
-    /* background-image: linear-gradient(to bottom, #aec1c3, #a9b5b7, #bcc5c6, #cfd5d5, #e3e5e5); */
-  }
-  #login .container #login-row #login-column .login-box #login-form {
-    padding: 20px;
-  }
-  #login .container #login-row #login-column .login-box #login-form #register-link {
-    margin-top: -85px;
-  }
-  #login .container .btn-info{background-color:#d34b3d; border-color: #d34b3d;} 
+  /* background-image: linear-gradient(to left top, #17a2b8, #14abc4, #12b3d1, #11bcde, #12c5eb); */
+  /* background: #ffdad9; */
+  height: 100vh;
+}
+#login .container #login-row #login-column .login-box {
+  margin-top: 40px;
+  max-width: 600px;    
+  /* border: 1px solid #9C9C9C; */
+  border-radius: 4px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  background: #ffdad9;
+  padding: 25px;
+  color: #ffffff;
+  -webkit-box-shadow: -1px -1px 14px -4px rgba(0,0,0,0.8);
+  -moz-box-shadow: -1px -1px 14px -4px rgba(0,0,0,0.8);
+  box-shadow: -1px -1px 14px -4px rgba(0,0,0,0.8);
+  /* background-image: linear-gradient(to bottom, #aec1c3, #a9b5b7, #bcc5c6, #cfd5d5, #e3e5e5); */
+}
+#login .container #login-row #login-column .login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column .login-box #login-form #register-link {
+  margin-top: -85px;
+}
+#login .container .btn-info{background-color:#d34b3d; border-color: #d34b3d; margin-top:15px;} 
+#login .text-info{color: #d34b3d !important;}
+.forgot-password{display: inline; text-align: right; float: right; margin-top:-28px;}
 

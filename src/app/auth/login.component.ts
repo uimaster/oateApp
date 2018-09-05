@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { LoginRequest, LoginResponse } from './user.model';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from './auth.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +13,17 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
 
-  public loginForm: FormGroup;
-  public submitted = false;
+  loginForm: FormGroup;
+  submitted = false;
+  loading = false;
+  errorMessage: string | null;
+  userData: Observable<LoginResponse>;
 
   constructor(
     private router: Router, 
-    private formBuilder: FormBuilder
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder,
+    private authservice: AuthService
   ) { }
 
   ngOnInit() {
@@ -25,14 +33,36 @@ export class LoginComponent implements OnInit {
   // convenience getter for easy access to form fields
   get f() { return this.loginForm.controls; }
 
-  onSubmit(loginForm){
+  onSubmit(formData: LoginRequest){
+    alert('hh');
+    this.submitted = true;
+    if (this.loginForm.invalid) {
+      return;
+    }
+    
+    if(this.loginForm.valid){
+     
+      this.authservice.login(formData).subscribe((res:LoginResponse) => {
+
+        if(res && res.status === '200'){
+
+          console.log(res);
+
+        }else{
+          alert(res.message);
+        }
+
+      });
+
+    }
+
         // alert(loginForm);
   }
 
   createLoginForm(){
-    this.loginForm = this.formBuilder.group({      
+    this.loginForm = this.formBuilder.group({       
       username : ['', Validators.required],
-      password: ['', Validators.required, Validators.minLength(5)] 
+      password: ['', Validators.required] 
     });
   }
 
