@@ -64,7 +64,7 @@ export class TokenInterceptor implements HttpInterceptor {
 
               .flatMap((res) => {
                 if  (res.message === 'Success') {
-                  LocalStorage.setRefreshToken(res.data[0].bearerToken);
+                  LocalStorage.setRefreshToken(res.entity.token);
                   return next.handle(this.applyCredentials(req, LocalStorage.getRefreshToken()));
                 }
               });

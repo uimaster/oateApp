@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files*/
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+.sidebar{min-width: 250px; max-width: 250px;}
+.sidebar-nav{list-style: none; padding: 20px 15px;}
+.sidebar-nav li{list-style:none; display: block;}
+.sidebar-nav li a{padding:15px; text-align: left; color: #ffffff; background: #7386d5; float:left; width: 100%; text-transform: capitalize;}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { LoginRequest, LoginResponse } from './user.model';
+import { LoginRequest, LoginResponse, LoginResponseData } from './user.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from './auth.service';
 import { Observable } from 'rxjs/Observable';
@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   loading = false;
   errorMessage: string | null;
   userData: Observable<LoginResponse>;
+  empData: LoginResponseData;
 
   constructor(
     private router: Router, 
@@ -34,7 +35,7 @@ export class LoginComponent implements OnInit {
   get f() { return this.loginForm.controls; }
 
   onSubmit(formData: LoginRequest){
-    alert('hh');
+    
     this.submitted = true;
     if (this.loginForm.invalid) {
       return;
@@ -43,10 +44,11 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.valid){
      
       this.authservice.login(formData).subscribe((res:LoginResponse) => {
-
-        if(res && res.status === '200'){
-
-          console.log(res);
+        if(res && res.statusCode === 200){
+          
+          this.empData = res.entity;
+          localStorage.setItem('token', this.empData.token);
+          this.router.navigate(['employer']);
 
         }else{
           alert(res.message);
@@ -61,8 +63,9 @@ export class LoginComponent implements OnInit {
 
   createLoginForm(){
     this.loginForm = this.formBuilder.group({       
-      username : ['', Validators.required],
-      password: ['', Validators.required] 
+      emailId : ['', Validators.required],
+      password: ['', Validators.required],
+      remember: [0,]
     });
   }
 

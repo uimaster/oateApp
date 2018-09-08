@@ -1,6 +1,8 @@
 body {
   /* background-image: linear-gradient(to left top, #17a2b8, #14abc4, #12b3d1, #11bcde, #12c5eb); */
   /* background: #ffdad9; */
+  background: url('assets/img/bg.jpg');
+  background-repeat: repeat;
   height: 100vh;
 }
 #login .container #login-row #login-column .login-box {
@@ -10,7 +12,7 @@ body {
   border-radius: 4px;
   -moz-border-radius:4px;
   -webkit-border-radius:4px;
-  background: #ffdad9;
+  background: #ffffff;
   padding: 25px;
   color: #ffffff;
   -webkit-box-shadow: -1px -1px 14px -4px rgba(0,0,0,0.8);
