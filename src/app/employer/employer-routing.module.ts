@@ -4,12 +4,9 @@ import { EmployerComponent } from './employer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HrlistComponent } from './hrlist/hrlist.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
-import { LoginComponent } from '../auth/login.component';
 
 const routes: Routes = [
-  {path:'', component: LoginComponent},
-  {    
-    path:'employer', component: EmployerComponent,
+  {path:'', component: EmployerComponent,
     children: [
       {
         path:'', children: [
