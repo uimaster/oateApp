@@ -4,6 +4,8 @@ import { EmployerComponent } from './employer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HrlistComponent } from './hrlist/hrlist.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
+import { JobsComponent } from './jobs/jobs.component';
+import { EditjobsComponent } from './editjobs/editjobs.component';
 
 const routes: Routes = [
   {path:'', component: EmployerComponent,
@@ -12,11 +14,14 @@ const routes: Routes = [
         path:'', children: [
           {path: 'dashboard', component: DashboardComponent},
           {path: 'hrlist', component:HrlistComponent},
-          {path: 'personal-details', component:PersonalDetailsComponent}
+          {path: 'personal-details', component:PersonalDetailsComponent},
+          {path: 'post-jobs', component:JobsComponent},
+          {path: 'update-jobs', component: EditjobsComponent}          
         ]
       }
     ]
-  }
+  },
+  
 ];
 
 @NgModule({

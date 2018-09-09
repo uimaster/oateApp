@@ -48,6 +48,8 @@ export class LoginComponent implements OnInit {
           
           this.empData = res.entity;
           localStorage.setItem('token', this.empData.token);
+          localStorage.setItem('contactPersonName', this.empData.contactPersonName);
+          console.log(this.empData);
           this.router.navigate(['employer']);
 
         }else{

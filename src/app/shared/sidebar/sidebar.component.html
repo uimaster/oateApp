@@ -4,16 +4,27 @@
          <span class="pimg"><img src="assets/img/profile.jpg" alt=""></span>
       </div>
       <div class="profile-details">
-        <p class="name">Shashank Shekhar Tripathi</p>
+        <p class="name">{{contactpersonName}}</p>
         <p class="strength">95% Profile Strength</p>
       </div>
   </div>
   <ul class="sidebar-nav">
-    <li><a href="#">Dashboard</a></li>
-    <li><a href="#">Profile</a></li>
-    <li><a href="#">Manage HR</a></li>
-    <li><a href="#">Jobs</a></li>
-    <li><a href="#">Settings</a></li>
-    <li><a href="#">FAQ</a></li>
+    <li><a href="#"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
+    <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Profile</a></li>
+    <li><a href="#"><i class="fa fa-clipboard" aria-hidden="true"></i> Manage HR</a></li>
+    <li>
+      <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-tasks" aria-hidden="true"></i> Jobs</a>
+      <ul class="collapse list-unstyled" id="pageSubmenu">
+          <li>
+              <a routerLink="post-jobs">Post new job</a>
+          </li>
+          <li>
+              <a routerLink="update-jobs">Update Posted Job</a>
+          </li>         
+      </ul>
+    
+    </li>
+    <li><a href="#"><i class="fa fa-cogs" aria-hidden="true"></i> Settings</a></li>
+    <li><a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"></i> FAQ</a></li>
   </ul>
 </div>

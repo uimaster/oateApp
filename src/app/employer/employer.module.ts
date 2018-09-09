@@ -7,6 +7,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import { HrlistComponent } from './hrlist/hrlist.component';
 import { SharedModule } from '../shared/shared.module';
+import { JobsComponent } from './jobs/jobs.component';
+import { EditjobsComponent } from './editjobs/editjobs.component';
 
 @NgModule({
   imports: [
@@ -14,6 +16,6 @@ import { SharedModule } from '../shared/shared.module';
     EmployerRoutingModule,
     SharedModule
   ],
-  declarations: [EmployerComponent, DashboardComponent, PersonalDetailsComponent, HrlistComponent]
+  declarations: [EmployerComponent, DashboardComponent, PersonalDetailsComponent, HrlistComponent, JobsComponent, EditjobsComponent]
 })
 export class EmployerModule { }
