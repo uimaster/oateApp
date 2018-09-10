@@ -1,4 +1,4 @@
-export class PostjobRequest{
+export interface PostjobRequest{
 
     companyDesc: string;
     companyLogo: string;
@@ -7,20 +7,20 @@ export class PostjobRequest{
     createdAt: string;
     createdBy: string;
     deleted: boolean;
-    eligibility: [];
+    eligibility: any;
     employerId: string;
     eventDate: string;
     eventLocation: string;
     fromSalary: number;
     id: string;
-    jobRequirement: [];
+    jobRequirement: any;
     jobType: string;
     lastDateToApply: number;
-    location: [];
+    location: any;
     position: string;
     requiredExperience: boolean;
-    requiredSkills:[];
-    specialNotes:[];
+    requiredSkills:any;
+    specialNotes:any;
     toSalry: boolean;
     updatedAt: string;
     updatedBy: string;
