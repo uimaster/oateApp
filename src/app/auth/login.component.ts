@@ -49,6 +49,19 @@ export class LoginComponent implements OnInit {
           this.empData = res.entity;
           localStorage.setItem('token', this.empData.token);
           localStorage.setItem('contactPersonName', this.empData.contactPersonName);
+          localStorage.setItem('companyName', this.empData.companyName);
+          localStorage.setItem('companyLogo', this.empData.companyLogo);
+          localStorage.setItem('designation', this.empData.designation);
+          localStorage.setItem('companyRegistrationNumber', this.empData.companyRegistrationNumber);
+          // localStorage.setItem('companyUrl', this.empData.companyUrl);
+          localStorage.setItem('mobileNumber', this.empData.mobileNumber);
+          localStorage.setItem('employerType', this.empData.employerType);
+          localStorage.setItem('emailId', this.empData.emailId);
+          localStorage.setItem('gstiNumber', this.empData.gstiNumber);
+          localStorage.setItem('aboutCompany', this.empData.aboutCompany);
+          localStorage.setItem('officeAddress', this.empData.officeAddress['address']);
+          // localStorage.setItem('contactPersonName', this.empData.contactPersonName);
+          // localStorage.setItem('contactPersonName', this.empData.contactPersonName);
           console.log(this.empData);
           this.router.navigate(['employer']);
 

@@ -1,3 +1,91 @@
-<p>
-  personal-details works!
-</p>
+<div class="ui-fluid">
+  <div class="ui-g">
+    <div class="ui-g-12">
+        <h4 style="padding:0px 0px 10px 0px;" class="text-center">Personal Details</h4>
+      <div class="card no-margin">
+
+        <div class="ui-grid-row">
+          <div class="ui-g-12 ui-md-4">
+            <label for="companyName">Company Name</label>
+          </div>
+          <div class="ui-g-12 ui-md-8">
+            {{companyName}}
+          </div>
+        </div>
+
+        <div class="ui-grid-row">
+            <div class="ui-g-12 ui-md-4">
+              <label for="companyName">Contact Person Name</label>
+            </div>
+            <div class="ui-g-12 ui-md-8">
+              {{contactPersonName}}
+            </div>
+        </div>
+
+        <div class="ui-grid-row">
+            <div class="ui-g-12 ui-md-4">
+              <label for="companyName">Designation</label>
+            </div>
+            <div class="ui-g-12 ui-md-8">
+              {{designation}}
+            </div>
+        </div>
+
+        <div class="ui-grid-row">
+            <div class="ui-g-12 ui-md-4">
+              <label for="companyName">companyRegistrationNumber</label>
+            </div>
+            <div class="ui-g-12 ui-md-8">
+              {{companyRegistrationNumber}}
+            </div>
+        </div>
+
+        <div class="ui-grid-row">
+            <div class="ui-g-12 ui-md-4">
+              <label for="companyName">Company Logo</label>
+            </div>
+            <div class="ui-g-12 ui-md-8">
+                <img [src]="'http://' + companyLogo" width="150" height="auto" alt="">
+            </div>
+        </div>
+
+        <div class="ui-grid-row">
+            <div class="ui-g-12 ui-md-4">
+              <label for="companyName">GST Number</label>
+            </div>
+            <div class="ui-g-12 ui-md-8">
+                {{gstiNumber}}
+            </div>
+        </div>
+
+        <div class="ui-grid-row">
+            <div class="ui-g-12 ui-md-4">
+              <label for="companyName">employer Type</label>
+            </div>
+            <div class="ui-g-12 ui-md-8">
+                {{employerType}}
+            </div>
+        </div>
+
+        <div class="ui-grid-row">
+            <div class="ui-g-12 ui-md-4">
+              <label for="companyName">Office Address:</label>
+            </div>
+            <div class="ui-g-12 ui-md-8">
+                {{officeAddress}}
+            </div>
+        </div>
+
+        <div class="ui-grid-row">
+            <div class="ui-g-12 ui-md-4">
+              <label for="companyName">About Company</label>
+            </div>
+            <div class="ui-g-12 ui-md-8">
+                {{aboutCompany}}<br>                
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
