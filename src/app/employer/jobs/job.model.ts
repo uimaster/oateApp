@@ -1,5 +1,4 @@
 export interface PostjobRequest{
-
     companyDesc: string;
     companyLogo: string;
     companyName: string;
@@ -23,7 +22,6 @@ export interface PostjobRequest{
     specialNotes:any;
     toSalry: boolean;
     updatedAt: string;
-    updatedBy: string;
-    
+    updatedBy: string;    
 }
 
