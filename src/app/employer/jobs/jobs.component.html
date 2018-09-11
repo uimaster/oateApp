@@ -2,8 +2,8 @@
   <div class="ui-g">
 
     <div class="ui-g-8">
-      <div class="card no-margin">
-        <!-- <h1>Form Elements</h1> -->
+      <h4 style="padding:0px 0px 10px 0px;" class="text-center">Post New Job</h4>
+      <div class="card no-margin">       
         <div class="ui-g form-group">
           <div class="ui-g-12 ui-md-12">
             <div class="ui-grid-row">
@@ -56,7 +56,7 @@
             </div>
             <div class="ui-grid-row">
                 <div class="ui-g-12 ui-md-4">
-                    <label for="rexperience">required Experience(Should be in no of months)</label>
+                    <label for="rexperience">Required Experience(Should be in no of months)</label>
                 </div>
                 <div class="ui-g-12 ui-md-8">
                   <input id="rexperience" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
@@ -67,8 +67,9 @@
                     <label for="eventdate">Event Date</label>
                 </div>
                 <div class="ui-g-12 ui-md-8">
-                  <input id="eventdate" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                  <!-- <input id="eventdate" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
                   <!-- <p-calendar [(ngModel)]="date1"></p-calendar> -->
+                  <p-calendar formControlName="eventDate"></p-calendar>
                 </div>
             </div>
             <div class="ui-grid-row">
@@ -84,7 +85,8 @@
                     <label for="lastdateToapply">Last Date To Apply</label>
                 </div>
                 <div class="ui-g-12 ui-md-8">
-                  <input id="lastdateToapply" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                  <!-- <input id="lastdateToapply" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
+                  <p-calendar formControlName="date"></p-calendar>
                 </div>
             </div>
             <div class="ui-grid-row">
@@ -97,11 +99,12 @@
             </div>
             <div class="ui-grid-row">
                 <div class="ui-g-12 ui-md-4">
-                    <label for="companyUrl">Company Logo</label>
+                    <label for="companyLogo">Company Logo</label>
                 </div>
                 <div class="ui-g-12 ui-md-8">
-                  <input id="companylogo" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                </div>
+                  <!-- <input id="companylogo" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
+                  <p-fileUpload name="myfile[]" url="./upload.php" multiple="multiple"
+                  accept="image/*" auto="auto"></p-fileUpload>                </div>
             </div>
             <div class="ui-grid-row">
                 <div class="ui-g-12 ui-md-4">
@@ -144,13 +147,18 @@
                 </div>
             </div>
             <div class="ui-grid-row">               
-                <div class="ui-g-12 ui-md-12">
-                  <input id="specialNotes" pinputtext="" type="checkbox" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> I confirm
+                <div class="ui-g-12 ui-md-4">&nbsp;</div>
+                <div class="ui-g-12 ui-md-8">                  
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                        <label class="custom-control-label" for="defaultUnchecked">I confirm</label>
+                    </div>
                 </div>
             </div>
             <div class="ui-grid-row"> 
-                <div class="ui-g-12 ui-md-12">
-                    <button pButton type="button" icon="pi pi-check" label="Post"></button>
+                <div class="ui-g-12 ui-md-4">&nbsp;</div>
+                <div class="ui-g-12 ui-md-8 text-center">
+                    <button type="button" class="btn">Post</button>
                 </div>
             </div>
 
