@@ -26,3 +26,4 @@ export interface PostjobRequest{
     updatedBy: string;
     
 }
+

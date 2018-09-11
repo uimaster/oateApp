@@ -9,12 +9,21 @@ import { HrlistComponent } from './hrlist/hrlist.component';
 import { SharedModule } from '../shared/shared.module';
 import { JobsComponent } from './jobs/jobs.component';
 import { EditjobsComponent } from './editjobs/editjobs.component';
+import {InputTextModule} from 'primeng/inputtext';
+import {CalendarModule} from 'primeng/calendar';
+import {CheckboxModule} from 'primeng/checkbox';
+import {FileUploadModule} from 'primeng/fileupload';
 
 @NgModule({
   imports: [
     CommonModule,
     EmployerRoutingModule,
-    SharedModule
+    SharedModule,
+    InputTextModule,
+    CalendarModule,
+    CheckboxModule,
+    FileUploadModule
+    
   ],
   declarations: [EmployerComponent, DashboardComponent, PersonalDetailsComponent, HrlistComponent, JobsComponent, EditjobsComponent]
 })

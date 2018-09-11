@@ -16,3 +16,5 @@
 .sidebar-nav li a:hover{background: #62c4e7;}
 /* .sidebar-nav li:last-child a{border-bottom: 0;} */
 .content-wrapper{width: 100%; float: left; padding: 20px;}
+.btn{background-color: #d34b3d; padding:6px 35px; color: #ffffff; border-color: #d34b3d;}
+.btn:hover{opacity: 0.9;}
