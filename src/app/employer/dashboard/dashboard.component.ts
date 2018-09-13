@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployerjobService } from './employerjob.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  data: any;
+
+  constructor(
+    // private employerjobservice: EmployerjobService
+  ) { 
+
+
+
+    this.data = {
+      labels: ['Applied', 'Invited', 'Shortlisted', 'Interview', 'Rejected'],
+      datasets: [
+          {
+              label: 'Dashboard Chart',
+              width: 10,
+              backgroundColor: '#42A5F5',
+              borderColor: '#1E88E5',
+              data: [18, 15, 13, 11, 1]
+          }
+       ]
+  }
+
+
+
+  }
 
   ngOnInit() {
   }

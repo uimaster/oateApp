@@ -1,9 +1,9 @@
-.row-box{padding:15px; background: #ffffff; display: block; overflow: hidden;}
+.row-box{padding:15px; background: #ffffff; display: block; overflow: hidden; border-bottom: 1px solid #f3f3f3;}
 .profile-image{float: left; display: block;}
 .profile-details{margin-left:70px; margin-top: 15px;}
-.profile-details .name{margin-bottom: 2px; font-size: 14px; line-height: 14px;}
+.profile-details .name{margin-bottom: 2px; font-size: 16px; padding-bottom: 7px; color: #214761; font-weight: 600; line-height: 14px;}
 .profile-details .strength{margin-bottom:0; font-size: 13px; line-height: 14px;}
-.profile-image .pimg img{width: 60px; height: 60px; border-radius: 50%; border:2px solid #62c4e7;}
+.profile-image .pimg img{width: 60px; height: 60px; border-radius: 50%; border:2px solid #214761;}
 
 a[data-toggle="collapse"] {
     position: relative;
