@@ -13,6 +13,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {CalendarModule} from 'primeng/calendar';
 import {CheckboxModule} from 'primeng/checkbox';
 import {FileUploadModule} from 'primeng/fileupload';
+import {ChartModule} from 'primeng/chart';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import {FileUploadModule} from 'primeng/fileupload';
     InputTextModule,
     CalendarModule,
     CheckboxModule,
-    FileUploadModule
+    FileUploadModule,
+    ChartModule
     
   ],
   declarations: [EmployerComponent, DashboardComponent, PersonalDetailsComponent, HrlistComponent, JobsComponent, EditjobsComponent]

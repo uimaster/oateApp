@@ -9,11 +9,13 @@
  -webkit-box-shadow: 3px 2px 8px 0px rgba(0,0,0,0.55);
  -moz-box-shadow: 3px 2px 8px 0px rgba(0,0,0,0.55);
  box-shadow: 3px 2px 8px 0px rgba(0,0,0,0.55);
+ height: 100%;
+ background: #214761;
 }
 .sidebar-nav{list-style: none; padding: 0px; margin-bottom: 0;}
 .sidebar-nav li{list-style:none; display: block;}
-.sidebar-nav li a{display: block; text-decoration: none; padding:15px; border-bottom: 1px solid #ffffff; text-align: left; color: #ffffff; background: #7386d5; width: 100%; text-transform: capitalize;}
-.sidebar-nav li a:hover{background: #62c4e7;}
+.sidebar-nav li a{display: block; font-size: 16px; text-decoration: none; padding:15px; border-bottom: 1px solid #ffffff; text-align: left; color: #ffffff; background: #214761; width: 100%; text-transform: capitalize;}
+.sidebar-nav li a:hover{background: #ffffff; color: #214761;}
 /* .sidebar-nav li:last-child a{border-bottom: 0;} */
 .content-wrapper{width: 100%; float: left; padding: 20px;}
 .btn{background-color: #d34b3d; padding:6px 35px; color: #ffffff; border-color: #d34b3d;}

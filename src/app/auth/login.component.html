@@ -8,6 +8,8 @@
                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" id="login-form" class="form"> 
                       <div class="login-box col-md-12">                    
                             <h3 class="text-center text-info">Secure Login</h3>
+                            <div class="alert alert-success" *ngIf="showSuccess">{{successMessage}}</div>
+                            <div class="alert alert-warning" *ngIf="showError">{{errorMessage}}</div>
                             <div class="form-group">
                                 <label for="emailId" class="text-info">Username:</label><br>
                                 <input type="text" formControlName="emailId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }">

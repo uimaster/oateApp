@@ -16,7 +16,10 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
   loading = false;
-  errorMessage: string | null;
+  errorMessage = '';
+  successMessage = '';
+  showError = false;
+  showSuccess = false;
   userData: Observable<LoginResponse>;
   empData: LoginResponseData;
 
@@ -45,10 +48,13 @@ export class LoginComponent implements OnInit {
      
       this.authservice.login(formData).subscribe((res:LoginResponse) => {
         if(res && res.statusCode === 200){
-          
+          this.successMessage = res.message;
+          this.showSuccess = true;
           this.empData = res.entity;
+          const profileData = this.empData;
+          localStorage.setItem('isLoggedIn', 'true');
           localStorage.setItem('token', this.empData.token);
-          localStorage.setItem('contactPersonName', this.empData.contactPersonName);
+          localStorage.setItem('profileData', JSON.stringify(this.empData));
           localStorage.setItem('companyName', this.empData.companyName);
           localStorage.setItem('companyLogo', this.empData.companyLogo);
           localStorage.setItem('designation', this.empData.designation);
@@ -60,13 +66,17 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('gstiNumber', this.empData.gstiNumber);
           localStorage.setItem('aboutCompany', this.empData.aboutCompany);
           localStorage.setItem('officeAddress', this.empData.officeAddress['address']);
-          // localStorage.setItem('contactPersonName', this.empData.contactPersonName);
-          // localStorage.setItem('contactPersonName', this.empData.contactPersonName);
-          console.log(this.empData);
-          this.router.navigate(['employer']);
-
-        }else{
-          alert(res.message);
+          localStorage.setItem('contactPersonName', this.empData.contactPersonName);
+          localStorage.setItem('contactPersonName', this.empData.contactPersonName);
+          
+          setTimeout(() => {
+            this.router.navigate(['employer/dashboard']); 
+          }, 3000);                
+           
+          } else {
+            this.errorMessage = res.message;
+            this.showError = true;
+            localStorage.setItem('isLoggedIn', 'false');
         }
 
       });
