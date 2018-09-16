@@ -3,7 +3,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RouterModule, Router} from '@angular/router';
 import { AppRouteModule } from './app.routing.module';
-
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { FormsModule } from '@angular/forms';
@@ -12,6 +12,9 @@ import { AccordionModule } from 'primeng/primeng';
 import { PanelModule } from 'primeng/primeng';
 import { ButtonModule } from 'primeng/primeng';
 import { RadioButtonModule } from 'primeng/primeng';
+import { TokenInterceptor } from './auth/token.interceptor';
+import { AuthService } from './auth/auth.service';
+
 
 
 @NgModule({
@@ -31,7 +34,14 @@ import { RadioButtonModule } from 'primeng/primeng';
     ButtonModule,
     RadioButtonModule  
   ],
-  providers: [],
+  providers:[
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

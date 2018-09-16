@@ -14,6 +14,8 @@ import {CalendarModule} from 'primeng/calendar';
 import {CheckboxModule} from 'primeng/checkbox';
 import {FileUploadModule} from 'primeng/fileupload';
 import {ChartModule} from 'primeng/chart';
+import { EmployerjobService } from './dashboard/employerjob.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -24,9 +26,11 @@ import {ChartModule} from 'primeng/chart';
     CalendarModule,
     CheckboxModule,
     FileUploadModule,
-    ChartModule
+    ChartModule,
+    HttpClientModule
     
   ],
-  declarations: [EmployerComponent, DashboardComponent, PersonalDetailsComponent, HrlistComponent, JobsComponent, EditjobsComponent]
+  declarations: [EmployerComponent, DashboardComponent, PersonalDetailsComponent, HrlistComponent, JobsComponent, EditjobsComponent],
+  providers: [EmployerjobService]
 })
 export class EmployerModule { }
