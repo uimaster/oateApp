@@ -5,14 +5,13 @@ import { EmployerjobService } from './employerjob.service';
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
-})
+  })
 export class DashboardComponent implements OnInit {
 
   data: any;
+  employeData = [];
 
-  constructor(
-    // private employerjobservice: EmployerjobService
-  ) { 
+  constructor(private employerService: EmployerjobService) { 
 
 
 
@@ -34,6 +33,20 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getemployerjobs();
+  }
+
+  getemployerjobs(){
+    this.employerService.employerjobs().subscribe(res => {        
+      if(res && res !== undefined){
+        this.employeData = res.entities;        
+        console.log(this.employeData);
+        if(this.employeData.length > 0) {
+          console.log('sdfsdf');
+        }
+      }       
+    }
+    );    
   }
 
 }
