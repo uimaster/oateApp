@@ -17,6 +17,7 @@ import { AuthService } from './auth/auth.service';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent    
@@ -32,7 +33,7 @@ import { AuthService } from './auth/auth.service';
     AccordionModule,
     PanelModule,
     ButtonModule,
-    RadioButtonModule  
+    RadioButtonModule     
   ],
   providers:[
     AuthService,
