@@ -18,7 +18,7 @@ export class TokenInterceptor implements HttpInterceptor {
 
 
   private applyCredentials = (req: HttpRequest<any>, token: string) => {
-    debugger;
+    // debugger;
     return req.clone({
       setHeaders: {
         'Authorization': `Bearer ${token}`,
@@ -31,7 +31,7 @@ export class TokenInterceptor implements HttpInterceptor {
 
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<any> {
-    debugger;
+    // debugger;
     if (req.headers.has(InterceptorSkipHeader)) {
       const headers = req.headers.delete(InterceptorSkipHeader);
       return next.handle(req.clone({headers}));

@@ -1,7 +1,7 @@
 body {
   /* background-image: linear-gradient(to left top, #17a2b8, #14abc4, #12b3d1, #11bcde, #12c5eb); */
   /* background: #ffdad9; */
-  background: url('assets/img/bg.jpg');
+  background-image: url('../../assets/img/bg.jpg');
   background-repeat: repeat;
   height: 100vh;
 }

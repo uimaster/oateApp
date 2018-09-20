@@ -59,7 +59,6 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('companyLogo', this.empData.companyLogo);
           localStorage.setItem('designation', this.empData.designation);
           localStorage.setItem('companyRegistrationNumber', this.empData.companyRegistrationNumber);
-          // localStorage.setItem('companyUrl', this.empData.companyUrl);
           localStorage.setItem('mobileNumber', this.empData.mobileNumber);
           localStorage.setItem('employerType', this.empData.employerType);
           localStorage.setItem('emailId', this.empData.emailId);
@@ -70,8 +69,8 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('contactPersonName', this.empData.contactPersonName);
           
           setTimeout(() => {
-            this.router.navigate(['employer/dashboard']); 
-          }, 3000);                
+            this.router.navigate(['/dashboard']); 
+          }, 2000);                
            
           } else {
             this.errorMessage = res.message;
@@ -83,7 +82,7 @@ export class LoginComponent implements OnInit {
 
     }
 
-        // alert(loginForm);
+       
   }
 
   createLoginForm(){
