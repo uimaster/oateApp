@@ -13,10 +13,10 @@ import { TokenInterceptor } from './token.interceptor';
     CommonModule,
     AuthRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule    
+    HttpClientModule
   ],
   declarations: [LoginComponent],
-  providers:[
+  providers: [
     AuthService,
     {
       provide: HTTP_INTERCEPTORS,

@@ -11,6 +11,7 @@ import { LocalStorage } from '../../utils/localStorage';
 
 
 export class TokenInterceptor implements HttpInterceptor {
+  debugger;
   public cachedRequests = [];
 
   constructor(private router: Router, public inj: Injector, public loaderInject: Injector) { }
@@ -21,7 +22,7 @@ export class TokenInterceptor implements HttpInterceptor {
     // debugger;
     return req.clone({
       setHeaders: {
-        'Authorization': `Bearer ${token}`,
+        'x-token': `${token}`,
         // 'Content-Type': 'application/json, multipart/form-data, text/plain;charset=UTF-8',
         'X-Requested-With' : 'XMLHttpRequest',
         // 'DeviceType': '1'

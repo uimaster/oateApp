@@ -3,7 +3,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RouterModule, Router} from '@angular/router';
 import { AppRouteModule } from './app.routing.module';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { FormsModule } from '@angular/forms';
@@ -20,22 +20,23 @@ import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
-    AppComponent    
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRouteModule,
     BrowserAnimationsModule,
     SharedModule,
-    RouterModule, 
+    RouterModule,
     BrowserAnimationsModule,
     FormsModule,
     AccordionModule,
     PanelModule,
     ButtonModule,
-    RadioButtonModule     
+    RadioButtonModule,
+    HttpClientModule
   ],
-  providers:[
+  providers: [
     AuthService,
     {
       provide: HTTP_INTERCEPTORS,
