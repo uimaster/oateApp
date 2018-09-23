@@ -23,16 +23,17 @@ export class AuthService {
 
 
   login(payload: LoginRequest): Observable<any>{
+
     let headers = new HttpHeaders();
     // headers = headers.append('Authorization', 'Basic ' + btoa(payload.username + ':' + payload.password));
-      
-    headers = headers.append('x-token', 'doatwke');   
+
+    headers = headers.append('x-token', 'doatwke');
     headers = headers.append('Content-Type', 'application/json');
     headers = headers.append(InterceptorSkipHeader, '');
     return this.http.post(LOGIN_URL, payload, { headers: headers })
       .map((res: LoginResponse) => {
         if (res) {
-          return res;          
+          return res;
         }
       })
       .catch((error) => Observable.throw('server Error.'));
