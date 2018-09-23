@@ -11,7 +11,7 @@ export class JobDetailsComponent implements OnInit {
 
   token  = localStorage.getItem('token');
 
-  constructor(private jobdetailservice: JobDetailsService) { }
+  constructor() { }
 
   ngOnInit() {
     // this.getemployerjobdetails();
