@@ -8,6 +8,7 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Job Title</th>
+          <th scope="col">Company Name</th>
           <th scope="col">Requirement</th>
           <th scope="col">Posted Date</th>
           <th scope="col">Location</th>
@@ -15,22 +16,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Mumbai</td>
-          <td><a href="javascript:void(0);"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>&nbsp;&nbsp;<a href="javascript:void(0);"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>Mumbai</td>
-          <td><a href="javascript:void(0);"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>&nbsp;&nbsp;<a href="javascript:void(0);"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
-        </tr>
+        <tr *ngFor="let jobdata of jobdetailsData; let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{jobdata.position}}</td>
+          <td>{{jobdata.companyName}}</td>
+          <td>{{jobdata.appliedCount}}</td>
+          <td>{{jobdata.jobPostedDate | date }}</td>
+          <td>{{jobdata.eventLocation}}</td>
+          <td><a href="javascript:void(0);"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>&nbsp;&nbsp;<a href="javascript:void(0);" (click)="deleteData(jobdata.id);"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+        </tr>       
       </tbody>
     </table>
   </div>
