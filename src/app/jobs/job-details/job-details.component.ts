@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JobDetailsService } from '../services/job-details.service';
+import { JobdetailResponse, JobdetailsResponseData } from './jobdetails.model';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-job-details',
@@ -8,6 +10,13 @@ import { JobDetailsService } from '../services/job-details.service';
 })
 export class JobDetailsComponent implements OnInit {
 
+  errorMessage = '';
+  successMessage = '';
+  showError = false;
+  showSuccess = false;
+  jobData: Observable<JobdetailResponse>;
+  jobdetailsData: JobdetailsResponseData;
+
   constructor(private jobdetailservice: JobDetailsService) { }
 
   ngOnInit() {
@@ -15,9 +24,23 @@ export class JobDetailsComponent implements OnInit {
   }
 
   getemployerjobdetails() {
-    this.jobdetailservice.employerjobs().subscribe( res => {
-      console.log(res);
-    });
+    this.jobdetailservice.employerjobs().subscribe(
+      (res: JobdetailResponse) => {
+        if(res && res.statusCode === 200){
+          this.successMessage = res.message;
+          this.showSuccess = true;
+          this.jobdetailsData = res.entities;  
+          console.log(this.jobdetailsData);        
+        }else {
+          this.errorMessage = res.message;
+          this.showError = true;         
+        }
+      }
+    );
+  }
+
+  deleteData(id){
+   console.log(id);
   }
 
 }
