@@ -6,7 +6,7 @@ body {
   height: 100vh;
 }
 #login .container #login-row #login-column .login-box {
-  margin-top: 40px;
+  margin-top: 15px;
   max-width: 600px;    
   /* border: 1px solid #9C9C9C; */
   border-radius: 4px;
@@ -27,6 +27,6 @@ body {
   margin-top: -85px;
 }
 #login .container .btn-info{background-color:#d34b3d; border-color: #d34b3d; margin-top:15px;} 
-#login .text-info{color: #d34b3d !important;}
+#login .text-info,.loginLinksWrapper a{color: #d34b3d !important;}
 .forgot-password{display: inline; text-align: right; float: right; margin-top:-28px;}
-
+/* .loginLinksWrapper .hrjobs:first-child a{border-right: 1px solid #333; height: 15px; padding-left:15px; padding-right: 15px;} */
