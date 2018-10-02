@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { JobDetailsService } from '../services/job-details.service';
-import { JobdetailResponse, JobdetailsResponseData } from './jobdetails.model';
 import { Observable } from 'rxjs/Observable';
+import { JobDetailSerivce } from '../services/job-detail.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-job-details',
@@ -14,33 +14,43 @@ export class JobDetailsComponent implements OnInit {
   successMessage = '';
   showError = false;
   showSuccess = false;
-  jobData: Observable<JobdetailResponse>;
-  jobdetailsData: JobdetailsResponseData;
-
-  constructor(private jobdetailservice: JobDetailsService) { }
+  jid: any;
+  
+  constructor(
+    private route: ActivatedRoute,
+    private jobdetailservice: JobDetailSerivce
+    ) { this.route.params.subscribe( params => console.log(params) ); }
 
   ngOnInit() {
-    this.getemployerjobdetails();
+  this.getjobdetails();
+  this.jid = +this.route.snapshot.paramMap.get('id');
+  console.log(this.jid);
+  }
+  
+  getjobdetails(){
+   this.jobdetailservice.Jobdetails(this.jid).subscribe(
+
+   )
   }
 
-  getemployerjobdetails() {
-    this.jobdetailservice.employerjobs().subscribe(
-      (res: JobdetailResponse) => {
-        if(res && res.statusCode === 200){
-          this.successMessage = res.message;
-          this.showSuccess = true;
-          this.jobdetailsData = res.entities;  
-          console.log(this.jobdetailsData);        
-        }else {
-          this.errorMessage = res.message;
-          this.showError = true;         
-        }
-      }
-    );
-  }
+  // getemployerjobdetails() {
+  //   this.jobdetailservice.employerjobs().subscribe(
+  //     (res: JobdetailResponse) => {
+  //       if(res && res.statusCode === 200){
+  //         this.successMessage = res.message;
+  //         this.showSuccess = true;
+  //         this.jobdetailsData = res.entities;  
+  //         console.log(this.jobdetailsData);        
+  //       }else {
+  //         this.errorMessage = res.message;
+  //         this.showError = true;         
+  //       }
+  //     }
+  //   );
+  // }
 
-  deleteData(id){
-   console.log(id);
-  }
+  // deleteData(id){
+  //  console.log(id);
+  // }
 
 }
