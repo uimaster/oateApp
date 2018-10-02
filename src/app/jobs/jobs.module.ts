@@ -8,8 +8,9 @@ import { EditJobComponent } from './edit-job/edit-job.component';
 import { JobsComponent } from './jobs.component';
 import { PostJobComponent } from './post-job/post-job.component';
 import { SharedModule } from '../shared/shared.module';
-import { JobDetailsService } from './services/job-details.service';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { EmployerJobsService } from './services/employer-jobs.service';
+import { EmployerJobsComponent } from './employer-jobs/employer-jobs.component';
+import { JobDetailSerivce } from './services/job-detail.service';
 
 @NgModule({
   imports: [
@@ -18,9 +19,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     SharedModule,
     CommonModule
   ],
-  declarations: [JobsComponent, JobDetailsComponent, EditJobComponent, PostJobComponent],
+  declarations: [JobsComponent, JobDetailsComponent, EditJobComponent, PostJobComponent, EmployerJobsComponent],
   providers: [
-    JobDetailsService
+    EmployerJobsService, JobDetailSerivce
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

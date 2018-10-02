@@ -21,5 +21,6 @@
 .btn{background-color: #d34b3d; padding:6px 35px; color: #ffffff; border-color: #d34b3d;}
 .btn:hover{opacity: 0.9;}
 .heading-box{padding: 7px 15px; border-bottom:1px solid #cccccc; margin-bottom: 15px;}
-.heading-box h4{text-transform: capitalize;}
+.heading-box h4{text-transform: capitalize; display: inline-block;}
 .table-bordered thead td, .table-bordered thead th{background: #efefef;}
+.heading-box a.btn{display: inline-block; float: right;}

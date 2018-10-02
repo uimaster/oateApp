@@ -19,5 +19,5 @@ export class HrdetailResponseData{
       lastLogin: string;
       fname: string;
       lname: string;
-      address: []
+      address: any[];
 }

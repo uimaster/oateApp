@@ -7,7 +7,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class JobDetailsService {
+export class EmployerJobsService {
 
   constructor(private http: HttpClient) { }
 
