@@ -1,33 +1,80 @@
-dfsdfsdf
-<!-- <div class="job-details-wrapper">
+
+<div class="job-details-wrapper">
   <div class="heading-box">
      <h4>Job Details</h4>
-     <a class="btn" [routerLink]="['/jobs/add-job']">Post New Job</a>
+     <!-- <a class="btn" [routerLink]="['/jobs/add-job']">Post New Job</a> -->
   </div>
   <div class="table-responsive">
     <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Job Title</th>
-          <th scope="col">Company Name</th>
-          <th scope="col">Requirement</th>
-          <th scope="col">Posted Date</th>
-          <th scope="col">Location</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
       <tbody>
-        <tr *ngFor="let jobdata of jobdetailsData; let i = index">
-          <th scope="row">{{i+1}}</th>
-          <td>{{jobdata.position}}</td>
-          <td>{{jobdata.companyName}}</td>
-          <td>{{jobdata.appliedCount}}</td>
-          <td>{{jobdata.jobPostedDate | date }}</td>
-          <td>{{jobdata.eventLocation}}</td>
-          <td><a [routerLink]="['/jobs-details',jobdata.id]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>&nbsp;&nbsp;<a href="javascript:void(0);" (click)="deleteData(jobdata.id);"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
-        </tr>       
+        <tr>          
+           <td class="heading">Company Name:</td>
+           <td class="headingData">{{jobdetailsData.companyName}}</td>
+           <td class="heading">Company URL:</td>
+           <td class="headingData">{{jobdetailsData.companyUrl}}</td>
+        </tr>
+        <tr>          
+            <td class="heading">Event Date:</td>
+            <td class="headingData">{{jobdetailsData.eventDate | date: 'dd-MM-yyyy'}}</td>
+            <td class="heading">Event Location:</td>
+            <td class="headingData">{{jobdetailsData.eventLocation}}</td>
+         </tr>
+        <tr>
+            <td class="heading">Job Type:</td>
+            <td class="headingData">{{jobdetailsData.jobType}}</td>
+            <td class="heading">Salary:</td>
+            <td class="headingData">{{jobdetailsData.fromSalary}} - {{jobdetailsData.toSalry}}</td>
+        </tr>
+          <tr>          
+            <td class="heading">Job Position:</td>
+            <td class="headingData">{{jobdetailsData.position}}</td>
+            <td class="heading">Total Requirement:</td>
+            <td class="headingData">{{jobdetailsData.totalRequirement}}</td>
+          </tr>
+          <tr>          
+              <td class="heading">Job Description:</td>
+              <td class="headingData">{{jobdetailsData.jobDescription}}</td>
+              <td class="heading">Eligibility:</td>
+              <td class="headingData">
+                <ul>
+                  <li *ngFor="let eligiBility of jobdetailsData.eligibility; let i = index">
+                    {{eligiBility}}
+                  </li>
+                </ul>                
+              </td>
+            </tr>
+          <tr>          
+              <td class="heading">job Location:</td>
+              <td class="headingData"> 
+                <ul class="listdatas">
+                  <li *ngFor="let joblocation of jobdetailsData.jobLocation; let i = index">
+                    {{joblocation}}
+                  </li>
+                </ul>          
+              </td>
+              <td class="heading">Skill Requirement:</td>
+              <td class="headingData"> 
+                <ul class="listdatas">
+                  <li *ngFor="let skill of jobdetailsData.requiredSkillsMandatory; let i = index">
+                    {{skill}}
+                  </li>
+                </ul>          
+              </td>
+          </tr>
+          <tr>          
+              <td class="heading">Prefer Skill Requirement:</td>
+              <td class="headingData"> 
+                <ul class="listdatas">
+                  <li *ngFor="let preferskill of jobdetailsData.requiredSkillsPreferred; let i = index">
+                    {{preferskill}}
+                  </li>
+                </ul>          
+              </td>
+              <td class="heading">Company Description:</td>
+              <td class="headingData">{{jobdetailsData.companyDesc}}</td>
+          </tr>
+
       </tbody>
     </table>
   </div>
-</div> -->
+</div>

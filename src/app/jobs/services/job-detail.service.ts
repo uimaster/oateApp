@@ -11,7 +11,7 @@ export class JobDetailSerivce {
   
     constructor(private http: HttpClient){}
     
-    Jobdetails(jobid){
+    Jobdetails(jobid): Observable<any>{
         return this.http.get(JOB_DETAILS + '/' + jobid);
     }
 
