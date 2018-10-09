@@ -52,8 +52,10 @@ export class LoginComponent implements OnInit {
           this.showSuccess = true;
           this.empData = res.entity;
           const profileData = this.empData;
+          console.log(res);
           localStorage.setItem('isLoggedIn', 'true');
           localStorage.setItem('token', this.empData.token);
+          localStorage.setItem('empid', this.empData.id);
           localStorage.setItem('profileData', JSON.stringify(this.empData));
           localStorage.setItem('companyName', this.empData.companyName);
           localStorage.setItem('companyLogo', this.empData.companyLogo);
