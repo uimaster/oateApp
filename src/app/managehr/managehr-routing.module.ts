@@ -4,6 +4,7 @@ import { ManagehrComponent } from './managehr/managehr.component';
 import { AddhrComponent } from './addhr/addhr.component';
 import { RemovehrComponent } from './removehr/removehr.component';
 import { HrdetailsComponent } from './hrdetails/hrdetails.component';
+import { ListdetailhrComponent } from './listdetailhr/listdetailhr.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
     children: [
       { path:'add-hr', component: AddhrComponent },
       { path:'remove-hr', component: RemovehrComponent },
-      { path:'hr-details', component: HrdetailsComponent }
+      { path:'hr-details', component: HrdetailsComponent },
+      { path:'managehr/hrdetail/:hrid', component: ListdetailhrComponent}
     ]
   }
 ];

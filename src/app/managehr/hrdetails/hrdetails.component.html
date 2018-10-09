@@ -24,7 +24,7 @@
           <td>{{hrdata.email}}</td>
           <!-- <td>{{hrdata. }}</td> -->
           <td>{{hrdata.lastLogin}}</td>
-          <td><a href="javascript:void(0);"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>&nbsp;&nbsp;<a href="javascript:void(0);" (click)="deleteData(hrdata.id);"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+          <td><a class="btn" [routerLink]="['/managehr/hrdetail',hrdata.id]">View </a>&nbsp;&nbsp;<a class="btn" href="javascript:void(0);" (click)="deleteData(hrdata.id);">Delete</a></td>
         </tr>       
       </tbody>
     </table>
