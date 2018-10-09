@@ -5,5 +5,6 @@ export const REFRESHTOKEN_URL = BASE_URL + 'jwtauth/TokenRefresh';
 export const EMPLOYER_JOBS = BASE_URL + 'job/employer-jobs';
 export const JOB_DETAILS = BASE_URL + 'job';
 export const HR_DETAILS = BASE_URL + 'employer/getAllHRs';
+export const EDIT_PROFILE = BASE_URL + 'employer/update';
 
 
