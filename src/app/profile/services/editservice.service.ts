@@ -14,8 +14,12 @@ export class EditserviceService {
 
   constructor(private http: HttpClient) { }
 
-  updateProfile(responseupdateemployprofile: ResponseUpdateEmployProfile): Observable<any> {
-    return this.http.put( EDIT_PROFILE + '/' + this.employid, responseupdateemployprofile);
+  updateProfile(payload: ResponseUpdateEmployProfile): Observable<any> {
+    return this.http.put( EDIT_PROFILE + '/' + this.employid, payload)
+    .map((res: any) => {
+      return res;
+    })
+      .catch((error) => Observable.throw(error.json() || 'Server error'));
   }
 
 }

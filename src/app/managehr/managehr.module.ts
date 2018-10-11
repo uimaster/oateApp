@@ -8,6 +8,7 @@ import { HrdetailsComponent } from './hrdetails/hrdetails.component';
 import { ManagehrComponent } from './managehr/managehr.component';
 import { SharedModule } from '../shared/shared.module';
 import { HrdetailsService } from './services/hrdetails.service';
+import { ListdetailhrComponent } from './listdetailhr/listdetailhr.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { HrdetailsService } from './services/hrdetails.service';
     ManagehrRoutingModule,
     SharedModule
   ],
-  declarations: [AddhrComponent, RemovehrComponent, HrdetailsComponent, ManagehrComponent],
+  declarations: [AddhrComponent, RemovehrComponent, HrdetailsComponent, ManagehrComponent, ListdetailhrComponent],
   providers: [HrdetailsService]
 })
 export class ManagehrModule { }

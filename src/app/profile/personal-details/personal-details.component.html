@@ -3,7 +3,7 @@
     <div class="ui-g-12">
         <div class="heading-box">
           <h4>Personal Details</h4>
-          <a class="btn" [routerLink]="['/profile/edit-profile-details']">Edit Details</a>
+          <a class="btn" [routerLink]="['/profile/edit-profile-details', employid]">Edit Details</a>
        </div>
       <div class="no-margin">
 
@@ -36,7 +36,7 @@
 
         <div class="ui-grid-row">
             <div class="ui-g-12 ui-md-4">
-              <label for="companyName">companyRegistrationNumber</label>
+              <label for="companyName">Company Registration Number</label>
             </div>
             <div class="ui-g-12 ui-md-8">
               {{companyRegistrationNumber}}
@@ -63,7 +63,7 @@
 
         <div class="ui-grid-row">
             <div class="ui-g-12 ui-md-4">
-              <label for="companyName">employer Type</label>
+              <label for="companyName">Employer Type</label>
             </div>
             <div class="ui-g-12 ui-md-8">
                 {{employerType}}
