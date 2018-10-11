@@ -6,13 +6,18 @@ import { ProfileComponent } from './profile/profile.component';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import { SharedModule } from '../shared/shared.module';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditserviceService } from './services/editservice.service';
 
 @NgModule({
   imports: [
     CommonModule,
     ProfileRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  declarations: [ProfileComponent, PersonalDetailsComponent, EditProfileComponent]
+  declarations: [ProfileComponent, PersonalDetailsComponent, EditProfileComponent],
+  providers: [EditserviceService]
 })
 export class ProfileModule { }

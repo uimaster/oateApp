@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class PersonalDetailsComponent implements OnInit {
 
   // profileData = localStorage.getItem('profileData');
+  employid = localStorage.getItem('empid');
   companyName = localStorage.getItem('companyName');
   contactPersonName = localStorage.getItem('contactPersonName');
   designation = localStorage.getItem('designation');
