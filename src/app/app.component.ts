@@ -13,10 +13,10 @@ export class AppComponent implements OnInit{
   constructor( private router: Router) {}
 
   ngOnInit() {
-    if(this.isLoggedIn === true) {
-      this.router.navigate(['/dashboard']);
-    } else {
-      this.router.navigate(['/login']);
-    }
+    // if(this.isLoggedIn === true) {
+    //   this.router.navigate(['/dashboard']);
+    // } else {
+    //   this.router.navigate(['/login']);
+    // }
   }
 }

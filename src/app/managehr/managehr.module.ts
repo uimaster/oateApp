@@ -9,14 +9,18 @@ import { ManagehrComponent } from './managehr/managehr.component';
 import { SharedModule } from '../shared/shared.module';
 import { HrdetailsService } from './services/hrdetails.service';
 import { ListdetailhrComponent } from './listdetailhr/listdetailhr.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddhrService } from './services/addhrservice';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     ManagehrRoutingModule,
     SharedModule
   ],
   declarations: [AddhrComponent, RemovehrComponent, HrdetailsComponent, ManagehrComponent, ListdetailhrComponent],
-  providers: [HrdetailsService]
+  providers: [HrdetailsService, AddhrService]
 })
 export class ManagehrModule { }

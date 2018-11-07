@@ -10,12 +10,10 @@ import { ResponseUpdateEmployProfile } from '../model/employeprofile.model';
 @Injectable()
 export class EditserviceService {
   
-  public employid = localStorage.getItem('empid');
-
   constructor(private http: HttpClient) { }
 
   updateProfile(payload: ResponseUpdateEmployProfile): Observable<any> {
-    return this.http.put( EDIT_PROFILE + '/' + this.employid, payload)
+    return this.http.put( EDIT_PROFILE, payload)
     .map((res: any) => {
       return res;
     })

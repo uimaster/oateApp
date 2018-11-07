@@ -56,19 +56,19 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('isLoggedIn', 'true');
           localStorage.setItem('token', this.empData.token);
           localStorage.setItem('empid', this.empData.id);
-          localStorage.setItem('profileData', JSON.stringify(this.empData));
-          localStorage.setItem('companyName', this.empData.companyName);
-          localStorage.setItem('companyLogo', this.empData.companyLogo);
-          localStorage.setItem('designation', this.empData.designation);
-          localStorage.setItem('companyRegistrationNumber', this.empData.companyRegistrationNumber);
-          localStorage.setItem('mobileNumber', this.empData.mobileNumber);
-          localStorage.setItem('employerType', this.empData.employerType);
-          localStorage.setItem('emailId', this.empData.emailId);
-          localStorage.setItem('gstiNumber', this.empData.gstiNumber);
-          localStorage.setItem('aboutCompany', this.empData.aboutCompany);
-          localStorage.setItem('officeAddress', this.empData.officeAddress['address']);
-          localStorage.setItem('contactPersonName', this.empData.contactPersonName);
-          localStorage.setItem('contactPersonName', this.empData.contactPersonName);
+          // localStorage.setItem('profileData', JSON.stringify(this.empData));
+          // localStorage.setItem('companyName', this.empData.companyName);
+          // localStorage.setItem('companyLogo', this.empData.companyLogo);
+          // localStorage.setItem('designation', this.empData.designation);
+          // localStorage.setItem('companyRegistrationNumber', this.empData.companyRegistrationNumber);
+          // localStorage.setItem('mobileNumber', this.empData.mobileNumber);
+          // localStorage.setItem('employerType', this.empData.employerType);
+          // localStorage.setItem('emailId', this.empData.emailId);
+          // localStorage.setItem('gstiNumber', this.empData.gstiNumber);
+          // localStorage.setItem('aboutCompany', this.empData.aboutCompany);
+          // localStorage.setItem('officeAddress', this.empData.officeAddress['address']);
+          // localStorage.setItem('contactPersonName', this.empData.contactPersonName);
+          // localStorage.setItem('contactPersonName', this.empData.contactPersonName);
           
           setTimeout(() => {
             this.router.navigate(['/dashboard']); 

@@ -10,7 +10,7 @@ const routes: Routes = [
     component: ProfileComponent,
     children: [
       {path: 'personal-details', component: PersonalDetailsComponent},
-      {path: 'edit-profile-details/:empid', component: EditProfileComponent}
+      {path: 'edit-profile-details', component: EditProfileComponent}
     ]
   }
 ];

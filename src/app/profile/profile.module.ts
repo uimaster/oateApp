@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditserviceService } from './services/editservice.service';
+import { PersonalDetailSerivce } from './services/personaldetail.service';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { EditserviceService } from './services/editservice.service';
     ReactiveFormsModule
   ],
   declarations: [ProfileComponent, PersonalDetailsComponent, EditProfileComponent],
-  providers: [EditserviceService]
+  providers: [EditserviceService, PersonalDetailSerivce]
 })
 export class ProfileModule { }
