@@ -10,43 +10,44 @@
   </div>
   <ul class="sidebar-nav">
     <li><a [routerLink]="['/dashboard']"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
-    <li><a href="#profileSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-home"
+    <!-- <li><a href="#profileSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-home"
           aria-hidden="true"></i> Profile</a>
       <ul class="collapse list-unstyled" id="profileSubmenu">
         <li>
           <a [routerLink]="['/profile/personal-details']">Personal Details</a>
         </li>
       </ul>
-    </li>
-    <li><a href="#managehrmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clipboard"
+    </li> -->
+    <li><a [routerLink]="['/profile/personal-details']"><i class="fa fa-home" aria-hidden="true"></i> Profile</a></li>
+    <li><a [routerLink]="['/managehr/hr-details']"><i class="fa fa-clipboard" aria-hidden="true"></i> HR</a></li>
+    <li><a [routerLink]="['/jobs/jobs-details']"><i class="fa fa-tasks" aria-hidden="true"></i> Jobs</a></li>
+    <!-- <li><a [routerLink]="['/hr/hrlist']"><i class="fa fa-tasks" aria-hidden="true"></i> hrlist</a></li> -->
+    <!-- <li><a href="#managehrmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clipboard"
           aria-hidden="true"></i> Manage HR</a>
       <ul class="collapse list-unstyled" id="managehrmenu">
         <li>
           <a [routerLink]="['/managehr/add-hr']">Add HR</a>
         </li>
-        <!-- <li>
+        <li>
           <a [routerLink]="['/managehr/remove-hr']">Remove HR</a>
-        </li> -->
+        </li>
         <li>
           <a [routerLink]="['/managehr/hr-details']">Hr Details</a>
         </li>
       </ul>
-    </li>
+    </li> 
     <li>
       <a href="#jobsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-tasks"
           aria-hidden="true"></i> Jobs</a>
       <ul class="collapse list-unstyled" id="jobsSubmenu">
         <li>
           <a [routerLink]="['/jobs/jobs-details']">Job Listing</a>
-        </li>
-        <!-- <li>
-          <a [routerLink]="['/jobs/add-job']">Post new job</a>
-        </li> -->
+        </li>        
         <li>
           <a [routerLink]="['/jobs/edit-job']">Update Posted Job</a>
         </li>
       </ul>
-    </li>
+    </li>-->
     <li><a href="#"><i class="fa fa-cogs" aria-hidden="true"></i> Settings</a></li>
     <li><a href="#"><i class="fa fa-question-circle-o" aria-hidden="true"></i> FAQ</a></li>
   </ul>

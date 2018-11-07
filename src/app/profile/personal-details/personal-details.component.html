@@ -7,12 +7,15 @@
        </div>
       <div class="no-margin" *ngIf="prdetailData">
 
-        <div class="ui-grid-row">
+        <div class="ui-grid-row compLogo">
           <div class="ui-g-12 ui-md-4">
             <label for="companyName">Company Name</label>
           </div>
           <div class="ui-g-12 ui-md-8">
             {{prdetailData.companyName}}
+          </div>
+          <div class="companyLogo">
+            <img [src]="'http://' + prdetailData.companyLogo" width="150" height="auto" alt="">
           </div>
         </div>
 
@@ -34,7 +37,7 @@
             </div>
         </div>
 
-        <div class="ui-grid-row">
+        <div class="ui-grid-row" *ngIf="prdetailData.createdBy">
           <div class="ui-g-12 ui-md-4">
             <label for="createdBy">Created By</label>
           </div>
@@ -61,14 +64,14 @@
             </div>
         </div>
 
-        <div class="ui-grid-row">
+        <!-- <div class="ui-grid-row">
             <div class="ui-g-12 ui-md-4">
               <label for="companyName">Company Logo</label>
             </div>
             <div class="ui-g-12 ui-md-8">
                 <img [src]="'http://' + prdetailData.companyLogo" width="150" height="auto" alt="">
             </div>
-        </div>
+        </div> -->
 
         <div class="ui-grid-row">
             <div class="ui-g-12 ui-md-4">

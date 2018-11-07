@@ -19,8 +19,18 @@
 /* .sidebar-nav li:last-child a{border-bottom: 0;} */
 .content-wrapper{width: 100%; float: left; padding: 20px;}
 .btn{background-color: #d34b3d; padding:5px 18px; color: #ffffff; border-color: #d34b3d;}
-.btn:hover{opacity: 0.9;}
+.btn:hover{opacity: 0.9; color: #ffffff;}
+.btn-primary{background-color: #337ab7; border-color: #2e6da4;}
 .heading-box{padding: 7px 15px; border-bottom:1px solid #cccccc; margin-bottom: 15px;}
 .heading-box h4{text-transform: capitalize; display: inline-block;}
 .table-bordered thead td, .table-bordered thead th{background: #efefef;}
 .heading-box a.btn{display: inline-block; float: right;}
+.compLogo{position: relative;}
+.companyLogo {position: absolute; right: 0; top:0;}
+.not-active {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: #ffffff;
+    opacity: 0.6;
+  }

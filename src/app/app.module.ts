@@ -15,9 +15,6 @@ import { RadioButtonModule } from 'primeng/primeng';
 import { TokenInterceptor } from './auth/token.interceptor';
 import { AuthService } from './auth/auth.service';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent
