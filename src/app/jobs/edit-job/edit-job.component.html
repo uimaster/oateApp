@@ -1,3 +1,152 @@
-<p>
-  edit-job works!
-</p>
+<div class="update-job-wrapper">
+    <div class="ui-fluid">
+        <div class="ui-g">
+      
+          <div class="ui-g-12">
+            <div class="heading-box">
+                <h4>Update Job</h4>
+            </div>
+            <div class="card no-margin">       
+              <div class="ui-g form-group">
+                <div class="ui-g-12 ui-md-12">
+                  <div class="ui-grid-row">
+                    <div class="ui-g-12 ui-md-4">
+                      <label for="companyName">Company Name</label>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                      <input id="companyName" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    </div>
+                  </div>
+                  <div class="ui-grid-row">
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="companyUrl">Company URL</label>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                      <input id="companyUrl" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    </div>
+                  </div>
+                  <div class="ui-grid-row">
+                      <div class="ui-g-12 ui-md-4">
+                          <label for="companyLogo">Company Logo</label>
+                      </div>
+                      <div class="ui-g-12 ui-md-8">
+                        <!-- <input id="companylogo" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
+                        <p-fileUpload name="myfile[]" url="./upload.php" multiple="multiple"
+                        accept="image/*" auto="auto"></p-fileUpload>                </div>
+                  </div>
+                 
+                  <div class="ui-grid-row">
+                      <div class="ui-g-12 ui-md-4">
+                          <label for="position">Position</label>
+                      </div>
+                      <div class="ui-g-12 ui-md-8">
+                        <input id="position" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      </div>
+                    </div>
+                 
+                  <div class="ui-grid-row">
+                      <div class="ui-g-12 ui-md-4">
+                          <label for="eventLocation">Event Location</label>
+                      </div>
+                      <div class="ui-g-12 ui-md-8">
+                        <input id="eventLocation" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      </div>
+                  </div>
+
+                  <div class="ui-grid-row">
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="passoutYearBatch">Passout Year Batch</label>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                      <input id="passoutYearBatch" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    </div>
+                  </div>
+                  <div class="ui-grid-row">
+                      <div class="ui-g-12 ui-md-4">
+                          <label for="fromsalary">From salary</label>
+                      </div>
+                      <div class="ui-g-12 ui-md-8">
+                        <input id="fromsalary" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      </div>
+                  </div>
+                  <div class="ui-grid-row">
+                      <div class="ui-g-12 ui-md-4">
+                          <label for="tosalary">To salary</label>
+                      </div>
+                      <div class="ui-g-12 ui-md-8">
+                        <input id="tosalary" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      </div>
+                  </div>
+                  <div class="ui-grid-row">
+                      <div class="ui-g-12 ui-md-4">
+                          <label for="rexperience">Required Experience(Should be in no of months)</label>
+                      </div>
+                      <div class="ui-g-12 ui-md-8">
+                        <input id="rexperience" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      </div>
+                  </div>
+
+                  <div class="ui-grid-row">
+                      <div class="ui-g-12 ui-md-4">
+                          <label for="companyDesc">Company Desc</label>
+                      </div>
+                      <div class="ui-g-12 ui-md-8">
+                        <input id="companyDesc" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      </div>
+                  </div>
+                  <div class="ui-grid-row">
+                      <div class="ui-g-12 ui-md-4">
+                          <label for="eligibility">Eligibility</label>
+                      </div>
+                      <div class="ui-g-12 ui-md-8">
+                        <input id="eligibility" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      </div>
+                  </div>
+                  <div class="ui-grid-row">
+                      <div class="ui-g-12 ui-md-4">
+                          <label for="requiredSkills">Required Skills</label>
+                      </div>
+                      <div class="ui-g-12 ui-md-8">
+                        <input id="requiredSkills" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      </div>
+                  </div>
+                  <div class="ui-grid-row">
+                      <div class="ui-g-12 ui-md-4">
+                          <label for="jobRequirement">Job Requirement</label>
+                      </div>
+                      <div class="ui-g-12 ui-md-8">
+                        <input id="jobRequirement" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      </div>
+                  </div>
+                  <div class="ui-grid-row">
+                      <div class="ui-g-12 ui-md-4">
+                          <label for="specialNotes">Special Notes</label>
+                      </div>
+                      <div class="ui-g-12 ui-md-8">
+                        <input id="specialNotes" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      </div>
+                  </div>
+                  <div class="ui-grid-row">               
+                      <div class="ui-g-12 ui-md-4">&nbsp;</div>
+                      <div class="ui-g-12 ui-md-8">                  
+                          <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                              <label class="custom-control-label" for="defaultUnchecked">I confirm</label>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="ui-grid-row"> 
+                      <div class="ui-g-12 ui-md-4">&nbsp;</div>
+                      <div class="ui-g-12 ui-md-8 text-center">
+                          <button type="button" class="btn">Update Job</button>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+      
+        </div>
+      </div>
+    </div>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonalDetailSerivce } from '../services/personaldetail.service';
+import { ResponsePersonalDetail, PersonalResponseData } from '../model/personaldetail.model';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-personal-details',
@@ -7,21 +10,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalDetailsComponent implements OnInit {
 
-  // profileData = localStorage.getItem('profileData');
+  errorMessage = '';
+  successMessage = '';
+  showError = false;
+  showSuccess = false;
+  personaldetailData:Observable<ResponsePersonalDetail>;
+  prdetailData: PersonalResponseData;
   employid = localStorage.getItem('empid');
-  companyName = localStorage.getItem('companyName');
-  contactPersonName = localStorage.getItem('contactPersonName');
-  designation = localStorage.getItem('designation');
-  companyRegistrationNumber = localStorage.getItem('companyRegistrationNumber');
-  companyLogo = localStorage.getItem('companyLogo');
-  employerType = localStorage.getItem('employerType');
-  aboutCompany = localStorage.getItem('aboutCompany');
   officeAddress = localStorage.getItem('officeAddress');
-  gstiNumber = localStorage.getItem('gstiNumber');
 
-  constructor() { }
+
+  constructor(private personaldetailservice: PersonalDetailSerivce) { }
 
   ngOnInit() {
+    this.getPersonalDetailData();
+  }
+
+  getPersonalDetailData(){
+    this.personaldetailservice.PersonalDetail().subscribe(
+      (res: ResponsePersonalDetail) => {
+        if(res && res.statusCode === 200){
+            this.successMessage = res.message;
+            this.showSuccess = true;
+            this.prdetailData = res.entity;
+            console.log(this.prdetailData);        
+        }else {
+          //this.errorMessage = res.message;
+          this.showError = true;         
+        }
+      }
+    )
   }
 
 }

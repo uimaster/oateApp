@@ -1,3 +1,127 @@
-<p>
-  addhr works!
-</p>
+<div class="add-managehr-wrapper">
+  <div class="ui-fluid">
+    <div class="ui-g">
+
+      <div class="ui-g-12">
+        <div class="heading-box">
+          <h4>Add HR</h4>
+        </div>
+        <div class="card no-margin">
+          <div class="ui-g form-group">
+            <div class="ui-g-12 ui-md-12">
+               <form [formGroup]="addhrForm" (submit)="saveHr(addhrForm.value);" >
+                  <div class="formWrapper">
+                    <div class="ui-grid-row">
+                      <div class="ui-g-12 ui-md-4">
+                        <label for="fname">First Name</label>
+                      </div>
+                      <div class="ui-g-12 ui-md-8">
+                        <input id="fname" formControlName="fname" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      </div>
+                    </div>
+                    <div class="ui-grid-row">
+                      <div class="ui-g-12 ui-md-4">
+                        <label for="lname">Last Name</label>
+                      </div>
+                      <div class="ui-g-12 ui-md-8">
+                        <input id="lname" formControlName="lname" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      </div>
+                    </div>
+                    <div class="ui-grid-row">
+                        <div class="ui-g-12 ui-md-4">
+                          <label for="emailId">Email id</label>
+                        </div>
+                        <div class="ui-g-12 ui-md-8">
+                          <input id="emailId" formControlName="emailId" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        </div>
+                      </div>
+                      <div class="ui-grid-row">
+                        <div class="ui-g-12 ui-md-4">
+                          <label for="password">password</label>
+                        </div>
+                        <div class="ui-g-12 ui-md-8">
+                          <input id="password" formControlName="password" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        </div>
+                      </div>
+                    <div class="ui-grid-row">
+                      <div class="ui-g-12 ui-md-4">
+                        <label for="createdBy">Created By</label>
+                      </div>
+                      <div class="ui-g-12 ui-md-8">
+                        <input id="createdBy" formControlName="createdBy" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      </div>
+                    </div>
+                      <div class="ui-grid-row">
+                        <div class="ui-g-12 ui-md-4">
+                          <label for="updatedAt">Updated At</label>
+                        </div>
+                        <div class="ui-g-12 ui-md-8">
+                          <input id="updatedAt" formControlName="updatedAt" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        </div>
+                      </div>
+
+                    <fieldset formArrayName="address">
+                      <legend>Office Address</legend>
+                      <ng-container *ngFor="let ctrl of addhrForm.get('address').controls; let i = index;" [formGroupName]="i" >
+                      <div class="ui-grid-row">
+                        <div class="ui-g-12 ui-md-4">
+                          <label for="address">Address</label>
+                        </div>
+                        <div class="ui-g-12 ui-md-8">
+                          <input id="address" formControlName="address" pinputtext type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        </div>
+                      
+                        <div class="ui-g-12 ui-md-4">
+                          <label for="city">City</label>
+                        </div>
+                        <div class="ui-g-12 ui-md-8">
+                          <input id="city" formControlName="city" pinputtext type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        </div>
+                      
+                        <div class="ui-g-12 ui-md-4">
+                          <label for="country">Country</label>
+                        </div>
+                        <div class="ui-g-12 ui-md-8">
+                          <input id="country" formControlName="country" pinputtext type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        </div>
+                      
+                        <div class="ui-g-12 ui-md-4">
+                          <label for="landmark">Landmark</label>
+                        </div>
+                        <div class="ui-g-12 ui-md-8">
+                          <input id="landmark" formControlName="landmark" pinputtext type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        </div>
+                      
+                        <div class="ui-g-12 ui-md-4">
+                          <label for="pincode">Pincode</label>
+                        </div>
+                        <div class="ui-g-12 ui-md-8">
+                          <input id="pincode" formControlName="pincode" pinputtext type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        </div>
+                      
+                        <div class="ui-g-12 ui-md-4">
+                          <label for="state">State</label>
+                        </div>
+                        <div class="ui-g-12 ui-md-8">
+                          <input id="state" formControlName="state" pinputtext type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        </div>
+                      </div>
+                      </ng-container>
+                    </fieldset>
+
+
+                    <div class="ui-grid-row">
+                      <div class="ui-g-12 ui-md-4">&nbsp;</div>
+                      <div class="ui-g-12 ui-md-8 text-right">
+                        <button type="submit" class="btn btn-primary" >Add Hr</button>
+                      </div>
+                    </div>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

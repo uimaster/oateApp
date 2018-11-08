@@ -8,16 +8,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './token.interceptor';
 
+
 @NgModule({
   imports: [
     CommonModule,
     AuthRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule    
   ],
   declarations: [LoginComponent],
   providers: [
-    AuthService,
+    AuthService,    
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

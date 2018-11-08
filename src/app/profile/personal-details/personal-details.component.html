@@ -3,16 +3,28 @@
     <div class="ui-g-12">
         <div class="heading-box">
           <h4>Personal Details</h4>
-          <a class="btn" [routerLink]="['/profile/edit-profile-details', employid]">Edit Details</a>
+          <a class="btn" [routerLink]="['/profile/edit-profile-details']">Edit Details</a>
        </div>
-      <div class="no-margin">
+      <div class="no-margin" *ngIf="prdetailData">
 
-        <div class="ui-grid-row">
+        <div class="ui-grid-row compLogo">
           <div class="ui-g-12 ui-md-4">
             <label for="companyName">Company Name</label>
           </div>
           <div class="ui-g-12 ui-md-8">
-            {{companyName}}
+            {{prdetailData.companyName}}
+          </div>
+          <div class="companyLogo">
+            <img [src]="'http://' + prdetailData.companyLogo" width="150" height="auto" alt="">
+          </div>
+        </div>
+
+        <div class="ui-grid-row">
+          <div class="ui-g-12 ui-md-4">
+            <label for="companyName">Company URL</label>
+          </div>
+          <div class="ui-g-12 ui-md-8">
+            {{prdetailData.companyUrl}}
           </div>
         </div>
 
@@ -21,16 +33,25 @@
               <label for="companyName">Contact Person Name</label>
             </div>
             <div class="ui-g-12 ui-md-8">
-              {{contactPersonName}}
+              {{prdetailData.contactPersonName}}
             </div>
         </div>
+
+        <div class="ui-grid-row" *ngIf="prdetailData.createdBy">
+          <div class="ui-g-12 ui-md-4">
+            <label for="createdBy">Created By</label>
+          </div>
+          <div class="ui-g-12 ui-md-8">
+            {{prdetailData.createdBy}}
+          </div>
+       </div>
 
         <div class="ui-grid-row">
             <div class="ui-g-12 ui-md-4">
               <label for="companyName">Designation</label>
             </div>
             <div class="ui-g-12 ui-md-8">
-              {{designation}}
+              {{prdetailData.designation}}
             </div>
         </div>
 
@@ -39,25 +60,25 @@
               <label for="companyName">Company Registration Number</label>
             </div>
             <div class="ui-g-12 ui-md-8">
-              {{companyRegistrationNumber}}
+              {{prdetailData.companyRegistrationNumber}}
             </div>
         </div>
 
-        <div class="ui-grid-row">
+        <!-- <div class="ui-grid-row">
             <div class="ui-g-12 ui-md-4">
               <label for="companyName">Company Logo</label>
             </div>
             <div class="ui-g-12 ui-md-8">
-                <img [src]="'http://' + companyLogo" width="150" height="auto" alt="">
+                <img [src]="'http://' + prdetailData.companyLogo" width="150" height="auto" alt="">
             </div>
-        </div>
+        </div> -->
 
         <div class="ui-grid-row">
             <div class="ui-g-12 ui-md-4">
               <label for="companyName">GST Number</label>
             </div>
             <div class="ui-g-12 ui-md-8">
-                {{gstiNumber}}
+                {{prdetailData.gstiNumber}}
             </div>
         </div>
 
@@ -66,7 +87,7 @@
               <label for="companyName">Employer Type</label>
             </div>
             <div class="ui-g-12 ui-md-8">
-                {{employerType}}
+                {{prdetailData.employerType}}
             </div>
         </div>
 
@@ -75,8 +96,10 @@
               <label for="companyName">Office Address:</label>
             </div>
             <div class="ui-g-12 ui-md-8">
-                {{officeAddress}}
-            </div>
+                {{prdetailData.officeAddress.address}}&nbsp;&nbsp;
+                {{prdetailData.officeAddress.city}}&nbsp;&nbsp;{{prdetailData.officeAddress.state}}&nbsp;&nbsp;{{prdetailData.officeAddress.pincode}}
+                &nbsp;&nbsp;{{prdetailData.officeAddress.landmark}}
+              </div>
         </div>
 
         <div class="ui-grid-row">
@@ -84,7 +107,7 @@
               <label for="companyName">About Company</label>
             </div>
             <div class="ui-g-12 ui-md-8">
-                {{aboutCompany}}<br>                
+                {{prdetailData.aboutCompany}}<br>                
             </div>
         </div>
 
