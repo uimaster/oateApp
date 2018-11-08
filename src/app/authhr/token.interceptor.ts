@@ -10,7 +10,7 @@ import { LocalStorage } from '../../utils/localStorage';
 @Injectable()
 
 
-export class TokenInterceptor implements HttpInterceptor {
+export class TokenHrInterceptor implements HttpInterceptor {
   debugger;
   public cachedRequests = [];
 

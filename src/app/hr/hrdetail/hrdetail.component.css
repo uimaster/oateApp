@@ -1,0 +1,23 @@
+.navigation-wrapper{width: 100%; float: left; border:1px solid #dddddd; overflow: hidden;}
+.navigation-wrapper ul{list-style: none; padding: 0;}
+.navigation-wrapper ul li a{text-decoration: none; display: block; padding: 5px 10px;}
+
+.job-listing-wrapper{width: 100%; float: left; border: 1px solid #dddddd;}
+.job-listing-wrapper .top-box-pannel{width:100%; float: left; border-bottom: 1px solid #dddddd; padding: 10px;}
+.job-listing-wrapper .bottom-box-pannel{width:100%; float: left;padding: 25px;}
+.left-frm-wrapper{width:100%; float: left;}
+.left-frm-wrapper .form-group{margin-right: 15px;}
+.jobListing{width: 100%; float: left;}
+.jobListing ul{list-style: none; padding: 0;}
+.jobListing ul li{border:1px solid #ddd; padding: 4px; width: 100%; float: left; display: block; margin-bottom: 15px;}
+.jobListing ul li .colBox-1{width: calc(50% - 10px); float: left; margin-right: 10px; position: relative;}
+.jobListing ul li .colBox-2{width: calc(30% - 10px); float: left; margin-right: 10px; position: relative;}
+.jobListing ul li .colBox-3{width:20%; float: left;  position: relative;}
+.colBox-1 .common{margin-bottom: 10px;}
+.colBox-1 .common .heading{font-weight: 700; font-size: 16px;}
+.colBox-1 .common .heading span{font-weight: 400; font-size: 14px;}
+.matchingBox{width: 100%; float: left; position: relative;}
+.matchingBox .applied{border:1px solid #dddddd; display: inline-block; background: green; color: #000000; padding:3px 6px;}
+.matchingBox .reject{display: inline-block; border:1px solid #ddd; padding:3px 6px;}
+
+.pagination-wrapper{width: 100%; float: left; text-align: center;}

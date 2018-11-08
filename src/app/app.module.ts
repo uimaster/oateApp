@@ -14,6 +14,9 @@ import { ButtonModule } from 'primeng/primeng';
 import { RadioButtonModule } from 'primeng/primeng';
 import { TokenInterceptor } from './auth/token.interceptor';
 import { AuthService } from './auth/auth.service';
+import { AuthHrService } from './authhr/auth.hrservice';
+import { TokenHrInterceptor } from './authhr/token.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -35,9 +38,15 @@ import { AuthService } from './auth/auth.service';
   ],
   providers: [
     AuthService,
+    AuthHrService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenHrInterceptor,
       multi: true
     }
   ],

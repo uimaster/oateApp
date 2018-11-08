@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class HrloginComponent implements OnInit {
 
-  loginForm: FormGroup;
+  loginhrForm: FormGroup;
   submitted = false;
   loading = false;
   errorMessage = '';
@@ -33,16 +33,16 @@ export class HrloginComponent implements OnInit {
     this.createLoginForm();
   }
 
-  get f() { return this.loginForm.controls; }
+  get f() { return this.loginhrForm.controls; }
 
   onSubmit(formData: LoginRequest){
     
     this.submitted = true;
-    if (this.loginForm.invalid) {
+    if (this.loginhrForm.invalid) {
       return;
     }
     
-    if(this.loginForm.valid){
+    if(this.loginhrForm.valid){
      
       this.authHrservice.login(formData).subscribe((res:LoginResponse) => {
         if(res && res.statusCode === 200){
@@ -73,7 +73,7 @@ export class HrloginComponent implements OnInit {
   }
 
   createLoginForm(){
-    this.loginForm = this.formBuilder.group({       
+    this.loginhrForm = this.formBuilder.group({       
       emailId : ['', Validators.required],
       password: ['', Validators.required],
       remember: [0,]
