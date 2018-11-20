@@ -20,7 +20,7 @@ export interface PostjobRequest{
     requiredExperience: boolean;
     requiredSkills:any;
     specialNotes:any;
-    toSalry: boolean;
+    toSalry: any;
     updatedAt: string;
     updatedBy: string;    
 }

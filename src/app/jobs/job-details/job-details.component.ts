@@ -39,7 +39,7 @@ export class JobDetailsComponent implements OnInit {
         this.successMessage = res.message;
         this.showSuccess = true;
         this.jobdetailsData = res.entity;  
-        console.log(this.jobdetailsData);        
+        // console.log(this.jobdetailsData);        
       }else {
         this.errorMessage = res.message;
         this.showError = true;         

@@ -11,17 +11,21 @@ import { SharedModule } from '../shared/shared.module';
 import { EmployerJobsService } from './services/employer-jobs.service';
 import { EmployerJobsComponent } from './employer-jobs/employer-jobs.component';
 import { JobDetailSerivce } from './services/job-detail.service';
+import { UpdateJobSerivce } from './services/update-job.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     JobsRoutingModule,
     SharedModule,
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [JobsComponent, JobDetailsComponent, EditJobComponent, PostJobComponent, EmployerJobsComponent],
   providers: [
-    EmployerJobsService, JobDetailSerivce
+    EmployerJobsService, JobDetailSerivce, UpdateJobSerivce
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

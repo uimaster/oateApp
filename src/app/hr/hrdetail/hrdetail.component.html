@@ -1,5 +1,5 @@
 <div class="hrdetails-wrapper">
-<div class="row">
+<div class="row" *ngIf="detailsData.length > 0">
   <div class="col-md-2">
     <div class="navigation-wrapper">
          <ul>
@@ -110,4 +110,7 @@
     </div>
   </div>
 </div>
+
+<div *ngIf="detailsData.length < 1" class="text-center"> Job Details is not available !</div>
+
 </div>

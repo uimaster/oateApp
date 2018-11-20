@@ -12,6 +12,8 @@ export class AddhrComponent implements OnInit {
   public addhrForm: FormGroup;
   token: string;
   date = new Date();
+  createdby = localStorage.getItem('contactPersonName');
+
   constructor(
     private fb: FormBuilder,
     private addhrservice: AddhrService
@@ -25,7 +27,7 @@ export class AddhrComponent implements OnInit {
       emailId: ['',Validators.required],
       address: this.fb.array([this.getAddress()]),
       createdAt: [this.date],
-      createdBy: [''],
+      createdBy: [this.createdby],
       token: [this.token],
       creater: [''],
       deleted: [false],
@@ -56,7 +58,7 @@ export class AddhrComponent implements OnInit {
     } else {
       this.addhrservice.addHrdata(formData).subscribe ( res => {
         if(res) {
-          console.log(res);
+          // console.log(res);
         }
       })
     }

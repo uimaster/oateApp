@@ -88,7 +88,7 @@ getAddress() {
             this.showSuccess = true;
             this.prdetailData = res.entity;
             const controlArray = <FormArray> this.editProfileForm.get('officeAddress');
-            console.log(this.prdetailData);   
+            // console.log(this.prdetailData);   
             this.editProfileForm.controls['companyName'].setValue(this.prdetailData.companyName);
             this.editProfileForm.controls['emailId'].setValue(this.prdetailData.emailId);
             this.editProfileForm.controls['contactPersonName'].setValue(this.prdetailData.contactPersonName);
@@ -103,6 +103,7 @@ getAddress() {
             this.editProfileForm.controls['aboutCompany'].setValue(this.prdetailData.aboutCompany); 
             this.editProfileForm.controls['companyUrl'].setValue(this.prdetailData.companyUrl); 
             this.editProfileForm.controls['createdBy'].setValue(this.prdetailData.createdBy); 
+            this.editProfileForm.controls['id'].setValue(this.prdetailData.id); 
             controlArray.controls[0].get('address').setValue(this.prdetailData.officeAddress.address);
             controlArray.controls[0].get('city').setValue(this.prdetailData.officeAddress.city);
             controlArray.controls[0].get('country').setValue(this.prdetailData.officeAddress.country);
