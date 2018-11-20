@@ -8,6 +8,8 @@ import { HrComponent } from './hr/hr.component';
 import { SharedModule } from '../shared/shared.module';
 import { HrlistService } from './service/hrlist.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PagerService } from '../../utils/pager.service';
+import { HrJobDetailSerivce } from './service/jobdetail.service';
 
 @NgModule({
   imports: [
@@ -18,6 +20,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   declarations: [HrlistingComponent, HrdetailComponent, HrComponent],
-  providers: [HrlistService]
+  providers: [HrlistService, HrJobDetailSerivce, PagerService]
 })
 export class HrModule { }

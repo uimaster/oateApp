@@ -33,7 +33,7 @@ export class PersonalDetailsComponent implements OnInit {
             this.successMessage = res.message;
             this.showSuccess = true;
             this.prdetailData = res.entity;
-            console.log(this.prdetailData);        
+            // console.log(this.prdetailData);        
         }else {
           //this.errorMessage = res.message;
           this.showError = true;         

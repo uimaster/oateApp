@@ -39,7 +39,7 @@ export class JobdetailsResponseData {
     specialNotes1: string;
     specialNotes2: string;
     specialNotes3: string;
-    toSalry: number;
+    toSalary: number;
     totalRequirement: number;
     updatedAt: string;
     updatedBy: string;

@@ -13,7 +13,7 @@ const routes: Routes = [
     children: [
       
           { path: 'add-job', component: PostJobComponent},
-          { path: 'edit-job', component: EditJobComponent },
+          { path: 'edit-job/:id', component: EditJobComponent },
           { path: 'jobs-details', component: EmployerJobsComponent },
           { path: 'job-details/:id', component: JobDetailsComponent }
        

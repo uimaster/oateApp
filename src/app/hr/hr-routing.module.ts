@@ -10,7 +10,7 @@ const routes: Routes = [
    component: HrComponent,
    children: [
      {path: 'hrlist', component: HrlistingComponent},
-     {path: 'hrdetail', component: HrdetailComponent}
+     {path: 'hrdetail/:id', component: HrdetailComponent}
    ]
 
   },

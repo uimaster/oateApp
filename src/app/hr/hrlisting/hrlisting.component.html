@@ -1,29 +1,31 @@
 <div class="job-details-wrapper">
     <div class="heading-box">
-       <h4>List of HR</h4>
+       <h4>Recently Posted Jobs</h4>
        <!-- <a class="btn btn-primary" [routerLink]="['/hr/add-hr']">+ Add HR</a> -->
     </div>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Email</th>
-            <!-- <th scope="col">Mobile</th> -->
-            <th scope="col">Last Login</th>
+            <th scope="col">S.NO.</th>
+            <th scope="col">Job Number</th>
+            <th scope="col">Job Title</th>
+            <th scope="col">Posted On</th>
+            <!--<th scope="col">Email</th>
+             <th scope="col">Mobile</th> -->
+            <th scope="col">Responses</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Deepak</td>
-            <td>Barnwal</td>
-            <td>deepak@gmail.com</td>           
-            <td>345223</td>
-            <td><a class="btn not-active">View </a>&nbsp;&nbsp;<a class="btn not-active" href="javascript:void(0);" (click)="deleteData(hrdata.id);">Delete</a></td>
+          <tr *ngFor="let hrjob of hrjobsData; let i = index;">
+            <td scope="row">{{i+1}}</td>
+            <td>{{hrjob.postedJobNumber}}</td>
+            <td>{{hrjob.position}}</td>
+            <td>{{hrjob.postedJobDate}}</td>
+            <!-- <td>deepak@gmail.com</td>            -->
+            <td>{{hrjob.appliedCount}}</td>
+            <td><a [routerLink]="['/hr/hrdetail',hrjob.id]" class="btn">View </a>&nbsp;&nbsp;<a class="btn not-active" href="javascript:void(0);" (click)="deleteData(hrdata.id);">Delete</a></td>
           </tr>       
         </tbody>
       </table>

@@ -6,7 +6,8 @@
             <div class="heading-box">
                 <h4>Update Job</h4>
             </div>
-            <div class="card no-margin">       
+            <div class="card no-margin">   
+              <form [formGroup]="editJobForm">       
               <div class="ui-g form-group">
                 <div class="ui-g-12 ui-md-12">
                   <div class="ui-grid-row">
@@ -14,7 +15,7 @@
                       <label for="companyName">Company Name</label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
-                      <input id="companyName" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <input id="companyName" formControlName="companyName" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                     </div>
                   </div>
                   <div class="ui-grid-row">
@@ -22,67 +23,83 @@
                         <label for="companyUrl">Company URL</label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
-                      <input id="companyUrl" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <input id="companyUrl" formControlName="companyUrl" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                     </div>
                   </div>
                   <div class="ui-grid-row">
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="eventDate">Event Date</label>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                      <input id="eventDate" formControlName="eventDate" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    </div>
+                  </div>
+                  <div class="ui-grid-row">
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="eventLocation">Event Location</label>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                      <input id="eventLocation" formControlName="eventLocation" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    </div>
+                  </div>
+                  <div class="ui-grid-row">
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="jobType">Job Type</label>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                      <input id="jobType" formControlName="jobType" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    </div>
+                  </div>
+
+                  <!-- <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">
                           <label for="companyLogo">Company Logo</label>
                       </div>
                       <div class="ui-g-12 ui-md-8">
-                        <!-- <input id="companylogo" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
                         <p-fileUpload name="myfile[]" url="./upload.php" multiple="multiple"
                         accept="image/*" auto="auto"></p-fileUpload>                </div>
-                  </div>
+                  </div> -->
                  
                   <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">
                           <label for="position">Position</label>
                       </div>
                       <div class="ui-g-12 ui-md-8">
-                        <input id="position" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        <input id="position" formControlName="position" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                       </div>
-                    </div>
-                 
-                  <div class="ui-grid-row">
-                      <div class="ui-g-12 ui-md-4">
-                          <label for="eventLocation">Event Location</label>
-                      </div>
-                      <div class="ui-g-12 ui-md-8">
-                        <input id="eventLocation" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                      </div>
-                  </div>
+                    </div>                
+
 
                   <div class="ui-grid-row">
                     <div class="ui-g-12 ui-md-4">
                         <label for="passoutYearBatch">Passout Year Batch</label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
-                      <input id="passoutYearBatch" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <input id="passoutYearBatch" formControlName="passoutYearBatch" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                     </div>
                   </div>
                   <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">
-                          <label for="fromsalary">From salary</label>
+                          <label for="fromSalary">From salary</label>
                       </div>
                       <div class="ui-g-12 ui-md-8">
-                        <input id="fromsalary" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        <input id="fromSalary" formControlName="fromSalary" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                       </div>
                   </div>
                   <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">
-                          <label for="tosalary">To salary</label>
+                          <label for="toSalary">To salary</label>
                       </div>
                       <div class="ui-g-12 ui-md-8">
-                        <input id="tosalary" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        <input id="toSalary" formControlName="toSalary" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                       </div>
                   </div>
                   <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">
-                          <label for="rexperience">Required Experience(Should be in no of months)</label>
+                          <label for="requiredExperience">Required Experience(Should be in no of months)</label>
                       </div>
                       <div class="ui-g-12 ui-md-8">
-                        <input id="rexperience" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        <input id="requiredExperience" formControlName="requiredExperience" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                       </div>
                   </div>
 
@@ -91,7 +108,7 @@
                           <label for="companyDesc">Company Desc</label>
                       </div>
                       <div class="ui-g-12 ui-md-8">
-                        <input id="companyDesc" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        <input id="companyDesc" formControlName="companyDesc" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                       </div>
                   </div>
                   <div class="ui-grid-row">
@@ -99,33 +116,57 @@
                           <label for="eligibility">Eligibility</label>
                       </div>
                       <div class="ui-g-12 ui-md-8">
-                        <input id="eligibility" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        <input id="eligibility" formControlName="eligibility"  pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                       </div>
                   </div>
                   <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">
-                          <label for="requiredSkills">Required Skills</label>
+                          <label for="requiredSkillsMandatory">Required Skills</label>
                       </div>
                       <div class="ui-g-12 ui-md-8">
-                        <input id="requiredSkills" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        <input id="requiredSkillsMandatory" formControlName="requiredSkillsMandatory" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                       </div>
                   </div>
                   <div class="ui-grid-row">
+                        <div class="ui-g-12 ui-md-4">
+                            <label for="totalRequirement">Total Requirement</label>
+                        </div>
+                        <div class="ui-g-12 ui-md-8">
+                          <input id="totalRequirement" formControlName="totalRequirement" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        </div>
+                    </div>
+                  <!-- <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">
                           <label for="jobRequirement">Job Requirement</label>
                       </div>
                       <div class="ui-g-12 ui-md-8">
                         <input id="jobRequirement" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                       </div>
-                  </div>
+                  </div> -->
                   <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">
-                          <label for="specialNotes">Special Notes</label>
+                          <label for="specialNotes1">Special Notes1</label>
                       </div>
                       <div class="ui-g-12 ui-md-8">
-                        <input id="specialNotes" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        <input id="specialNotes1" formControlName="specialNotes1" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                       </div>
                   </div>
+                  <div class="ui-grid-row">
+                        <div class="ui-g-12 ui-md-4">
+                            <label for="specialNotes1">Special Notes2</label>
+                        </div>
+                        <div class="ui-g-12 ui-md-8">
+                          <input id="specialNotes1" formControlName="specialNotes2" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        </div>
+                    </div>
+                    <div class="ui-grid-row">
+                            <div class="ui-g-12 ui-md-4">
+                                <label for="specialNotes1">Special Notes3</label>
+                            </div>
+                            <div class="ui-g-12 ui-md-8">
+                              <input id="specialNotes1" formControlName="specialNotes3" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                            </div>
+                        </div>
                   <div class="ui-grid-row">               
                       <div class="ui-g-12 ui-md-4">&nbsp;</div>
                       <div class="ui-g-12 ui-md-8">                  
@@ -143,6 +184,7 @@
                   </div>
                 </div>
               </div>
+             </form>
             </div>
           </div>
       

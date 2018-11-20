@@ -47,12 +47,12 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.valid){
      
       this.authservice.login(formData).subscribe((res:LoginResponse) => {
-        if(res && res.statusCode === 200){
+        if(res && res.statusCode === 200){         
           this.successMessage = res.message;
           this.showSuccess = true;
           this.empData = res.entity;
           const profileData = this.empData;
-          console.log(res);
+          // console.log(res);
           localStorage.setItem('isLoggedIn', 'true');
           localStorage.setItem('token', this.empData.token);
           localStorage.setItem('empid', this.empData.id);
@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
           // localStorage.setItem('aboutCompany', this.empData.aboutCompany);
           // localStorage.setItem('officeAddress', this.empData.officeAddress['address']);
           // localStorage.setItem('contactPersonName', this.empData.contactPersonName);
-          // localStorage.setItem('contactPersonName', this.empData.contactPersonName);
+          localStorage.setItem('contactPersonName', this.empData.contactPersonName);
           
           setTimeout(() => {
             this.router.navigate(['/dashboard']); 

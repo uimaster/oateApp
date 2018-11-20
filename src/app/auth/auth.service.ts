@@ -23,7 +23,7 @@ export class AuthService {
 
 
   login(payload: LoginRequest): Observable<any>{
-
+   
     let headers = new HttpHeaders();
     // headers = headers.append('Authorization', 'Basic ' + btoa(payload.username + ':' + payload.password));
 
@@ -36,7 +36,7 @@ export class AuthService {
           return res;
         }
       })
-      .catch((error) => Observable.throw('server Error.'));
+      .catch((error) => Observable.throw(error || 'server Error.'));
   }
 
   refreshToken(): Observable<LoginResponse> {
