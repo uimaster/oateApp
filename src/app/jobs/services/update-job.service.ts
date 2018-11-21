@@ -5,19 +5,20 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { ResponseUpdateEmployProfile } from "../editjob.model";
 
 @Injectable()
 export class UpdateJobSerivce {
   
     constructor(private http: HttpClient){}
     
-    // updatejob(payload: ResponseUpdateEmployProfile): Observable<any> {
-    //     return this.http.put( EDIT_JOB, payload)
-    //     .map((res: any) => {
-    //       return res;
-    //     })
-    //       .catch((error) => Observable.throw(error.json() || 'Server error'));
-    //   }
+    updatejob(payload: ResponseUpdateEmployProfile): Observable<any> {
+        return this.http.put( EDIT_JOB, payload)
+        .map((res: any) => {
+          return res;
+        })
+          .catch((error) => Observable.throw(error.json() || 'Server error'));
+      }
   
 
 }

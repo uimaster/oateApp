@@ -1,49 +1,39 @@
-export class JobdetailResponse {
-    isSuccess: boolean;
-    message: string;
-    statusCode: number;
-    entities: JobdetailsResponseData;
-}
-
-
-export class JobdetailsResponseData {
-
+export class ResponseUpdateEmployProfile{
     appliedCount: number;
     companyDesc: string;
     companyLogo: string;
     companyName: string;
     companyUrl: string;
-    createdAt: string;
+    createdAt: any;
     createdBy: string;
     deleted: boolean;
-    eligibility: string;
-    employerId: string;
-    eventDate: string;
+    eligibility: any;
+    employerId: any;
+    eventDate: any;
     eventLocation: string;
     fromSalary: number;
     id: string;
-    jobDescription: string;
+    jobDescription:string;
     jobLocation: string;
-    jobPostedDate: string;
     jobType: string;
-    lastDateToApply: string;
+    lastDateToApply: number;
     passoutYearBatch: string;
     position: string;
+    postedJobDate: any;
     postedJobNumber: number;
     requiredExperience: number;
     requiredSkillsMandatory: string;
-    requiredSkillsPreferred: string
-    specialNoteTitle1: string;
+    requiredSkillsPreferred:string;
+    specialNoteTitle1: Array<string>;
     specialNoteTitle2: string;
     specialNoteTitle3: string;
     specialNotes1: string;
     specialNotes2: string;
     specialNotes3: string;
     toSalary: number;
-    totalRequirement: number;
-    updatedAt: string;
+    totalRequirement:number;
+    updatedAt: any;
     updatedBy: string;
-    verifiedByAdmin: string;
+    verifiedByAdmin: boolean;
     verifierName: string;
-
 }

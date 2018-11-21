@@ -7,7 +7,7 @@
                 <h4>Update Job</h4>
             </div>
             <div class="card no-margin">   
-              <form [formGroup]="editJobForm">       
+              <form [formGroup]="editJobForm" (submit)="submitEditJob(editJobForm.value);">       
               <div class="ui-g form-group">
                 <div class="ui-g-12 ui-md-12">
                   <div class="ui-grid-row">
@@ -178,8 +178,8 @@
                   </div>
                   <div class="ui-grid-row"> 
                       <div class="ui-g-12 ui-md-4">&nbsp;</div>
-                      <div class="ui-g-12 ui-md-8 text-center">
-                          <button type="button" class="btn">Update Job</button>
+                      <div class="ui-g-12 ui-md-8 text-right">
+                          <button type="submit" class="btn btn-primary">Update Job</button>
                       </div>
                   </div>
                 </div>

@@ -16,6 +16,7 @@ export class HrdetailComponent implements OnInit {
   showSuccess = false;
   public jid: any;
   detailsData = [];
+  skills = [];
 
   constructor( private hrjobdetailservice: HrJobDetailSerivce, private route: ActivatedRoute) { }
 
@@ -34,13 +35,21 @@ export class HrdetailComponent implements OnInit {
           this.detailsData = res.entities;
           this.successMessage = res.message;
           this.showSuccess = true;   
-         // console.log('this.detailsData', this.detailsData);                   
+          console.log(this.detailsData); 
+          this.getSkills(this.detailsData[0].skills);                  
         }else {
           this.errorMessage = res.message;
           this.showError = true;         
         }
        } 
      );
+  }
+  getSkills(data){
+    for(var i = 0; i< data.length; i ++) {
+      //console.log(data[i]);
+      this.skills.push(data[i].skill);
+    }
+    //console.log('skills', this.skills);
   }
 
 }
