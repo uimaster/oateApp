@@ -47,19 +47,19 @@
          </div>
          <div class="jobListing">
            <ul>
-             <li>
+             <li *ngFor="let jdetail of detailsData; let i = index;">
                <div class="colBox-1">
                  <div class="employe-name">
                     <div class="checkbox">
-                      <label><input type="checkbox" value="">Ravi</label>
+                      <label><input type="checkbox" value="">{{jdetail.name}}</label>
                     </div>
                     <div class="package"></div>
                  </div>
                  <div class="education common">
-                   <div class="heading">Education: <span>B.tech/B.E.  Uttar Pradesh</span></div>
+                   <div class="heading">Education: <span>{{jdetail.postGraduationDegree}}, &nbsp; {{jdetail.postGraduationUniversity}}</span></div>
                  </div>
                  <div class="skills common">
-                  <div class="heading">Key skills: <span>B.tech/B.E.  Uttar Pradesh</span></div>
+                  <div class="heading">Key skills: <span>{{skills}}</span></div>
                 </div>
                 <div class="matchingBox">
                    <div class="applied">
@@ -69,32 +69,18 @@
                 </div>
                </div>
                <div class="colBox-2"></div>
-               <div class="colBox-3"></div>
-             </li>
-             <li>
-              <div class="colBox-1">
-                <div class="employe-name">
-                   <div class="checkbox">
-                     <label><input type="checkbox" value="">Ravi</label>
-                   </div>
-                   <div class="package"></div>
-                </div>
-                <div class="education common">
-                  <div class="heading">Education: <span>B.tech/B.E.  Uttar Pradesh</span></div>
-                </div>
-                <div class="skills common">
-                 <div class="heading">Key skills: <span>B.tech/B.E.  Uttar Pradesh</span></div>
-               </div>
-               <div class="matchingBox">
-                  <div class="applied">
-                    Applied - Matching
+               <div class="colBox-3">
+                <ng-container *ngIf="jdetail.photo === null; else datapic ">
+                  <div class="NotFound">
+                    <span>Image Not Available!</span>
                   </div>
-                  <div class="reject">Reject</div>
+                </ng-container>
+                <ng-template #datapic>
+                  <img [src]="jdetail.photo" alt="">
+                </ng-template>
                </div>
-              </div>
-              <div class="colBox-2"></div>
-              <div class="colBox-3"></div>
-            </li>
+             </li>
+
            </ul>
          </div>
          <!-- <div class="pagination-wrapper">

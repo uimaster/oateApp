@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { JobDetailSerivce } from '../services/job-detail.service';
+import { UpdateJobSerivce } from '../services/update-job.service';
 import { JobdetailResponse, JobdetailsResponseData } from '../employer-jobs/employerjobs.model';
 import { ActivatedRoute } from '@angular/router';
 
@@ -25,7 +26,8 @@ export class EditJobComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private fb:FormBuilder,
-     private jobdetailservice: JobDetailSerivce
+    private jobdetailservice: JobDetailSerivce,
+    private updatejobservice: UpdateJobSerivce
      ) { }
 
   ngOnInit() {
@@ -75,9 +77,6 @@ export class EditJobComponent implements OnInit {
       verifierName: ['']  
     });
 
-
-
-
   }
 
   getjobdetails(){    
@@ -114,6 +113,25 @@ export class EditJobComponent implements OnInit {
         }
        }   
      );   
+    }
+
+    submitEditJob(editJobForm){
+
+      if(this.editJobForm.valid) {
+        console.log(editJobForm);
+        this.updatejobservice.updatejob(editJobForm).subscribe( res => {
+          if(res) {
+            if(res.status === 200){
+                            
+              console.log(res);
+            } else {
+              console.log(res);
+            }
+          }
+        })
+      } else {
+        console.log('Form is invalid!');
+      }
     }
 
 }

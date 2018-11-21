@@ -12,7 +12,7 @@
 .jobListing ul li{border:1px solid #ddd; padding: 4px; width: 100%; float: left; display: block; margin-bottom: 15px;}
 .jobListing ul li .colBox-1{width: calc(50% - 10px); float: left; margin-right: 10px; position: relative;}
 .jobListing ul li .colBox-2{width: calc(30% - 10px); float: left; margin-right: 10px; position: relative;}
-.jobListing ul li .colBox-3{width:20%; float: left;  position: relative;}
+.jobListing ul li .colBox-3{width:20%; float: right;  position: relative;}
 .colBox-1 .common{margin-bottom: 10px;}
 .colBox-1 .common .heading{font-weight: 700; font-size: 16px;}
 .colBox-1 .common .heading span{font-weight: 400; font-size: 14px;}
@@ -21,3 +21,5 @@
 .matchingBox .reject{display: inline-block; border:1px solid #ddd; padding:3px 6px;}
 
 .pagination-wrapper{width: 100%; float: left; text-align: center;}
+.NotFound{width: 100px; height: 100px; float: right; border-radius: 50%; border:1px solid #dddddd; display: table;}
+.NotFound span{display: table-cell; vertical-align: middle; text-align: center; font-size: 12px;}

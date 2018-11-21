@@ -20,6 +20,7 @@ export class EditProfileComponent implements OnInit {
   personaldetailData:Observable<ResponsePersonalDetail>;
   prdetailData: PersonalResponseData;
   employid = localStorage.getItem('empid');
+  createdBy: string = localStorage.getItem('contactPersonName');
 
   public editProfileForm: FormGroup;
  
@@ -54,7 +55,7 @@ export class EditProfileComponent implements OnInit {
       companyRegistrationDate: [''],
       companyUrl: [''],
       createdAt:[''],
-      createdBy: [''],
+      createdBy: [this.createdBy],
       deleted:[''],
       emailVerified:[''],
       lastLogin:[''],
@@ -102,14 +103,14 @@ getAddress() {
             this.editProfileForm.controls['eventLocation'].setValue(this.prdetailData.designation); 
             this.editProfileForm.controls['aboutCompany'].setValue(this.prdetailData.aboutCompany); 
             this.editProfileForm.controls['companyUrl'].setValue(this.prdetailData.companyUrl); 
-            this.editProfileForm.controls['createdBy'].setValue(this.prdetailData.createdBy); 
+            this.editProfileForm.controls['createdBy'].setValue(this.createdBy); 
             this.editProfileForm.controls['id'].setValue(this.prdetailData.id); 
-            controlArray.controls[0].get('address').setValue(this.prdetailData.officeAddress.address);
-            controlArray.controls[0].get('city').setValue(this.prdetailData.officeAddress.city);
-            controlArray.controls[0].get('country').setValue(this.prdetailData.officeAddress.country);
-            controlArray.controls[0].get('landmark').setValue(this.prdetailData.officeAddress.landmark);
-            controlArray.controls[0].get('pincode').setValue(this.prdetailData.officeAddress.pincode);  
-            controlArray.controls[0].get('state').setValue(this.prdetailData.officeAddress.state);    
+            controlArray.controls[0].get('address').setValue(this.prdetailData.officeAddress[0].address);
+            controlArray.controls[0].get('city').setValue(this.prdetailData.officeAddress[0].city);
+            controlArray.controls[0].get('country').setValue(this.prdetailData.officeAddress[0].country);
+            controlArray.controls[0].get('landmark').setValue(this.prdetailData.officeAddress[0].landmark);
+            controlArray.controls[0].get('pincode').setValue(this.prdetailData.officeAddress[0].pincode);  
+            controlArray.controls[0].get('state').setValue(this.prdetailData.officeAddress[0].state);    
         }else {
           //this.errorMessage = res.message;
           this.showError = true;         
@@ -121,7 +122,7 @@ getAddress() {
 
   submitEditProfile(formData){
     if(this.editProfileForm.valid) {
-      console.log(formData);
+      // console.log(formData);
       this.editservice.updateProfile(formData).subscribe( res => {
         if(res) {
           if(res.status === 200){
