@@ -10,6 +10,7 @@ export const EDIT_JOB = BASE_URL + 'job/update';
 export const HR_DETAILS = BASE_URL + 'employer/getAllHRs';
 export const PERSONAL_DETAILS = BASE_URL + 'employer/employer-details';
 export const EDIT_PROFILE = BASE_URL + 'employer/update';
+export const UPLOAD_IMAGE = BASE_URL + 'employer/upload-img';
 export const ADD_HR = BASE_URL + 'user';
 export const HR_JOBS = BASE_URL + 'job/hr-jobs';
 export const HR_JOBS_DETAIL = BASE_URL + 'job/getStudentDetailsForAppliedJob';

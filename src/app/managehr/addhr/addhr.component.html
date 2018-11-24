@@ -13,34 +13,48 @@
                   <div class="formWrapper">
                     <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">
-                        <label for="fname">First Name</label>
+                        <label for="fname">First Name<span>*</span></label>
                       </div>
                       <div class="ui-g-12 ui-md-8">
-                        <input id="fname" formControlName="fname" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        <input formControlName="fname" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.fname.errors }" required  class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        <div *ngIf="submitted && f.fname.errors" class="invalid-feedback">
+                          <div *ngIf="f.fname.errors.required">First Name is required</div>
+                        </div>
                       </div>
                     </div>
                     <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">
-                        <label for="lname">Last Name</label>
+                        <label for="lname">Last Name<span>*</span></label>
                       </div>
                       <div class="ui-g-12 ui-md-8">
-                        <input id="lname" formControlName="lname" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        <input id="lname" formControlName="lname" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.lname.errors }" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        <div *ngIf="submitted && f.lname.errors" class="invalid-feedback">
+                            <div *ngIf="f.lname.errors.required">Last Name is required</div>
+                          </div>
                       </div>
                     </div>
                     <div class="ui-grid-row">
                         <div class="ui-g-12 ui-md-4">
-                          <label for="emailId">Email id</label>
+                          <label for="emailId">Email id<span>*</span></label>
                         </div>
                         <div class="ui-g-12 ui-md-8">
-                          <input id="emailId" formControlName="emailId" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                          <input id="emailId" formControlName="emailId" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }" required email class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                          <div *ngIf="submitted && f.emailId.errors" class="invalid-feedback">
+                              <div *ngIf="f.emailId.errors.required">Email is required</div>
+                              <div *ngIf="f.emailId.errors.email">Email must be a valid email address</div>
+                          </div>
                         </div>
                       </div>
                       <div class="ui-grid-row">
                         <div class="ui-g-12 ui-md-4">
-                          <label for="password">password</label>
+                          <label for="password">password<span>*</span></label>
                         </div>
                         <div class="ui-g-12 ui-md-8">
-                          <input id="password" formControlName="password" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                          <input id="password" formControlName="password" pinputtext="" type="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required class="form-control ui-inputtext ui-corner-all ui-state-default ui-widget">
+                          <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                              <div *ngIf="f.password.errors.required">Password is required</div>
+                              <!-- <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div> -->
+                          </div>
                         </div>
                       </div>
                     <!--<div class="ui-grid-row">
