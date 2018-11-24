@@ -15,7 +15,10 @@
                       <label for="companyName">Company Name</label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
-                      <input id="companyName" formControlName="companyName" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <input id="companyName" formControlName="companyName" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.companyName.errors }" required class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <div *ngIf="submitted && f.companyName.errors" class="invalid-feedback">
+                            <div *ngIf="f.companyName.errors.required">Company Name is required</div>
+                       </div>
                     </div>
                   </div>
                   <div class="ui-grid-row">
@@ -47,7 +50,10 @@
                         <label for="jobType">Job Type</label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
-                      <input id="jobType" formControlName="jobType" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <input id="jobType" formControlName="jobType" [ngClass]="{ 'is-invalid': submitted && f.jobType.errors }" required pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <div *ngIf="submitted && f.jobType.errors" class="invalid-feedback">
+                            <div *ngIf="f.jobType.errors.required">Job Type is required</div>
+                       </div>
                     </div>
                   </div>
 

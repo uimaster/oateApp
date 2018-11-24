@@ -22,6 +22,7 @@ export class EditJobComponent implements OnInit {
   jobdetailsData: JobdetailsResponseData;
 
   public editJobForm: FormGroup;
+  submitted = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -41,7 +42,7 @@ export class EditJobComponent implements OnInit {
     this.editJobForm = this.fb.group({
       companyDesc: [''],
       companyLogo: [''],
-      companyName: [''],
+      companyName: ['', Validators.required],
       companyUrl: [''],
       createdAt: [''],
       createdBy: [''],
@@ -54,7 +55,7 @@ export class EditJobComponent implements OnInit {
       id: [''],
       jobDescription: [''],
       jobLocation: [''],
-      jobType: [''],
+      jobType: ['', Validators.required],
       lastDateToApply: [''],
       passoutYearBatch: [''],
       position: [''],
@@ -78,6 +79,8 @@ export class EditJobComponent implements OnInit {
     });
 
   }
+    // convenience getter for easy access to form fields
+     get f() { return this.editJobForm.controls; }
 
   getjobdetails(){    
     this.jobdetailservice.Jobdetails(this.jid).subscribe(
@@ -116,7 +119,7 @@ export class EditJobComponent implements OnInit {
     }
 
     submitEditJob(editJobForm){
-
+      this.submitted = true;
       if(this.editJobForm.valid) {
         console.log(editJobForm);
         this.updatejobservice.updatejob(editJobForm).subscribe( res => {

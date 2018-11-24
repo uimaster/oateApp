@@ -34,3 +34,14 @@
     color: #ffffff;
     opacity: 0.6;
   }
+  .custom-select.is-invalid~.invalid-feedback, 
+  .custom-select.is-invalid~.invalid-tooltip, 
+  .ui-inputtext.is-invalid~.invalid-feedback, 
+  .ui-inputtext.is-invalid~.invalid-tooltip,
+   .was-validated .custom-select:invalid~.invalid-feedback, 
+   .was-validated .custom-select:invalid~.invalid-tooltip, 
+   .was-validated .form-control:invalid~.invalid-feedback, 
+   .was-validated .form-control:invalid~.invalid-tooltip {
+      display: block;    
+  }
+  .ui-inputtext.is-invalid{border-color: #dc3545;}

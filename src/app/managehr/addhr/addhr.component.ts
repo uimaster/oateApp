@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, Validators, FormControl, FormGroup, FormArray} from '@angular/forms'
+import { FormBuilder, FormGroup, Validators, FormControl, FormArray} from '@angular/forms'
 import { AddhrService } from '../services/addhrservice';
 
 @Component({
@@ -9,7 +9,8 @@ import { AddhrService } from '../services/addhrservice';
 })
 export class AddhrComponent implements OnInit {
 
-  public addhrForm: FormGroup;
+  addhrForm: FormGroup;
+  submitted = false;
   token: string;
   date = new Date();
   createdby = localStorage.getItem('contactPersonName');
@@ -33,11 +34,10 @@ export class AddhrComponent implements OnInit {
       deleted: [false],
       id: [''],
       lastLogin: [''],
-      password: [''],
+      password: ['', Validators.required],
       role: ['HR'],
       updatedAt: [this.date],
       updatedBy: ['']
-
     });
   }
 
@@ -51,14 +51,18 @@ export class AddhrComponent implements OnInit {
       state: ['', Validators.required]
     });
   }
+    // convenience getter for easy access to form fields
+  get f() { return this.addhrForm.controls; }
 
   saveHr(formData){
+    this.submitted = true;
+   
     if(this.addhrForm.invalid) {
       console.log('Form is invalid');
+      return;
     } else {
       this.addhrservice.addHrdata(formData).subscribe ( res => {
-        if(res) {
-          // console.log(res);
+        if(res) {          
         }
       })
     }
