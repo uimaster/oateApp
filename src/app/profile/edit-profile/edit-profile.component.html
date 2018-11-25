@@ -7,8 +7,14 @@
           <h4>Update profile data</h4>
         </div>
         <div class="card no-margin">
-          <div class="ui-g form-group">
+          <div class="ui-g form-group sssss">
             <div class="ui-g-12 ui-md-12">
+                <div class="ui-grid-row">
+                  <div class="ui-g-12 ui-md-4">&nbsp;</div>
+                  <div class="ui-g-12 ui-md-8">
+                    <div class="success alert alert-success" *ngIf="showSuccess">Profile has been updated successfully !</div>
+                  </div>
+                </div> 
               <form [formGroup]="editProfileForm" (submit)="submitEditProfile(editProfileForm.value);">
                 <div class="formWrapper">
                   <div class="ui-grid-row">
@@ -16,7 +22,10 @@
                       <label for="companyName">Company Name</label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
-                      <input id="companyName" formControlName="companyName" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <input id="companyName" formControlName="companyName" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.companyName.errors }" required class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <div *ngIf="submitted && f.companyName.errors" class="invalid-feedback">
+                          <div *ngIf="f.companyName.errors.required">Company Name is required</div>
+                     </div> 
                     </div>
                   </div>
                   <div class="ui-grid-row">
@@ -24,7 +33,10 @@
                       <label for="companyUrl">Company URL</label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
-                      <input id="companyUrl" formControlName="companyUrl" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <input id="companyUrl" formControlName="companyUrl" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.companyUrl.errors }" required class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <div *ngIf="submitted && f.companyUrl.errors" class="invalid-feedback">
+                          <div *ngIf="f.companyUrl.errors.required">Company URL is required</div>
+                     </div>
                     </div>
                   </div>
                   <div class="ui-grid-row">
@@ -32,7 +44,11 @@
                       <label for="emailId">Email Id</label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
-                      <input id="emailId" formControlName="emailId" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <input id="emailId" formControlName="emailId" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }" required email class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <div *ngIf="submitted && f.emailId.errors" class="invalid-feedback">
+                          <div *ngIf="f.emailId.errors.required">Email is required</div>
+                          <div *ngIf="f.emailId.errors.email">Email must be a valid email address</div>
+                      </div>
                     </div>
                   </div>
                   <div class="ui-grid-row">

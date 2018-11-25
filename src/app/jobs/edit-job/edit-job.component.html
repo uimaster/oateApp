@@ -7,28 +7,32 @@
                 <h4>Update Job</h4>
             </div>
             <div class="card no-margin">   
+                
               <form [formGroup]="editJobForm" (submit)="submitEditJob(editJobForm.value);">       
               <div class="ui-g form-group">
                 <div class="ui-g-12 ui-md-12">
-                  <div class="ui-grid-row">
+                  <!-- <div class="ui-grid-row">
                     <div class="ui-g-12 ui-md-4">
-                      <label for="companyName">Company Name</label>
+                      <label for="companyName">Company Name<span>*</span></label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
                       <input id="companyName" formControlName="companyName" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.companyName.errors }" required class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                      <div *ngIf="submitted && f.companyName.errors" class="invalid-feedback">
+                       <div *ngIf="submitted && f.companyName.errors" class="invalid-feedback">
                             <div *ngIf="f.companyName.errors.required">Company Name is required</div>
                        </div>
                     </div>
                   </div>
                   <div class="ui-grid-row">
                     <div class="ui-g-12 ui-md-4">
-                        <label for="companyUrl">Company URL</label>
+                        <label for="companyUrl">Company URL<span>*</span></label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
-                      <input id="companyUrl" formControlName="companyUrl" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <input id="companyUrl" formControlName="companyUrl" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.companyUrl.errors }" required class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                       <div *ngIf="submitted && f.companyUrl.errors" class="invalid-feedback">
+                            <div *ngIf="f.companyUrl.errors.required">Company URL is required</div>
+                       </div>
                     </div>
-                  </div>
+                  </div> -->
                   <div class="ui-grid-row">
                     <div class="ui-g-12 ui-md-4">
                         <label for="eventDate">Event Date</label>
@@ -46,8 +50,16 @@
                     </div>
                   </div>
                   <div class="ui-grid-row">
+                        <div class="ui-g-12 ui-md-4">
+                            <label for="jobDescription">Job Description</label>
+                        </div>
+                        <div class="ui-g-12 ui-md-8">
+                          <input id="jobDescription" formControlName="jobDescription" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        </div>
+                  </div>
+                 <!-- <div class="ui-grid-row">
                     <div class="ui-g-12 ui-md-4">
-                        <label for="jobType">Job Type</label>
+                        <label for="jobType">Job Type<span>*</span></label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
                       <input id="jobType" formControlName="jobType" [ngClass]="{ 'is-invalid': submitted && f.jobType.errors }" required pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
@@ -57,31 +69,37 @@
                     </div>
                   </div>
 
-                  <!-- <div class="ui-grid-row">
+                   <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">
                           <label for="companyLogo">Company Logo</label>
                       </div>
                       <div class="ui-g-12 ui-md-8">
                         <p-fileUpload name="myfile[]" url="./upload.php" multiple="multiple"
                         accept="image/*" auto="auto"></p-fileUpload>                </div>
-                  </div> -->
+                  </div> 
                  
                   <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">
-                          <label for="position">Position</label>
+                          <label for="position">Position<span>*</span></label>
                       </div>
                       <div class="ui-g-12 ui-md-8">
-                        <input id="position" formControlName="position" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                           <input id="position" formControlName="position" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.position.errors }" required class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                           <div *ngIf="submitted && f.position.errors" class="invalid-feedback">
+                                <div *ngIf="f.position.errors.required">Position is required</div>
+                           </div>  
                       </div>
                     </div>                
 
 
                   <div class="ui-grid-row">
                     <div class="ui-g-12 ui-md-4">
-                        <label for="passoutYearBatch">Passout Year Batch</label>
+                        <label for="passoutYearBatch">Passout Year Batch<span>*</span></label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
-                      <input id="passoutYearBatch" formControlName="passoutYearBatch" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <input id="passoutYearBatch" formControlName="passoutYearBatch" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.passoutYearBatch.errors }" required class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <div *ngIf="submitted && f.passoutYearBatch.errors" class="invalid-feedback">
+                            <div *ngIf="f.passoutYearBatch.errors.required">passout Year Batch is required</div>
+                       </div> 
                     </div>
                   </div>
                   <div class="ui-grid-row">
@@ -99,6 +117,15 @@
                       <div class="ui-g-12 ui-md-8">
                         <input id="toSalary" formControlName="toSalary" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                       </div>
+                  </div>-->
+                   <div class="ui-grid-row">
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="lastDateToApply">Last Date To Apply</label>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                      <!-- <input id="lastDateToApply" formControlName="lastDateToApply" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
+                      <p-calendar  [(ngModel)]="date3" formControlName="lastDateToApply"></p-calendar>
+                    </div>
                   </div>
                   <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">
@@ -109,7 +136,7 @@
                       </div>
                   </div>
 
-                  <div class="ui-grid-row">
+                  <!-- <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">
                           <label for="companyDesc">Company Desc</label>
                       </div>
@@ -132,7 +159,7 @@
                       <div class="ui-g-12 ui-md-8">
                         <input id="requiredSkillsMandatory" formControlName="requiredSkillsMandatory" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                       </div>
-                  </div>
+                  </div> -->
                   <div class="ui-grid-row">
                         <div class="ui-g-12 ui-md-4">
                             <label for="totalRequirement">Total Requirement</label>
@@ -149,7 +176,7 @@
                         <input id="jobRequirement" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                       </div>
                   </div> -->
-                  <div class="ui-grid-row">
+                  <!-- <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">
                           <label for="specialNotes1">Special Notes1</label>
                       </div>
@@ -172,7 +199,7 @@
                             <div class="ui-g-12 ui-md-8">
                               <input id="specialNotes1" formControlName="specialNotes3" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                             </div>
-                        </div>
+                        </div> 
                   <div class="ui-grid-row">               
                       <div class="ui-g-12 ui-md-4">&nbsp;</div>
                       <div class="ui-g-12 ui-md-8">                  
@@ -181,7 +208,7 @@
                               <label class="custom-control-label" for="defaultUnchecked">I confirm</label>
                           </div>
                       </div>
-                  </div>
+                  </div>-->
                   <div class="ui-grid-row"> 
                       <div class="ui-g-12 ui-md-4">&nbsp;</div>
                       <div class="ui-g-12 ui-md-8 text-right">
