@@ -13,6 +13,8 @@ import { EmployerJobsComponent } from './employer-jobs/employer-jobs.component';
 import { JobDetailSerivce } from './services/job-detail.service';
 import { UpdateJobSerivce } from './services/update-job.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CalendarModule } from 'primeng/primeng';
+import { PostJobService } from './services/postjob.service';
 
 @NgModule({
   imports: [
@@ -21,11 +23,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CalendarModule
   ],
   declarations: [JobsComponent, JobDetailsComponent, EditJobComponent, PostJobComponent, EmployerJobsComponent],
   providers: [
-    EmployerJobsService, JobDetailSerivce, UpdateJobSerivce
+    EmployerJobsService, JobDetailSerivce, PostJobService, UpdateJobSerivce
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

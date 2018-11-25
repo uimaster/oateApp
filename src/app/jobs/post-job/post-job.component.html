@@ -6,6 +6,7 @@
         <div class="heading-box">
             <h4>Post Job</h4>
         </div>
+        <form [formGroup]="postJobForm" (submit)="addpostjob(postJobForm.value);" > 
         <div class="card no-margin">       
           <div class="ui-g form-group">
             <div class="ui-g-12 ui-md-12">
@@ -72,7 +73,7 @@
                   <div class="ui-g-12 ui-md-8">
                     <!-- <input id="eventdate" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
                     <!-- <p-calendar [(ngModel)]="date1"></p-calendar> -->
-                    <p-calendar formControlName="eventDate"></p-calendar>
+                    <p-calendar [(ngModel)]="date1" formControlName="eventDate"></p-calendar>
                   </div>
               </div>
               <div class="ui-grid-row">
@@ -89,7 +90,7 @@
                   </div>
                   <div class="ui-g-12 ui-md-8">
                     <!-- <input id="lastdateToapply" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
-                    <p-calendar formControlName="date"></p-calendar>
+                    <p-calendar [(ngModel)]="date2" formControlName="lastDateToApply"></p-calendar>
                   </div>
               </div>
               <div class="ui-grid-row">
@@ -100,15 +101,15 @@
                     <input id="companyUrl" formControlName="companyUrl" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                   </div>
               </div>
-              <div class="ui-grid-row">
+              <!-- <div class="ui-grid-row">
                   <div class="ui-g-12 ui-md-4">
                       <label for="companyLogo">Company Logo</label>
                   </div>
                   <div class="ui-g-12 ui-md-8">
-                    <!-- <input id="companylogo" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
                     <p-fileUpload name="myfile[]" url="./upload.php" multiple="multiple"
-                    accept="image/*" auto="auto"></p-fileUpload>                </div>
-              </div>
+                    accept="image/*" auto="auto"></p-fileUpload>                
+                </div>
+              </div> -->
               <div class="ui-grid-row">
                   <div class="ui-g-12 ui-md-4">
                       <label for="companyDesc">Company Desc</label>
@@ -122,34 +123,106 @@
                       <label for="eligibility">Eligibility</label>
                   </div>
                   <div class="ui-g-12 ui-md-8">
-                    <input id="eligibility" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    <input id="eligibility" formControlName="eligibility" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                   </div>
               </div>
               <div class="ui-grid-row">
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="jobDescription">Job Description</label>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                      <input id="jobDescription" formControlName="jobDescription" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    </div>
+                </div>
+              <div class="ui-grid-row">
                   <div class="ui-g-12 ui-md-4">
-                      <label for="requiredSkills">Required Skills</label>
+                      <label for="requiredExperience">Required Experience</label>
                   </div>
                   <div class="ui-g-12 ui-md-8">
-                    <input id="requiredSkills" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    <input id="requiredExperience" formControlName="requiredExperience" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                   </div>
               </div>
               <div class="ui-grid-row">
-                  <div class="ui-g-12 ui-md-4">
-                      <label for="jobRequirement">Job Requirement</label>
-                  </div>
-                  <div class="ui-g-12 ui-md-8">
-                    <input id="jobRequirement" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                  </div>
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="requiredSkillsMandatory">Required Experience Mandatory</label>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                      <input id="requiredSkillsMandatory" formControlName="requiredSkillsMandatory" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    </div>
               </div>
               <div class="ui-grid-row">
                   <div class="ui-g-12 ui-md-4">
-                      <label for="specialNotes">Special Notes</label>
+                      <label for="requiredSkillsPreferred">Required Skills Preferred</label>
                   </div>
                   <div class="ui-g-12 ui-md-8">
-                    <input id="specialNotes" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    <input id="requiredSkillsPreferred" formControlName="requiredSkillsPreferred" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                   </div>
               </div>
-              <div class="ui-grid-row">               
+                <div class="ui-grid-row">
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="specialNoteTitle1">Special Title1</label>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                      <input id="specialNoteTitle1" formControlName="specialNoteTitle1" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    </div>
+                </div>
+                <div class="ui-grid-row">
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="specialNoteTitle2">Special Title2</label>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                        <input id="specialNoteTitle2" formControlName="specialNoteTitle2" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    </div>
+                </div>
+                <div class="ui-grid-row">
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="specialNoteTitle3">Special Title3</label>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                        <input id="specialNoteTitle3" formControlName="specialNoteTitle3" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    </div>
+                </div>
+              <div class="ui-grid-row">
+                  <div class="ui-g-12 ui-md-4">
+                      <label for="specialNotes1">Special Notes1</label>
+                  </div>
+                  <div class="ui-g-12 ui-md-8">
+                    <input id="specialNotes1" formControlName="specialNotes1" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                  </div>
+              </div>
+              <div class="ui-grid-row">
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="specialNotes2">Special Notes2</label>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                        <input id="specialNotes2" formControlName="specialNotes2" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    </div>
+                </div>
+                <div class="ui-grid-row">
+                    <div class="ui-g-12 ui-md-4">
+                        <label for="specialNotes3">Special Notes3</label>
+                    </div>
+                    <div class="ui-g-12 ui-md-8">
+                        <input id="specialNotes3" formControlName="specialNotes3" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    </div>
+                </div>
+                <div class="ui-grid-row">
+                        <div class="ui-g-12 ui-md-4">
+                            <label for="passoutYearBatch">Passout Year Batch</label>
+                        </div>
+                        <div class="ui-g-12 ui-md-8">
+                            <input id="passoutYearBatch" formControlName="passoutYearBatch" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        </div>
+                </div>
+                <div class="ui-grid-row">
+                        <div class="ui-g-12 ui-md-4">
+                            <label for="totalRequirement">Total Requirement</label>
+                        </div>
+                        <div class="ui-g-12 ui-md-8">
+                            <input id="totalRequirement" formControlName="totalRequirement" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        </div>
+                </div>
+              <!-- <div class="ui-grid-row">               
                   <div class="ui-g-12 ui-md-4">&nbsp;</div>
                   <div class="ui-g-12 ui-md-8">                  
                       <div class="custom-control custom-checkbox">
@@ -157,11 +230,11 @@
                           <label class="custom-control-label" for="defaultUnchecked">I confirm</label>
                       </div>
                   </div>
-              </div>
+              </div> -->
               <div class="ui-grid-row"> 
                   <div class="ui-g-12 ui-md-4">&nbsp;</div>
                   <div class="ui-g-12 ui-md-8 text-right">
-                      <button type="button" class="btn btn-primary">Submit</button>
+                      <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
               </div>
   
@@ -169,6 +242,7 @@
             </div>
           </div>
         </div>
+        </form>
       </div>
   
   

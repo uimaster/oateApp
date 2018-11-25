@@ -15,13 +15,14 @@ export class EditProfileComponent implements OnInit {
 
   errorMessage = '';
   successMessage = '';
+  Msg: string;
   showError = false;
-  showSuccess = false;
+  showSuccess: boolean =  false;
   personaldetailData:Observable<ResponsePersonalDetail>;
   prdetailData: PersonalResponseData;
   employid = localStorage.getItem('empid');
   createdBy: string = localStorage.getItem('contactPersonName');
-
+  submitted = false;
   public editProfileForm: FormGroup;
  
   constructor(
@@ -53,14 +54,14 @@ export class EditProfileComponent implements OnInit {
       aboutCompany: ['', Validators.required],
       emailId: ['', Validators.required],
       companyRegistrationDate: [''],
-      companyUrl: [''],
+      companyUrl: ['', Validators.required],
       createdAt:[''],
       createdBy: [this.createdBy],
       deleted:[''],
       emailVerified:[''],
       lastLogin:[''],
       alternateMobileNumber:[''],
-      companyLogo:[''],
+      companyLogo:['https://manishoate.s3-us-west-2.amazonaws.com/5bed0f93d30de3303036fff9.jpg'],
       id:[''],
       password:[''],
       token: [''],
@@ -80,13 +81,13 @@ getAddress() {
       state: ['', Validators.required]
     })
   }
-
+    
   getPersonalDetailData(){
     this.personaldetailservice.PersonalDetail().subscribe(
       (res: ResponsePersonalDetail) => {
         if(res && res.statusCode === 200){
             this.successMessage = res.message;
-            this.showSuccess = true;
+            this.showSuccess = false;
             this.prdetailData = res.entity;
             const controlArray = <FormArray> this.editProfileForm.get('officeAddress');
             // console.log(this.prdetailData);   
@@ -119,17 +120,21 @@ getAddress() {
     )
   }
 
+// convenience getter for easy access to form fields
+get f() { return this.editProfileForm.controls; }
 
   submitEditProfile(formData){
+    this.submitted = true;
     if(this.editProfileForm.valid) {
       // console.log(formData);
       this.editservice.updateProfile(formData).subscribe( res => {
         if(res) {
-          if(res.status === 200){
-            
-            console.log(res);
+          if(res.statusCode === 200){
+            this.showSuccess = true;            
+            //console.log(res);
           } else {
-            console.log(res);
+            //console.log(res);
+            this.showSuccess = false;
           }
         }
       })

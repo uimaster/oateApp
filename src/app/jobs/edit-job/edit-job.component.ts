@@ -12,12 +12,14 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./edit-job.component.css']
 })
 export class EditJobComponent implements OnInit {
-
+  
   errorMessage = '';
   successMessage = '';
   showError = false;
   showSuccess = false;
   public jid: any;
+  date3 = new Date();
+  
   jobData: Observable<JobdetailResponse>;
   jobdetailsData: JobdetailsResponseData;
 
@@ -39,43 +41,14 @@ export class EditJobComponent implements OnInit {
     this.getjobdetails();
 
 
-    this.editJobForm = this.fb.group({
-      companyDesc: [''],
-      companyLogo: [''],
-      companyName: ['', Validators.required],
-      companyUrl: [''],
-      createdAt: [''],
-      createdBy: [''],
-      deleted: [''],
-      eligibility: [''],
-      employerId: [''],
+    this.editJobForm = this.fb.group({     
       eventDate: [''],
-      eventLocation: [''],
-      fromSalary: [''],
+      eventLocation: [''],    
       id: [''],
       jobDescription: [''],
-      jobLocation: [''],
-      jobType: ['', Validators.required],
-      lastDateToApply: [''],
-      passoutYearBatch: [''],
-      position: [''],
-      postedJobDate:[''],
-      postedJobNumber: [''],
+      lastDateToApply: [''], 
       requiredExperience: [''],
-      requiredSkillsMandatory: [''],
-      requiredSkillsPreferred: [''],
-      specialNoteTitle1: [''],
-      specialNoteTitle2: [''],
-      specialNoteTitle3: [''],
-      specialNotes1: [''],
-      specialNotes2: [''],
-      specialNotes3: [''],
-      toSalary: [''],
-      totalRequirement: [''],
-      updatedAt: [''],
-      updatedBy: [''],
-      verifiedByAdmin: [''],
-      verifierName: ['']  
+      totalRequirement: [''],     
     });
 
   }
@@ -89,26 +62,13 @@ export class EditJobComponent implements OnInit {
           this.successMessage = res.message;
           this.showSuccess = true;
           this.jobdetailsData = res.entity; 
-          // console.log(this.jobdetailsData);
-          this.editJobForm.controls['companyName'].setValue(this.jobdetailsData.companyName); 
-          this.editJobForm.controls['companyUrl'].setValue(this.jobdetailsData.companyUrl); 
-          this.editJobForm.controls['companyDesc'].setValue(this.jobdetailsData.companyDesc); 
-          this.editJobForm.controls['eligibility'].setValue(this.jobdetailsData.eligibility); 
-          this.editJobForm.controls['position'].setValue(this.jobdetailsData.position); 
-          this.editJobForm.controls['jobLocation'].setValue(this.jobdetailsData.jobLocation);
+          // console.log(this.jobdetailsData);     
+          this.editJobForm.controls['id'].setValue(this.jobdetailsData.id); 
           this.editJobForm.controls['eventLocation'].setValue(this.jobdetailsData.eventLocation);
-          this.editJobForm.controls['jobType'].setValue(this.jobdetailsData.jobType);
-          this.editJobForm.controls['employerId'].setValue(this.jobdetailsData.employerId); 
+          this.editJobForm.controls['jobDescription'].setValue(this.jobdetailsData.jobDescription);
+          this.editJobForm.controls['lastDateToApply'].setValue(this.jobdetailsData.lastDateToApply);          
           this.editJobForm.controls['eventDate'].setValue(this.jobdetailsData.eventDate);
-          this.editJobForm.controls['requiredExperience'].setValue(this.jobdetailsData.requiredExperience);
-          this.editJobForm.controls['requiredSkillsMandatory'].setValue(this.jobdetailsData.requiredSkillsMandatory); 
-          this.editJobForm.controls['requiredSkillsPreferred'].setValue(this.jobdetailsData.requiredSkillsPreferred); 
-          this.editJobForm.controls['specialNotes1'].setValue(this.jobdetailsData.specialNotes1); 
-          this.editJobForm.controls['specialNotes2'].setValue(this.jobdetailsData.specialNotes2); 
-          this.editJobForm.controls['specialNotes3'].setValue(this.jobdetailsData.specialNotes3);
-          this.editJobForm.controls['toSalary'].setValue(this.jobdetailsData.toSalary);
-          this.editJobForm.controls['fromSalary'].setValue(this.jobdetailsData.fromSalary); 
-          this.editJobForm.controls['passoutYearBatch'].setValue(this.jobdetailsData.passoutYearBatch); 
+          this.editJobForm.controls['requiredExperience'].setValue(this.jobdetailsData.requiredExperience);  
           this.editJobForm.controls['totalRequirement'].setValue(this.jobdetailsData.totalRequirement);   
         }else {
           this.errorMessage = res.message;
