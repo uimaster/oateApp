@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl, FormArray} from '@angular/forms'
 import { AddhrService } from '../services/addhrservice';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addhr',
@@ -14,10 +15,13 @@ export class AddhrComponent implements OnInit {
   token: string;
   date = new Date();
   createdby = localStorage.getItem('contactPersonName');
+  showSuccess = false;
+  showError = false;
 
   constructor(
     private fb: FormBuilder,
-    private addhrservice: AddhrService
+    private addhrservice: AddhrService,
+    private router: Router
   ) {  this.token = localStorage.getItem('token'); }
 
   ngOnInit() {
@@ -54,17 +58,23 @@ export class AddhrComponent implements OnInit {
     // convenience getter for easy access to form fields
   get f() { return this.addhrForm.controls; }
 
-  saveHr(formData){
+  saveHr(formData) {
     this.submitted = true;
-   
-    if(this.addhrForm.invalid) {
+
+    if (this.addhrForm.invalid) {
       console.log('Form is invalid');
       return;
     } else {
       this.addhrservice.addHrdata(formData).subscribe ( res => {
-        if(res) {          
+        if (res.statusCode === 200) {
+          this.showSuccess = true;
+          setTimeout(() => {
+            this.router.navigate(['/managehr/hr-details']);
+          }, 4000);
+        } else {
+          this.showError = true;
         }
-      })
+      });
     }
   }
 

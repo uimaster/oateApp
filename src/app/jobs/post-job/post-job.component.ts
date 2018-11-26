@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { PostJobService } from '../services/postjob.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-job',
@@ -11,19 +12,20 @@ export class PostJobComponent implements OnInit {
 
   public postJobForm: FormGroup;
   submitted = false;
-  showSuccess: boolean = false;
+  showSuccess = false;
   date1 = new Date();
   date2 = new Date();
 
   constructor(
     private postjobservice: PostJobService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit() {
 
-    this.postJobForm = this.fb.group({    
-      appliedCount: [''], 
+    this.postJobForm = this.fb.group({
+      appliedCount: [''],
       companyDesc: [''],
       companyLogo: [''],
       companyName: [''],
@@ -59,7 +61,7 @@ export class PostJobComponent implements OnInit {
       updatedAt: [''],
       updatedBy: [''],
       verifiedByAdmin: [''],
-      verifierName: ['']  
+      verifierName: ['']
     });
 
   }
@@ -68,24 +70,27 @@ export class PostJobComponent implements OnInit {
   get f() { return this.postJobForm.controls; }
 
   addpostjob(formData){
-  
+
     this.submitted = true;
-    if(this.postJobForm.invalid) {
+    if (this.postJobForm.invalid) {
       console.log('Form is invalid');
       return;
-    }else{
+    } else {
 
     this.postjobservice.addjobdata(formData).subscribe(
       (res: any) => {
-       if(res && res.statusCode === 200){
+       if (res && res.statusCode === 200) {
         // this.successMessage = res.message;
         this.showSuccess = true;
        }
       }, error => {
-        console.log('Something went wrong');
         this.showSuccess = false;
       });
   }
+}
+
+cancelUpdate() {
+  this.router.navigate(['/jobs/jobs-details']);
 }
 
 }

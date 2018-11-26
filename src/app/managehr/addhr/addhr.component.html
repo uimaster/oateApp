@@ -6,6 +6,11 @@
         <div class="heading-box">
           <h4>Add HR</h4>
         </div>
+        <div class="ui-g-12 ui-md-12">
+            <div class="success alert alert-success" *ngIf="showSuccess">HR added successfully.</div>
+            <div class="success alert alert-alert" *ngIf="showError">Failed to add HR.</div>
+          </div>
+
         <div class="card no-margin">
           <div class="ui-g form-group">
             <div class="ui-g-12 ui-md-12">
@@ -84,35 +89,35 @@
                         <div class="ui-g-12 ui-md-8">
                           <input id="address" formControlName="address" pinputtext type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                         </div>
-                      
+
                         <div class="ui-g-12 ui-md-4">
                           <label for="city">City</label>
                         </div>
                         <div class="ui-g-12 ui-md-8">
                           <input id="city" formControlName="city" pinputtext type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                         </div>
-                      
+
                         <div class="ui-g-12 ui-md-4">
                           <label for="country">Country</label>
                         </div>
                         <div class="ui-g-12 ui-md-8">
                           <input id="country" formControlName="country" pinputtext type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                         </div>
-                      
+
                         <div class="ui-g-12 ui-md-4">
                           <label for="landmark">Landmark</label>
                         </div>
                         <div class="ui-g-12 ui-md-8">
                           <input id="landmark" formControlName="landmark" pinputtext type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                         </div>
-                      
+
                         <div class="ui-g-12 ui-md-4">
                           <label for="pincode">Pincode</label>
                         </div>
                         <div class="ui-g-12 ui-md-8">
                           <input id="pincode" formControlName="pincode" pinputtext type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                         </div>
-                      
+
                         <div class="ui-g-12 ui-md-4">
                           <label for="state">State</label>
                         </div>
@@ -127,7 +132,8 @@
                     <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">&nbsp;</div>
                       <div class="ui-g-12 ui-md-8 text-right">
-                        <button type="submit" class="btn btn-primary" >Add Hr</button>
+                          <button type="button" class="btn btn-primary">Cancel</button>
+                        <button type="submit" class="btn btn-primary" >Submit</button>
                       </div>
                     </div>
                   </div>

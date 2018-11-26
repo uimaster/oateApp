@@ -29,27 +29,28 @@ export class HrdetailComponent implements OnInit {
   }
 
   getHrjobdetail(){
-     this.hrjobdetailservice.jobDetail(this.jid).subscribe(
-      (res: any) => {
-        if(res && res.statusCode === 200){
+     this.hrjobdetailservice.jobDetail(this.jid).subscribe(res => {
+        if(res && res.statusCode === 200) {
           this.detailsData = res.entities;
           this.successMessage = res.message;
-          this.showSuccess = true;   
-          console.log(this.detailsData); 
-          this.getSkills(this.detailsData[0].skills);                  
-        }else {
+          this.showSuccess = true;
+          if (this.detailsData.length > 0) {
+            this.getSkills(this.detailsData[0].skills);
+          }
+
+        } else {
           this.errorMessage = res.message;
-          this.showError = true;         
+          this.showError = true;
         }
-       } 
+       }
      );
   }
-  getSkills(data){
-    for(var i = 0; i< data.length; i ++) {
-      //console.log(data[i]);
+  getSkills(data) {
+    for ( let i = 0; i < data.length; i ++) {
+      // console.log(data[i]);
       this.skills.push(data[i].skill);
     }
-    //console.log('skills', this.skills);
+    // console.log('skills', this.skills);
   }
 
 }

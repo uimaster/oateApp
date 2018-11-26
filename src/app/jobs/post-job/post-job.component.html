@@ -1,13 +1,13 @@
 <div class="post-job-wrapper">
 <div class="ui-fluid">
     <div class="ui-g">
-  
+
       <div class="ui-g-12">
         <div class="heading-box">
             <h4>Post Job</h4>
         </div>
-        <form [formGroup]="postJobForm" (submit)="addpostjob(postJobForm.value);" > 
-        <div class="card no-margin">       
+        <form [formGroup]="postJobForm" (submit)="addpostjob(postJobForm.value);" >
+        <div class="card no-margin">
           <div class="ui-g form-group">
             <div class="ui-g-12 ui-md-12">
               <div class="ui-grid-row">
@@ -73,7 +73,7 @@
                   <div class="ui-g-12 ui-md-8">
                     <!-- <input id="eventdate" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
                     <!-- <p-calendar [(ngModel)]="date1"></p-calendar> -->
-                    <p-calendar [(ngModel)]="date1" formControlName="eventDate"></p-calendar>
+                    <p-calendar [(ngModel)]="date1" [showIcon]="true" formControlName="eventDate"></p-calendar>
                   </div>
               </div>
               <div class="ui-grid-row">
@@ -90,7 +90,7 @@
                   </div>
                   <div class="ui-g-12 ui-md-8">
                     <!-- <input id="lastdateToapply" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
-                    <p-calendar [(ngModel)]="date2" formControlName="lastDateToApply"></p-calendar>
+                    <p-calendar [(ngModel)]="date2" [showIcon]="true" formControlName="lastDateToApply"></p-calendar>
                   </div>
               </div>
               <div class="ui-grid-row">
@@ -107,7 +107,7 @@
                   </div>
                   <div class="ui-g-12 ui-md-8">
                     <p-fileUpload name="myfile[]" url="./upload.php" multiple="multiple"
-                    accept="image/*" auto="auto"></p-fileUpload>                
+                    accept="image/*" auto="auto"></p-fileUpload>
                 </div>
               </div> -->
               <div class="ui-grid-row">
@@ -222,30 +222,30 @@
                             <input id="totalRequirement" formControlName="totalRequirement" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                         </div>
                 </div>
-              <!-- <div class="ui-grid-row">               
+              <!-- <div class="ui-grid-row">
                   <div class="ui-g-12 ui-md-4">&nbsp;</div>
-                  <div class="ui-g-12 ui-md-8">                  
+                  <div class="ui-g-12 ui-md-8">
                       <div class="custom-control custom-checkbox">
                           <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
                           <label class="custom-control-label" for="defaultUnchecked">I confirm</label>
                       </div>
                   </div>
               </div> -->
-              <div class="ui-grid-row"> 
+              <div class="ui-grid-row">
                   <div class="ui-g-12 ui-md-4">&nbsp;</div>
                   <div class="ui-g-12 ui-md-8 text-right">
                       <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
               </div>
-  
-  
+
+
             </div>
           </div>
         </div>
         </form>
       </div>
-  
-  
+
+
     </div>
   </div>
 </div>

@@ -11,7 +11,6 @@ import { LocalStorage } from '../../utils/localStorage';
 
 
 export class TokenInterceptor implements HttpInterceptor {
-  debugger;
   public cachedRequests = [];
 
   constructor(private router: Router, public inj: Injector, public loaderInject: Injector) { }

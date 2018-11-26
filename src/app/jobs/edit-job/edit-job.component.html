@@ -1,14 +1,18 @@
 <div class="update-job-wrapper">
     <div class="ui-fluid">
         <div class="ui-g">
-      
+
           <div class="ui-g-12">
             <div class="heading-box">
                 <h4>Update Job</h4>
             </div>
-            <div class="card no-margin">   
-                
-              <form [formGroup]="editJobForm" (submit)="submitEditJob(editJobForm.value);">       
+            <div class="ui-g-12 ui-md-12">
+                <div class="success alert alert-success" *ngIf="showSuccess">Job updated successfully !</div>
+                <div class="success alert alert-error" *ngIf="showError">Job updation failed !</div>
+              </div>
+            <div class="card no-margin">
+
+              <form [formGroup]="editJobForm" (submit)="submitEditJob(editJobForm.value);">
               <div class="ui-g form-group">
                 <div class="ui-g-12 ui-md-12">
                   <!-- <div class="ui-grid-row">
@@ -38,7 +42,8 @@
                         <label for="eventDate">Event Date</label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
-                      <input id="eventDate" formControlName="eventDate" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        <p-calendar [(ngModel)]="date4" [showIcon]="true" formControlName="eventDate"></p-calendar>
+                      <!-- <input id="eventDate" formControlName="eventDate" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
                     </div>
                   </div>
                   <div class="ui-grid-row">
@@ -76,8 +81,8 @@
                       <div class="ui-g-12 ui-md-8">
                         <p-fileUpload name="myfile[]" url="./upload.php" multiple="multiple"
                         accept="image/*" auto="auto"></p-fileUpload>                </div>
-                  </div> 
-                 
+                  </div>
+
                   <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">
                           <label for="position">Position<span>*</span></label>
@@ -86,9 +91,9 @@
                            <input id="position" formControlName="position" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.position.errors }" required class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                            <div *ngIf="submitted && f.position.errors" class="invalid-feedback">
                                 <div *ngIf="f.position.errors.required">Position is required</div>
-                           </div>  
+                           </div>
                       </div>
-                    </div>                
+                    </div>
 
 
                   <div class="ui-grid-row">
@@ -99,7 +104,7 @@
                       <input id="passoutYearBatch" formControlName="passoutYearBatch" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.passoutYearBatch.errors }" required class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                       <div *ngIf="submitted && f.passoutYearBatch.errors" class="invalid-feedback">
                             <div *ngIf="f.passoutYearBatch.errors.required">passout Year Batch is required</div>
-                       </div> 
+                       </div>
                     </div>
                   </div>
                   <div class="ui-grid-row">
@@ -124,7 +129,8 @@
                     </div>
                     <div class="ui-g-12 ui-md-8">
                       <!-- <input id="lastDateToApply" formControlName="lastDateToApply" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
-                      <p-calendar  [(ngModel)]="date3" formControlName="lastDateToApply"></p-calendar>
+                      <!-- <p-calendar  [(ngModel)]="date3" formControlName="lastDateToApply"></p-calendar> -->
+                      <p-calendar [(ngModel)]="date3" [showIcon]="true" formControlName="lastDateToApply"></p-calendar>
                     </div>
                   </div>
                   <div class="ui-grid-row">
@@ -199,19 +205,20 @@
                             <div class="ui-g-12 ui-md-8">
                               <input id="specialNotes1" formControlName="specialNotes3" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                             </div>
-                        </div> 
-                  <div class="ui-grid-row">               
+                        </div>
+                  <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">&nbsp;</div>
-                      <div class="ui-g-12 ui-md-8">                  
+                      <div class="ui-g-12 ui-md-8">
                           <div class="custom-control custom-checkbox">
                               <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
                               <label class="custom-control-label" for="defaultUnchecked">I confirm</label>
                           </div>
                       </div>
                   </div>-->
-                  <div class="ui-grid-row"> 
+                  <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">&nbsp;</div>
                       <div class="ui-g-12 ui-md-8 text-right">
+                          <button type="button" class="btn btn-primary" (click)="cancelUpdate()">Cancel</button>
                           <button type="submit" class="btn btn-primary">Update Job</button>
                       </div>
                   </div>
@@ -220,8 +227,8 @@
              </form>
             </div>
           </div>
-      
-      
+
+
         </div>
       </div>
     </div>
