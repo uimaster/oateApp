@@ -78,6 +78,9 @@ export class AddhrComponent implements OnInit {
     }
   }
 
+  canceladdhr() {
+    this.router.navigate(['/managehr/hr-details']);
+  }
 
 
 }

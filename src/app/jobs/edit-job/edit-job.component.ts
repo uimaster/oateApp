@@ -44,13 +44,13 @@ export class EditJobComponent implements OnInit {
 
 
     this.editJobForm = this.fb.group({
-      eventDate: [''],
-      eventLocation: [''],
+      eventDate: ['', Validators.required],
+      eventLocation: ['', Validators.required],
       id: [''],
-      jobDescription: [''],
-      lastDateToApply: [''],
-      requiredExperience: [''],
-      totalRequirement: [''],
+      jobDescription: ['', Validators.required],
+      lastDateToApply: ['', Validators.required],
+      requiredExperience: ['', Validators.required],
+      totalRequirement: ['', Validators.required],
     });
 
   }

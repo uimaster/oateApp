@@ -28,8 +28,8 @@ export class PostJobComponent implements OnInit {
       appliedCount: [''],
       companyDesc: [''],
       companyLogo: [''],
-      companyName: [''],
-      companyUrl: [''],
+      companyName: ['', Validators.required],
+      companyUrl: ['', Validators.required],
       createdAt: [''],
       createdBy: [''],
       deleted: [''],
@@ -39,12 +39,12 @@ export class PostJobComponent implements OnInit {
       eventLocation: [''],
       fromSalary: [''],
       id: [''],
-      jobDescription: [''],
-      jobLocation: [''],
+      jobDescription: ['', Validators.required],
+      jobLocation: ['', Validators.required],
       jobType: [''],
       lastDateToApply: [''],
-      passoutYearBatch: [''],
-      position: [''],
+      passoutYearBatch: ['', Validators.required],
+      position: ['', Validators.required],
       postedJobDate:[''],
       postedJobNumber: [''],
       requiredExperience: [''],
@@ -57,7 +57,7 @@ export class PostJobComponent implements OnInit {
       specialNotes2: [''],
       specialNotes3: [''],
       toSalary: [''],
-      totalRequirement: [''],
+      totalRequirement: ['', Validators.required],
       updatedAt: [''],
       updatedBy: [''],
       verifiedByAdmin: [''],
@@ -89,7 +89,7 @@ export class PostJobComponent implements OnInit {
   }
 }
 
-cancelUpdate() {
+cancelpostjob() {
   this.router.navigate(['/jobs/jobs-details']);
 }
 

@@ -39,27 +39,36 @@
                   </div> -->
                   <div class="ui-grid-row">
                     <div class="ui-g-12 ui-md-4">
-                        <label for="eventDate">Event Date</label>
+                        <label for="eventDate">Event Date<span>*</span></label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
-                        <p-calendar [(ngModel)]="date4" [showIcon]="true" formControlName="eventDate"></p-calendar>
+                        <p-calendar [(ngModel)]="date4" [showIcon]="true" [ngClass]="{ 'is-invalid': submitted && f.eventDate.errors }" required formControlName="eventDate"></p-calendar>
                       <!-- <input id="eventDate" formControlName="eventDate" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
+                      <div class="invalid-feedback" *ngIf="editJobForm.controls['eventDate'].hasError('required') && editJobForm.controls['eventDate'].touched">
+                            Event Date To Apply is required !
+                      </div> 
                     </div>
                   </div>
                   <div class="ui-grid-row">
                     <div class="ui-g-12 ui-md-4">
-                        <label for="eventLocation">Event Location</label>
+                        <label for="eventLocation">Event Location<span>*</span></label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
-                      <input id="eventLocation" formControlName="eventLocation" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <input id="eventLocation" formControlName="eventLocation" [ngClass]="{ 'is-invalid': submitted && f.eventLocation.errors }" required pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <div class="invalid-feedback" *ngIf="editJobForm.controls['eventLocation'].hasError('required') && editJobForm.controls['eventLocation'].touched">
+                            Event Location is required !
+                      </div> 
                     </div>
                   </div>
                   <div class="ui-grid-row">
                         <div class="ui-g-12 ui-md-4">
-                            <label for="jobDescription">Job Description</label>
+                            <label for="jobDescription">Job Description<span>*</span></label>
                         </div>
                         <div class="ui-g-12 ui-md-8">
-                          <input id="jobDescription" formControlName="jobDescription" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                          <input id="jobDescription" formControlName="jobDescription" [ngClass]="{ 'is-invalid': submitted && f.jobDescription.errors }" required pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                          <div class="invalid-feedback" *ngIf="editJobForm.controls['jobDescription'].hasError('required') && editJobForm.controls['jobDescription'].touched">
+                                Job Description is required !
+                          </div>  
                         </div>
                   </div>
                  <!-- <div class="ui-grid-row">
@@ -125,21 +134,27 @@
                   </div>-->
                    <div class="ui-grid-row">
                     <div class="ui-g-12 ui-md-4">
-                        <label for="lastDateToApply">Last Date To Apply</label>
+                        <label for="lastDateToApply">Last Date To Apply<span>*</span></label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
                       <!-- <input id="lastDateToApply" formControlName="lastDateToApply" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
                       <!-- <p-calendar  [(ngModel)]="date3" formControlName="lastDateToApply"></p-calendar> -->
-                      <p-calendar [(ngModel)]="date3" [showIcon]="true" formControlName="lastDateToApply"></p-calendar>
+                      <p-calendar [(ngModel)]="date3" [showIcon]="true" [ngClass]="{ 'is-invalid': submitted && f.lastDateToApply.errors }" required formControlName="lastDateToApply"></p-calendar>
+                      <div class="invalid-feedback" *ngIf="editJobForm.controls['lastDateToApply'].hasError('required') && editJobForm.controls['lastDateToApply'].touched">
+                            Last Date To Apply is required !
+                      </div> 
                     </div>
                   </div>
                   <div class="ui-grid-row">
                       <div class="ui-g-12 ui-md-4">
-                          <label for="requiredExperience">Required Experience(Should be in no of months)</label>
+                          <label for="requiredExperience">Required Experience(Should be in no of months)<span>*</span></label>
                       </div>
                       <div class="ui-g-12 ui-md-8">
-                        <input id="requiredExperience" formControlName="requiredExperience" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                      </div>
+                        <input id="requiredExperience" formControlName="requiredExperience" [ngClass]="{ 'is-invalid': submitted && f.totalRequirement.errors }" required  pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                          <div class="invalid-feedback" *ngIf="editJobForm.controls['requiredExperience'].hasError('required') && editJobForm.controls['requiredExperience'].touched">
+                                Required Experience is required !
+                          </div>  
+                    </div>
                   </div>
 
                   <!-- <div class="ui-grid-row">
@@ -168,10 +183,13 @@
                   </div> -->
                   <div class="ui-grid-row">
                         <div class="ui-g-12 ui-md-4">
-                            <label for="totalRequirement">Total Requirement</label>
+                            <label for="totalRequirement">Total Requirement<span>*</span></label>
                         </div>
                         <div class="ui-g-12 ui-md-8">
-                          <input id="totalRequirement" formControlName="totalRequirement" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                          <input id="totalRequirement" formControlName="totalRequirement" [ngClass]="{ 'is-invalid': submitted && f.totalRequirement.errors }" required pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                          <div class="invalid-feedback" *ngIf="editJobForm.controls['totalRequirement'].hasError('required') && editJobForm.controls['totalRequirement'].touched">
+                                Total Requirement is required !
+                          </div>
                         </div>
                     </div>
                   <!-- <div class="ui-grid-row">

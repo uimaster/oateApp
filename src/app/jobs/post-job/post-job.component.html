@@ -12,18 +12,25 @@
             <div class="ui-g-12 ui-md-12">
               <div class="ui-grid-row">
                 <div class="ui-g-12 ui-md-4">
-                  <label for="companyName">Company Name</label>
+                  <label for="companyName">Company Name<span>*</span></label>
                 </div>
                 <div class="ui-g-12 ui-md-8">
-                  <input id="companyName" formControlName="companyName" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                  <input id="companyName" formControlName="companyName" [ngClass]="{ 'is-invalid': submitted && f.companyName.errors }" required pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    <div class="invalid-feedback" *ngIf="postJobForm.controls['companyName'].hasError('required') && postJobForm.controls['companyName'].touched">
+                        Company Name is required !
+                    </div>
+
                 </div>
               </div>
               <div class="ui-grid-row">
                 <div class="ui-g-12 ui-md-4">
-                    <label for="position">Job title/position</label>
+                    <label for="position">Job title/position<span>*</span></label>
                 </div>
                 <div class="ui-g-12 ui-md-8">
-                  <input id="position" formControlName="position" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                  <input id="position" formControlName="position" [ngClass]="{ 'is-invalid': submitted && f.position.errors }" required pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                  <div class="invalid-feedback" *ngIf="postJobForm.controls['position'].hasError('required') && postJobForm.controls['position'].touched">
+                        Position is required !
+                  </div>
                 </div>
               </div>
               <div class="ui-grid-row">
@@ -70,9 +77,7 @@
                   <div class="ui-g-12 ui-md-4">
                       <label for="eventdate">Event Date</label>
                   </div>
-                  <div class="ui-g-12 ui-md-8">
-                    <!-- <input id="eventdate" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
-                    <!-- <p-calendar [(ngModel)]="date1"></p-calendar> -->
+                  <div class="ui-g-12 ui-md-8">                   
                     <p-calendar [(ngModel)]="date1" [showIcon]="true" formControlName="eventDate"></p-calendar>
                   </div>
               </div>
@@ -95,11 +100,14 @@
               </div>
               <div class="ui-grid-row">
                   <div class="ui-g-12 ui-md-4">
-                      <label for="companyUrl">Company URL</label>
+                      <label for="companyUrl">Company URL<span>*</span></label>
                   </div>
                   <div class="ui-g-12 ui-md-8">
-                    <input id="companyUrl" formControlName="companyUrl" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                  </div>
+                    <input id="companyUrl" formControlName="companyUrl" [ngClass]="{ 'is-invalid': submitted && f.companyUrl.errors }" required pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    <div class="invalid-feedback" *ngIf="postJobForm.controls['companyUrl'].hasError('required') && postJobForm.controls['companyUrl'].touched">
+                            Company URL is required !
+                      </div>  
+                </div>
               </div>
               <!-- <div class="ui-grid-row">
                   <div class="ui-g-12 ui-md-4">
@@ -128,10 +136,13 @@
               </div>
               <div class="ui-grid-row">
                     <div class="ui-g-12 ui-md-4">
-                        <label for="jobDescription">Job Description</label>
+                        <label for="jobDescription">Job Description<span>*</span></label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
-                      <input id="jobDescription" formControlName="jobDescription" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <input id="jobDescription" formControlName="jobDescription" [ngClass]="{ 'is-invalid': submitted && f.jobDescription.errors }" required pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                       <div class="invalid-feedback" *ngIf="postJobForm.controls['jobDescription'].hasError('required') && postJobForm.controls['jobDescription'].touched">
+                            Job Description is required !
+                      </div>  
                     </div>
                 </div>
               <div class="ui-grid-row">
@@ -208,18 +219,24 @@
                 </div>
                 <div class="ui-grid-row">
                         <div class="ui-g-12 ui-md-4">
-                            <label for="passoutYearBatch">Passout Year Batch</label>
+                            <label for="passoutYearBatch">Passout Year Batch<span>*</span></label>
                         </div>
                         <div class="ui-g-12 ui-md-8">
-                            <input id="passoutYearBatch" formControlName="passoutYearBatch" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                            <input id="passoutYearBatch" formControlName="passoutYearBatch" [ngClass]="{ 'is-invalid': submitted && f.passoutYearBatch.errors }" required pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                              <div class="invalid-feedback" *ngIf="postJobForm.controls['passoutYearBatch'].hasError('required') && postJobForm.controls['passoutYearBatch'].touched">
+                                    Passout Year Batch is required !
+                              </div> 
                         </div>
                 </div>
                 <div class="ui-grid-row">
                         <div class="ui-g-12 ui-md-4">
-                            <label for="totalRequirement">Total Requirement</label>
+                            <label for="totalRequirement">Total Requirement<span>*</span></label>
                         </div>
                         <div class="ui-g-12 ui-md-8">
-                            <input id="totalRequirement" formControlName="totalRequirement" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                            <input id="totalRequirement" formControlName="totalRequirement" [ngClass]="{ 'is-invalid': submitted && f.totalRequirement.errors }" required pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                            <div class="invalid-feedback" *ngIf="postJobForm.controls['totalRequirement'].hasError('required') && postJobForm.controls['totalRequirement'].touched">
+                                    Total Requirement is required !
+                            </div> 
                         </div>
                 </div>
               <!-- <div class="ui-grid-row">
@@ -234,6 +251,7 @@
               <div class="ui-grid-row">
                   <div class="ui-g-12 ui-md-4">&nbsp;</div>
                   <div class="ui-g-12 ui-md-8 text-right">
+                      <button type="button" (click)="cancelpostjob()" class="btn btn-primary">Cancel</button>
                       <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
               </div>

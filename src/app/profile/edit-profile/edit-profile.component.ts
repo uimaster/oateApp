@@ -151,6 +151,10 @@ get f() { return this.editProfileForm.controls; }
   //     });
   // }
 
+  cancelupdateprofile(){
+    this.router.navigate(['/profile/personal-details']);
+  }
+
 
 
 }
