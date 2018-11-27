@@ -19,7 +19,7 @@
                 <div class="formWrapper">
                   <div class="ui-grid-row">
                     <div class="ui-g-12 ui-md-4">
-                      <label for="companyName">Company Name</label>
+                      <label for="companyName">Company Name<span>*</span></label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
                       <input id="companyName" formControlName="companyName" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.companyName.errors }" required class="ui-inputtext ui-corner-all ui-state-default ui-widget">
@@ -30,7 +30,7 @@
                   </div>
                   <div class="ui-grid-row">
                     <div class="ui-g-12 ui-md-4">
-                      <label for="companyUrl">Company URL</label>
+                      <label for="companyUrl">Company URL<span>*</span></label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
                       <input id="companyUrl" formControlName="companyUrl" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.companyUrl.errors }" required class="ui-inputtext ui-corner-all ui-state-default ui-widget">
@@ -41,7 +41,7 @@
                   </div>
                   <div class="ui-grid-row">
                     <div class="ui-g-12 ui-md-4">
-                      <label for="emailId">Email Id</label>
+                      <label for="emailId">Email Id<span>*</span></label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
                       <input id="emailId" formControlName="emailId" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }" required email class="ui-inputtext ui-corner-all ui-state-default ui-widget">
@@ -53,10 +53,13 @@
                   </div>
                   <div class="ui-grid-row">
                     <div class="ui-g-12 ui-md-4">
-                      <label for="password">Password</label>
+                      <label for="password">Password<span>*</span></label>
                     </div>
                     <div class="ui-g-12 ui-md-8">
-                      <input id="password" formControlName="password" pinputtext="" type="password" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <input id="password" formControlName="password" pinputtext="" type="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                   </div> 
                     </div>
                   </div>                  
                   <div class="ui-grid-row">
