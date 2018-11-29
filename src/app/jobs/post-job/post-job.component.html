@@ -10,7 +10,7 @@
         <div class="card no-margin">
           <div class="ui-g form-group">
             <div class="ui-g-12 ui-md-12">
-              <div class="ui-grid-row">
+              <!-- <div class="ui-grid-row">
                 <div class="ui-g-12 ui-md-4">
                   <label for="companyName">Company Name<span>*</span></label>
                 </div>
@@ -19,84 +19,7 @@
                     <div class="invalid-feedback" *ngIf="postJobForm.controls['companyName'].hasError('required') && postJobForm.controls['companyName'].touched">
                         Company Name is required !
                     </div>
-
                 </div>
-              </div>
-              <div class="ui-grid-row">
-                <div class="ui-g-12 ui-md-4">
-                    <label for="position">Job title/position<span>*</span></label>
-                </div>
-                <div class="ui-g-12 ui-md-8">
-                  <input id="position" formControlName="position" [ngClass]="{ 'is-invalid': submitted && f.position.errors }" required pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                  <div class="invalid-feedback" *ngIf="postJobForm.controls['position'].hasError('required') && postJobForm.controls['position'].touched">
-                        Position is required !
-                  </div>
-                </div>
-              </div>
-              <div class="ui-grid-row">
-                <div class="ui-g-12 ui-md-4">
-                    <label for="jobType">Job type</label>
-                </div>
-                <div class="ui-g-12 ui-md-8">
-                  <input id="jobType" formControlName="jobType" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                </div>
-              </div>
-              <div class="ui-grid-row">
-                <div class="ui-g-12 ui-md-4">
-                    <label for="jobLocation">Job Location</label>
-                </div>
-                <div class="ui-g-12 ui-md-8">
-                  <input id="jobLocation" formControlName="jobLocation" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                </div>
-              </div>
-              <div class="ui-grid-row">
-                  <div class="ui-g-12 ui-md-4">
-                      <label for="fromSalary">From salary</label>
-                  </div>
-                  <div class="ui-g-12 ui-md-8">
-                    <input id="fromSalary" formControlName="fromSalary" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                  </div>
-              </div>
-              <div class="ui-grid-row">
-                  <div class="ui-g-12 ui-md-4">
-                      <label for="toSalary">To salary</label>
-                  </div>
-                  <div class="ui-g-12 ui-md-8">
-                    <input id="toSalary" formControlName="toSalary" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                  </div>
-              </div>
-              <div class="ui-grid-row">
-                  <div class="ui-g-12 ui-md-4">
-                      <label for="requiredExperience">Required Experience(Should be in no of months)</label>
-                  </div>
-                  <div class="ui-g-12 ui-md-8">
-                    <input id="requiredExperience" formControlName="requiredExperience" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                  </div>
-              </div>
-              <div class="ui-grid-row">
-                  <div class="ui-g-12 ui-md-4">
-                      <label for="eventdate">Event Date</label>
-                  </div>
-                  <div class="ui-g-12 ui-md-8">                   
-                    <p-calendar [(ngModel)]="date1" [showIcon]="true" formControlName="eventDate"></p-calendar>
-                  </div>
-              </div>
-              <div class="ui-grid-row">
-                  <div class="ui-g-12 ui-md-4">
-                      <label for="eventLocation">Event Location</label>
-                  </div>
-                  <div class="ui-g-12 ui-md-8">
-                    <input id="eventLocation" formControlName="eventLocation" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                  </div>
-              </div>
-              <div class="ui-grid-row">
-                  <div class="ui-g-12 ui-md-4">
-                      <label for="lastdateToapply">Last Date To Apply</label>
-                  </div>
-                  <div class="ui-g-12 ui-md-8">
-                    <!-- <input id="lastdateToapply" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
-                    <p-calendar [(ngModel)]="date2" [showIcon]="true" formControlName="lastDateToApply"></p-calendar>
-                  </div>
               </div>
               <div class="ui-grid-row">
                   <div class="ui-g-12 ui-md-4">
@@ -109,16 +32,7 @@
                       </div>  
                 </div>
               </div>
-              <!-- <div class="ui-grid-row">
-                  <div class="ui-g-12 ui-md-4">
-                      <label for="companyLogo">Company Logo</label>
-                  </div>
-                  <div class="ui-g-12 ui-md-8">
-                    <p-fileUpload name="myfile[]" url="./upload.php" multiple="multiple"
-                    accept="image/*" auto="auto"></p-fileUpload>
-                </div>
-              </div> -->
-              <div class="ui-grid-row">
+                <div class="ui-grid-row">
                   <div class="ui-g-12 ui-md-4">
                       <label for="companyDesc">Company Desc</label>
                   </div>
@@ -128,117 +42,148 @@
               </div>
               <div class="ui-grid-row">
                   <div class="ui-g-12 ui-md-4">
-                      <label for="eligibility">Eligibility</label>
+                      <label for="companyLogo">Company Logo</label>
                   </div>
                   <div class="ui-g-12 ui-md-8">
-                    <input id="eligibility" formControlName="eligibility" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    <p-fileUpload name="myfile[]" url="./upload.php" multiple="multiple"
+                    accept="image/*" auto="auto"></p-fileUpload>
+                </div>
+              </div> 
+             -->
+              <div class="ui-grid-row">                
+                <div class="ui-g-6 ui-md-6">
+                   <label for="position">Job title/position<span>*</span></label>  
+                  <input id="position" formControlName="position" [ngClass]="{ 'is-invalid': submitted && f.position.errors }" required pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                  <div class="invalid-feedback" *ngIf="postJobForm.controls['position'].hasError('required') && postJobForm.controls['position'].touched">
+                        Position is required !
+                  </div>
+                </div>
+                <div class="ui-g-6 ui-md-6">
+                    <label for="jobType">Job type</label>
+                    <input id="jobType" formControlName="jobType" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                </div>
+              </div>
+          
+              <div class="ui-grid-row">
+                <div class="ui-g-6 ui-md-6">
+                  <label for="jobLocation">Job Location</label>  
+                  <input id="jobLocation" formControlName="jobLocation" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                </div>
+                 <div class="ui-g-6 ui-md-6">
+                    <label for="requiredExperience">Required Experience(Should be in no of months)</label>
+                    <input id="requiredExperience" formControlName="requiredExperience" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                 </div>
+              </div>
+
+              <div class="ui-grid-row">                  
+                  <div class="ui-g-6 ui-md-6">
+                    <label for="fromSalary">From salary</label>  
+                    <input id="fromSalary" formControlName="fromSalary" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                  </div>
+                  <div class="ui-g-6 ui-md-6">
+                    <label for="toSalary">To salary</label>  
+                    <input id="toSalary" formControlName="toSalary" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                   </div>
               </div>
-              <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
-                        <label for="jobDescription">Job Description<span>*</span></label>
-                    </div>
-                    <div class="ui-g-12 ui-md-8">
+         
+              <div class="ui-grid-row">              
+                  <div class="ui-g-6 ui-md-6">       
+                    <label for="eventdate">Event Date</label>              
+                    <p-calendar [(ngModel)]="date1" [showIcon]="true" formControlName="eventDate"></p-calendar>
+                  </div>
+                  <div class="ui-g-6 ui-md-6">
+                    <label for="eventLocation">Event Location</label>    
+                    <input id="eventLocation" formControlName="eventLocation" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                  </div>
+              </div>
+              
+              <div class="ui-grid-row">                
+                  <div class="ui-g-6 ui-md-6">
+                    <label for="lastdateToapply">Last Date To Apply</label>  
+                    <p-calendar [(ngModel)]="date2" [showIcon]="true" formControlName="lastDateToApply"></p-calendar>
+                  </div>
+                  <div class="ui-g-6 ui-md-6">
+                        <label for="eligibility">Eligibility</label>
+                        <input id="eligibility" formControlName="eligibility" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                  </div>
+              </div>
+        
+              <div class="ui-grid-row">                    
+                    <div class="ui-g-6 ui-md-6">
+                      <label for="jobDescription">Job Description<span>*</span></label>     
                       <input id="jobDescription" formControlName="jobDescription" [ngClass]="{ 'is-invalid': submitted && f.jobDescription.errors }" required pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                        <div class="invalid-feedback" *ngIf="postJobForm.controls['jobDescription'].hasError('required') && postJobForm.controls['jobDescription'].touched">
                             Job Description is required !
                       </div>  
                     </div>
-                </div>
-              <div class="ui-grid-row">
-                  <div class="ui-g-12 ui-md-4">
-                      <label for="requiredExperience">Required Experience</label>
-                  </div>
-                  <div class="ui-g-12 ui-md-8">
-                    <input id="requiredExperience" formControlName="requiredExperience" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                  </div>
-              </div>
-              <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
-                        <label for="requiredSkillsMandatory">Required Experience Mandatory</label>
+                    <div class="ui-g-6 ui-md-6">
+                       <label for="requiredExperience">Required Experience</label>  
+                      <input id="requiredExperience" formControlName="requiredExperience" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                     </div>
-                    <div class="ui-g-12 ui-md-8">
+                </div>        
+
+              <div class="ui-grid-row">                   
+                    <div class="ui-g-6 ui-md-6">
+                      <label for="requiredSkillsMandatory">Required Experience Mandatory</label>  
                       <input id="requiredSkillsMandatory" formControlName="requiredSkillsMandatory" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                     </div>
-              </div>
-              <div class="ui-grid-row">
-                  <div class="ui-g-12 ui-md-4">
-                      <label for="requiredSkillsPreferred">Required Skills Preferred</label>
-                  </div>
-                  <div class="ui-g-12 ui-md-8">
+                    <div class="ui-g-6 ui-md-6">
+                    <label for="requiredSkillsPreferred">Required Skills Preferred</label>   
                     <input id="requiredSkillsPreferred" formControlName="requiredSkillsPreferred" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                  </div>
-              </div>
-                <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
-                        <label for="specialNoteTitle1">Special Title1</label>
                     </div>
-                    <div class="ui-g-12 ui-md-8">
+              </div>
+
+
+                <div class="ui-grid-row">
+                    <div class="ui-g-6 ui-md-6">
+                     <label for="specialNoteTitle1">Special Title1</label>  
                       <input id="specialNoteTitle1" formControlName="specialNoteTitle1" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                     </div>
-                </div>
-                <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
+                    <div class="ui-g-6 ui-md-6">
                         <label for="specialNoteTitle2">Special Title2</label>
-                    </div>
-                    <div class="ui-g-12 ui-md-8">
                         <input id="specialNoteTitle2" formControlName="specialNoteTitle2" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                     </div>
                 </div>
-                <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
+                           
+              <div class="ui-grid-row">
+                    <div class="ui-g-6 ui-md-6">
                         <label for="specialNoteTitle3">Special Title3</label>
-                    </div>
-                    <div class="ui-g-12 ui-md-8">
                         <input id="specialNoteTitle3" formControlName="specialNoteTitle3" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                     </div>
-                </div>
-              <div class="ui-grid-row">
-                  <div class="ui-g-12 ui-md-4">
-                      <label for="specialNotes1">Special Notes1</label>
-                  </div>
-                  <div class="ui-g-12 ui-md-8">
+                  <div class="ui-g-6 ui-md-6">
+                    <label for="specialNotes1">Special Notes1</label>  
                     <input id="specialNotes1" formControlName="specialNotes1" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                   </div>
               </div>
-              <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
+
+                <div class="ui-grid-row">
+                    <div class="ui-g-6 ui-md-6">
                         <label for="specialNotes2">Special Notes2</label>
-                    </div>
-                    <div class="ui-g-12 ui-md-8">
                         <input id="specialNotes2" formControlName="specialNotes2" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                     </div>
-                </div>
-                <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
+                    <div class="ui-g-6 ui-md-6">
                         <label for="specialNotes3">Special Notes3</label>
-                    </div>
-                    <div class="ui-g-12 ui-md-8">
                         <input id="specialNotes3" formControlName="specialNotes3" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                     </div>
                 </div>
+             
                 <div class="ui-grid-row">
-                        <div class="ui-g-12 ui-md-4">
-                            <label for="passoutYearBatch">Passout Year Batch<span>*</span></label>
-                        </div>
-                        <div class="ui-g-12 ui-md-8">
-                            <input id="passoutYearBatch" formControlName="passoutYearBatch" [ngClass]="{ 'is-invalid': submitted && f.passoutYearBatch.errors }" required pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                              <div class="invalid-feedback" *ngIf="postJobForm.controls['passoutYearBatch'].hasError('required') && postJobForm.controls['passoutYearBatch'].touched">
-                                    Passout Year Batch is required !
-                              </div> 
-                        </div>
+                    <div class="ui-g-6 ui-md-6">
+                        <label for="passoutYearBatch">Passout Year Batch<span>*</span></label>
+                        <input id="passoutYearBatch" formControlName="passoutYearBatch" [ngClass]="{ 'is-invalid': submitted && f.passoutYearBatch.errors }" required pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        <div class="invalid-feedback" *ngIf="postJobForm.controls['passoutYearBatch'].hasError('required') && postJobForm.controls['passoutYearBatch'].touched">
+                            Passout Year Batch is required !
+                        </div> 
+                    </div>
+                    <div class="ui-g-6 ui-md-6">
+                        <label for="totalRequirement">Total Number Of Requirement<span>*</span></label>
+                        <input id="totalRequirement" formControlName="totalRequirement" [ngClass]="{ 'is-invalid': submitted && f.totalRequirement.errors }" required pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        <div class="invalid-feedback" *ngIf="postJobForm.controls['totalRequirement'].hasError('required') && postJobForm.controls['totalRequirement'].touched">
+                                Total Requirement is required !
+                        </div> 
+                    </div>
                 </div>
-                <div class="ui-grid-row">
-                        <div class="ui-g-12 ui-md-4">
-                            <label for="totalRequirement">Total Requirement<span>*</span></label>
-                        </div>
-                        <div class="ui-g-12 ui-md-8">
-                            <input id="totalRequirement" formControlName="totalRequirement" [ngClass]="{ 'is-invalid': submitted && f.totalRequirement.errors }" required pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                            <div class="invalid-feedback" *ngIf="postJobForm.controls['totalRequirement'].hasError('required') && postJobForm.controls['totalRequirement'].touched">
-                                    Total Requirement is required !
-                            </div> 
-                        </div>
-                </div>
+
               <!-- <div class="ui-grid-row">
                   <div class="ui-g-12 ui-md-4">&nbsp;</div>
                   <div class="ui-g-12 ui-md-8">
