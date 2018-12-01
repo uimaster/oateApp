@@ -1,0 +1,32 @@
+<div class="job-details-wrapper">
+  <div class="heading-box">
+     <h4>List of HR</h4>
+     <a class="btn btn-primary" [routerLink]="['/managehr/add-hr']">+ Add HR</a>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <!-- <th scope="col">Mobile</th> -->
+          <th scope="col">Last Login</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hrdata of hrdetailsData; let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{hrdata.fname}}</td>
+          <td>{{hrdata.lname}}</td>
+          <td>{{hrdata.email}}</td>
+          <!-- <td>{{hrdata. }}</td> -->
+          <td>{{hrdata.lastLogin}}</td>
+          <td><a class="btn not-active" [routerLink]="['/managehr/hrdetail',hrdata.id]">View </a>&nbsp;&nbsp;<a class="btn not-active" href="javascript:void(0);" (click)="deleteData(hrdata.id);">Delete</a></td>
+        </tr>       
+      </tbody>
+    </table>
+  </div>
+</div>

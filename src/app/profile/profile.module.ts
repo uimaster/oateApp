@@ -9,11 +9,13 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditserviceService } from './services/editservice.service';
 import { PersonalDetailSerivce } from './services/personaldetail.service';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 
 @NgModule({
   imports: [
     CommonModule,
     ProfileRoutingModule,
+    InputTextareaModule,
     SharedModule,
     FormsModule,
     ReactiveFormsModule

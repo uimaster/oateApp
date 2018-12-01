@@ -49,3 +49,4 @@
   .ui-calendar .ui-datepicker{ max-width: 250px!important;}
   .content-wrapper label span{color:#dc3545;}
   .pi-calendar:before { content: "\f073"; font-family: fontAwesome; vertical-align: top; line-height: 20px; }
+  textarea{resize:none; min-height: 80px;}

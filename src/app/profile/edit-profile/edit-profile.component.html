@@ -9,10 +9,9 @@
         <div class="card no-margin">
           <div class="ui-g form-group sssss">
             <div class="ui-g-12 ui-md-12">
-                <div class="ui-grid-row">
-                  <div class="ui-g-12 ui-md-4">&nbsp;</div>
-                  <div class="ui-g-12 ui-md-8">
-                    <div class="success alert alert-success" *ngIf="showSuccess">Profile has been updated successfully !</div>
+                <div class="ui-grid-row" *ngIf="showSuccess">                 
+                  <div class="ui-g-12 ui-md-12">
+                    <div class="success alert alert-success">Profile has been updated successfully !</div>
                   </div>
                 </div> 
               <form [formGroup]="editProfileForm" (submit)="submitEditProfile(editProfileForm.value);">
@@ -149,7 +148,8 @@
                   <div class="ui-grid-row">                    
                     <div class="ui-g-12 ui-md-12">
                       <label for="aboutCompany">About Company</label>
-                      <input id="aboutCompany" formControlName="aboutCompany" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <!-- <input id="aboutCompany" formControlName="aboutCompany" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
+                      <textarea id="aboutCompany" pInputTextarea autoResize="autoResize" formControlName="aboutCompany"></textarea>
                     </div>
                   </div>
                   <div class="ui-grid-row">
