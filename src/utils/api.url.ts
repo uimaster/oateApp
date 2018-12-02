@@ -14,5 +14,6 @@ export const UPLOAD_IMAGE = BASE_URL + 'employer/upload-img';
 export const ADD_HR = BASE_URL + 'user';
 export const HR_JOBS = BASE_URL + 'job/hr-jobs';
 export const HR_JOBS_DETAIL = BASE_URL + 'job/getStudentDetailsForAppliedJob';
+export const JOB_DESCRIPTION = BASE_URL + 'job'
 
 

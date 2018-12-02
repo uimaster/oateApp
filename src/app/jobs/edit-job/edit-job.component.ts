@@ -19,7 +19,7 @@ export class EditJobComponent implements OnInit {
   showSuccess = false;
   public jid: any;
   date3 = new Date();
-  date4 = new Date();
+  date4 = new Date(); 
 
   jobData: Observable<JobdetailResponse>;
   jobdetailsData: JobdetailsResponseData;
@@ -63,7 +63,12 @@ export class EditJobComponent implements OnInit {
         if (res && res.statusCode === 200) {
 
           this.jobdetailsData = res.entity;
-          // console.log(this.jobdetailsData);
+          // let lastDateToApply = new Date(this.jobdetailsData.lastDateToApply);
+          // this.lastDateToApplyms = lastDateToApply.getTime();
+          // localStorage.setItem('lastDateToApplyval', this.lastDateToApplyms);
+          // this.eventdatems = new Date(this.jobdetailsData.eventDate).getTime();
+          // localStorage.setItem('eventdateval', this.eventdatems);
+          
           this.editJobForm.controls['id'].setValue(this.jobdetailsData.id);
           this.editJobForm.controls['eventLocation'].setValue(this.jobdetailsData.eventLocation);
           this.editJobForm.controls['jobDescription'].setValue(this.jobdetailsData.jobDescription);
@@ -100,5 +105,11 @@ export class EditJobComponent implements OnInit {
     cancelUpdate() {
       this.router.navigate(['/jobs/jobs-details']);
     }
+
+    // getMiliData(data) { 
+    //   let convetedData = new Date(data).getTime();
+    //   this.editJobForm.controls['eventDate'].setValue(convetedData);      
+    //   console.log(convetedData);
+    // }
 
 }

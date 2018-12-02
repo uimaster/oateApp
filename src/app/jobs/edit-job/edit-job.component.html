@@ -19,7 +19,8 @@
                   <div class="ui-grid-row">                    
                     <div class="ui-g-6 ui-md-6">
                         <label for="eventDate">Event Date<span>*</span></label>
-                        <p-calendar [(ngModel)]="date4" [showIcon]="true" [ngClass]="{ 'is-invalid': submitted && f.eventDate.errors }" required formControlName="eventDate"></p-calendar>
+                        <!-- <p-calendar [(ngModel)]="date4" dateFormat="dd/mm/yy" (onSelect)="getMiliData($event)"  [showIcon]="true" [ngClass]="{ 'is-invalid': submitted && f.eventDate.errors }" required formControlName="eventDate"></p-calendar> -->
+                        <p-calendar [(ngModel)]="date4" dateFormat="dd/mm/yy"  [showIcon]="true" [ngClass]="{ 'is-invalid': submitted && f.eventDate.errors }" required formControlName="eventDate"></p-calendar>
                       <div class="invalid-feedback" *ngIf="editJobForm.controls['eventDate'].hasError('required') && editJobForm.controls['eventDate'].touched">
                             Event Date To Apply is required !
                       </div> 
