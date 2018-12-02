@@ -38,11 +38,11 @@
               <td colspan="3" class="headingData">
                 <ul>
                   <!-- {{jobdetailsData.eligibility | json}} -->
-                  <ng-template *ngIf="jobdetailsData?.eligibility && jobdetailsData?.eligibility>0">
+                  <ng-container *ngIf="jobdetailsData?.eligibility && jobdetailsData?.eligibility.length>0">
                     <li *ngFor="let egblity of jobdetailsData?.eligibility; let i = index">
                         {{egblity}}                      
                     </li>
-                </ng-template>
+                </ng-container>
                 </ul>                
               </td>
             </tr>
@@ -50,9 +50,11 @@
               <td class="heading">job Location:</td>
               <td class="headingData"> 
                 <ul class="listdatas">
-                  <li *ngFor="let joblocation of jobdetailsData?.jobLocation; let i = index">
-                    {{joblocation}}
-                  </li>
+                  <ng-container *ngIf="jobdetailsData?.jobLocation && jobdetailsData?.jobLocation.length>0">
+                    <li *ngFor="let joblocation of jobdetailsData?.jobLocation; let i = index">
+                      {{joblocation}}
+                    </li>
+                 </ng-container>
                 </ul>          
               </td>
               <td class="heading">Skill Requirement:</td>

@@ -34,9 +34,10 @@ export class HrdetailComponent implements OnInit {
           this.detailsData = res.entities;
           this.successMessage = res.message;
           this.showSuccess = true;
-          if (this.detailsData.length > 0) {
-            this.getSkills(this.detailsData[0].skills);
-          }
+          console.log(this.detailsData);
+          // if (this.detailsData.length > 0) {
+          //   this.getSkills(this.detailsData[0].skills);
+          // }
 
         } else {
           this.errorMessage = res.message;
@@ -45,12 +46,10 @@ export class HrdetailComponent implements OnInit {
        }
      );
   }
-  getSkills(data) {
-    for ( let i = 0; i < data.length; i ++) {
-      // console.log(data[i]);
-      this.skills.push(data[i].skill);
-    }
-    // console.log('skills', this.skills);
-  }
+  // getSkills(data) {
+  //   for ( let i = 0; i < data.length; i ++) {      
+  //     this.skills.push(data[i].skill);
+  //   }   
+  // }
 
 }
