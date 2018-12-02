@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpParams} from '@angular/common/http';
-import { HR_JOBS_DETAIL } from '../../apiurl/api.url';
+import { HR_JOBS_DETAIL } from '../../../utils/api.url';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';

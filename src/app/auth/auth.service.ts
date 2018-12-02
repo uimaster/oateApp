@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { Router } from '@angular/router';
-import { LOGIN_URL, REFRESHTOKEN_URL } from '../apiurl/api.url';
+import { LOGIN_URL, REFRESHTOKEN_URL } from '../../utils/api.url';
 import { LoginRequest, LoginResponse } from './user.model';
 import { InterceptorSkipHeader} from './token.interceptor';
 import { LocalStorage } from '../../utils/localStorage';
