@@ -31,7 +31,7 @@ export class EditProfileComponent implements OnInit {
     private fb: FormBuilder,
     private editservice: EditserviceService,
     private personaldetailservice: PersonalDetailSerivce,
-    private router: Router;
+    private router: Router
     ) { }
 
   ngOnInit() {
