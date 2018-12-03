@@ -35,7 +35,7 @@ export class HrlistingComponent implements OnInit {
           this.showSuccess = true;
           this.hrjobsData = res.entities; 
           this.setPage(1);
-          // console.log(this.hrjobsData);               
+          console.log(this.hrjobsData);               
         }else {
           this.errorMessage = res.message;
           this.showError = true;         

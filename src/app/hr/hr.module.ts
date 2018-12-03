@@ -10,6 +10,10 @@ import { HrlistService } from './service/hrlist.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PagerService } from '../../utils/pager.service';
 import { HrJobDetailSerivce } from './service/jobdetail.service';
+import { JobdescriptionComponent } from './jobdescription/jobdescription.component';
+import { JobDescSerivce } from './service/jobdesc.service';
+
+
 
 @NgModule({
   imports: [
@@ -19,7 +23,7 @@ import { HrJobDetailSerivce } from './service/jobdetail.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [HrlistingComponent, HrdetailComponent, HrComponent],
-  providers: [HrlistService, HrJobDetailSerivce, PagerService]
+  declarations: [HrlistingComponent, HrdetailComponent, HrComponent, JobdescriptionComponent],
+  providers: [HrlistService, HrJobDetailSerivce, PagerService, JobDescSerivce]
 })
 export class HrModule { }

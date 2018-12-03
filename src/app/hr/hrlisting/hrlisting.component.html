@@ -20,12 +20,12 @@
         <tbody>
           <tr *ngFor="let hrjob of hrjobsData; let i = index;">
             <td scope="row">{{i+1}}</td>
-            <td>{{hrjob.postedJobNumber}}</td>
+            <td><a [routerLink]="['/hr/job-description',hrjob.id]" class="jobNumber">{{hrjob.postedJobNumber}}</a></td>
             <td>{{hrjob.position}}</td>
-            <td>{{hrjob.postedJobDate}}</td>
+            <td>{{hrjob.postedJobDate | date:'dd/MM/yyyy'}}</td>
             <!-- <td>deepak@gmail.com</td>            -->
             <td>{{hrjob.appliedCount}}</td>
-            <td><a [routerLink]="['/hr/hrdetail',hrjob.id]" class="btn">View </a>&nbsp;&nbsp;<a class="btn not-active" href="javascript:void(0);" (click)="deleteData(hrdata.id);">Delete</a></td>
+            <td><a [routerLink]="['/hr/hrdetail',hrjob.id]" class="btn">View Apply</a>&nbsp;&nbsp;<a class="btn not-active" href="javascript:void(0);" (click)="deleteData(hrdata.id);">Delete</a></td>
           </tr>       
         </tbody>
       </table>

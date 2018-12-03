@@ -3,14 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { ManagehrRoutingModule } from './managehr-routing.module';
 import { AddhrComponent } from './addhr/addhr.component';
-import { RemovehrComponent } from './removehr/removehr.component';
 import { HrdetailsComponent } from './hrdetails/hrdetails.component';
 import { ManagehrComponent } from './managehr/managehr.component';
 import { SharedModule } from '../shared/shared.module';
-import { HrdetailsService } from './services/hrdetails.service';
-import { ListdetailhrComponent } from './listdetailhr/listdetailhr.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddhrService } from './services/addhrservice';
+import { HrlistComponent } from './hrlist/hrlist.component';
+import { HrlistService } from './services/hrlist.service';
 
 @NgModule({
   imports: [
@@ -20,7 +19,7 @@ import { AddhrService } from './services/addhrservice';
     ManagehrRoutingModule,
     SharedModule
   ],
-  declarations: [AddhrComponent, RemovehrComponent, HrdetailsComponent, ManagehrComponent, ListdetailhrComponent],
-  providers: [HrdetailsService, AddhrService]
+  declarations: [AddhrComponent, HrdetailsComponent, ManagehrComponent, HrlistComponent],
+  providers: [AddhrService, HrlistService]
 })
 export class ManagehrModule { }

@@ -1,0 +1,84 @@
+<div class="job-description-wrapper" *ngIf="jobdescData">
+    <div class="heading-box">
+       <h4>Job Description</h4>
+       <a [routerLink]="['/hr/hrlist']" class="btn btn-primary">Back to List</a>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <tbody>
+          <!-- <tr>          
+             <td class="heading">Company Name:</td>
+             <td class="headingData">{{jobdescData.companyName}}</td>
+             <td class="heading">Company URL:</td>
+             <td class="headingData">{{jobdescData.companyUrl}}</td>
+          </tr> -->
+          <tr>          
+              <td class="heading">Event Date:</td>
+              <td class="headingData">{{jobdescData.eventDate | date: 'dd-MM-yyyy'}}</td>
+              <td class="heading">Event Location:</td>
+              <td class="headingData">{{jobdescData.eventLocation}}</td>
+           </tr>
+          <tr>
+              <td class="heading">Job Type:</td>
+              <td class="headingData">{{jobdescData.jobType}}</td>
+              <td class="heading">Salary:</td>
+              <td class="headingData">{{jobdescData.fromSalary}} - {{jobdescData.toSalry}}</td>
+          </tr>
+            <tr>          
+              <td class="heading">Job Position:</td>
+              <td class="headingData">{{jobdescData.position}}</td>
+              <td class="heading">Total Requirement:</td>
+              <td class="headingData">{{jobdescData.totalRequirement}}</td>
+            </tr>
+            <tr>          
+                <!-- <td class="heading">Job Description:</td>
+                <td class="headingData">{{jobdescData.jobDescription}}</td> -->
+                <td colspan="1" class="heading">Eligibility:</td>
+                <td colspan="3" class="headingData">
+                  <ul>
+                    <!-- {{jobdescData.eligibility | json}} -->
+                    <ng-container *ngIf="jobdescData?.eligibility && jobdescData?.eligibility.length>0">
+                      <li *ngFor="let egblity of jobdescData?.eligibility; let i = index">
+                          {{egblity}}                      
+                      </li>
+                  </ng-container>
+                  </ul>                
+                </td>
+              </tr>
+            <tr>          
+                <td class="heading">job Location:</td>
+                <td class="headingData"> 
+                  <ul class="listdatas">
+                    <ng-container *ngIf="jobdescData?.jobLocation && jobdescData?.jobLocation.length>0">
+                      <li *ngFor="let joblocation of jobdescData?.jobLocation; let i = index">
+                        {{joblocation}}
+                      </li>
+                   </ng-container>
+                  </ul>          
+                </td>
+                <td class="heading">Skill Requirement:</td>
+                <td class="headingData"> 
+                  <ul class="listdatas">
+                    <li *ngFor="let skill of jobdescData?.requiredSkillsMandatory; let i = index">
+                      {{skill}}
+                    </li>
+                  </ul>          
+                </td>
+            </tr>
+            <tr>          
+                <td class="heading">Prefer Skill Requirement:</td>
+                <td class="headingData"> 
+                  <ul class="listdatas">
+                    <li *ngFor="let preferskill of jobdescData?.requiredSkillsPreferred; let i = index">
+                      {{preferskill}}
+                    </li>
+                  </ul>          
+                </td>
+                <td class="heading">Company Description:</td>
+                <td class="headingData">{{jobdescData.companyDesc}}</td>
+            </tr>
+  
+        </tbody>
+      </table>
+    </div>
+  </div>

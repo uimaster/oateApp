@@ -7,15 +7,15 @@
   <div class="table-responsive">
     <table class="table table-bordered">
       <tbody>
-        <tr>          
+        <!-- <tr>          
            <td class="heading">Company Name:</td>
            <td class="headingData">{{jobdetailsData.companyName}}</td>
            <td class="heading">Company URL:</td>
            <td class="headingData">{{jobdetailsData.companyUrl}}</td>
-        </tr>
+        </tr> -->
         <tr>          
             <td class="heading">Event Date:</td>
-            <td class="headingData">{{jobdetailsData.eventDate | date: 'dd-MM-yyyy'}}</td>
+            <td class="headingData">{{jobdetailsData.eventDate | date: 'dd/MM/yyyy'}}</td>
             <td class="heading">Event Location:</td>
             <td class="headingData">{{jobdetailsData.eventLocation}}</td>
          </tr>
@@ -32,17 +32,17 @@
             <td class="headingData">{{jobdetailsData.totalRequirement}}</td>
           </tr>
           <tr>          
-              <td class="heading">Job Description:</td>
-              <td class="headingData">{{jobdetailsData.jobDescription}}</td>
-              <td class="heading">Eligibility:</td>
-              <td class="headingData">
+              <!-- <td class="heading">Job Description:</td>
+              <td class="headingData">{{jobdetailsData.jobDescription}}</td> -->
+              <td colspan="1" class="heading">Eligibility:</td>
+              <td colspan="3" class="headingData">
                 <ul>
                   <!-- {{jobdetailsData.eligibility | json}} -->
-                  <ng-template *ngIf="jobdetailsData?.eligibility && jobdetailsData?.eligibility>0">
+                  <ng-container *ngIf="jobdetailsData?.eligibility && jobdetailsData?.eligibility.length>0">
                     <li *ngFor="let egblity of jobdetailsData?.eligibility; let i = index">
                         {{egblity}}                      
                     </li>
-                </ng-template>
+                </ng-container>
                 </ul>                
               </td>
             </tr>
@@ -50,9 +50,11 @@
               <td class="heading">job Location:</td>
               <td class="headingData"> 
                 <ul class="listdatas">
-                  <li *ngFor="let joblocation of jobdetailsData?.jobLocation; let i = index">
-                    {{joblocation}}
-                  </li>
+                  <ng-container *ngIf="jobdetailsData?.jobLocation && jobdetailsData?.jobLocation.length>0">
+                    <li *ngFor="let joblocation of jobdetailsData?.jobLocation; let i = index">
+                      {{joblocation}}
+                    </li>
+                 </ng-container>
                 </ul>          
               </td>
               <td class="heading">Skill Requirement:</td>

@@ -9,47 +9,34 @@
         <div class="ui-g-12 ui-md-12">
             <div class="success alert alert-success" *ngIf="showSuccess">HR added successfully.</div>
             <div class="success alert alert-alert" *ngIf="showError">Failed to add HR.</div>
-          </div>
+        </div>
 
         <div class="card no-margin">
           <div class="ui-g form-group">
             <div class="ui-g-12 ui-md-12">
                <form [formGroup]="addhrForm" (submit)="saveHr(addhrForm.value);" >
                   <div class="formWrapper">
-                    <div class="ui-grid-row">
-                      <div class="ui-g-12 ui-md-4">
+
+                    <div class="ui-grid-row">                     
+                      <div class="ui-g-6 ui-md-6">
                         <label for="fname">First Name<span>*</span></label>
-                      </div>
-                      <div class="ui-g-12 ui-md-8">
                         <input formControlName="fname" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.fname.errors }" required  class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                         <div class="invalid-feedback" *ngIf="addhrForm.controls['fname'].hasError('required') && addhrForm.controls['fname'].touched">
                             First Name is required !
                         </div>
-  
-                        <!-- <div *ngIf="submitted && f.fname.errors" class="invalid-feedback">
-                          <div *ngIf="f.fname.errors.required">First Name is required</div>
-                        </div> -->
+                      </div>
+                      <div class="ui-g-6 ui-md-6">
+                          <label for="lname">Last Name<span>*</span></label>
+                          <input id="lname" formControlName="lname" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.lname.errors }" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                          <div class="invalid-feedback" *ngIf="addhrForm.controls['lname'].hasError('required') && addhrForm.controls['lname'].touched">
+                              Last Name is required !
+                          </div>                      
                       </div>
                     </div>
-                    <div class="ui-grid-row">
-                      <div class="ui-g-12 ui-md-4">
-                        <label for="lname">Last Name<span>*</span></label>
-                      </div>
-                      <div class="ui-g-12 ui-md-8">
-                        <input id="lname" formControlName="lname" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.lname.errors }" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                        <div class="invalid-feedback" *ngIf="addhrForm.controls['lname'].hasError('required') && addhrForm.controls['lname'].touched">
-                            Last Name is required !
-                        </div>
-                        <!-- <div *ngIf="submitted && f.lname.errors" class="invalid-feedback">
-                            <div *ngIf="f.lname.errors.required">Last Name is required</div>
-                          </div> -->
-                      </div>
-                    </div>
-                    <div class="ui-grid-row">
-                        <div class="ui-g-12 ui-md-4">
+              
+                    <div class="ui-grid-row">                       
+                        <div class="ui-g-6 ui-md-6">
                           <label for="emailId">Email id<span>*</span></label>
-                        </div>
-                        <div class="ui-g-12 ui-md-8">
                           <input id="emailId" formControlName="emailId" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }" required email class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                           <div *ngIf="submitted && f.emailId.errors" class="invalid-feedback">
                               <div class="invalid-feedback" *ngIf="addhrForm.controls['emailId'].hasError('required') && addhrForm.controls['emailId'].touched">
@@ -59,85 +46,56 @@
                               <div *ngIf="f.emailId.errors.email">Email must be a valid email address</div>
                           </div>
                         </div>
+                         <div class="ui-g-6 ui-md-6">
+                            <label for="password">password<span>*</span></label>
+                            <input id="password" formControlName="password" pinputtext="" type="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required class="form-control ui-inputtext ui-corner-all ui-state-default ui-widget">
+                            <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                                <!-- <div *ngIf="f.password.errors.required">Password is required</div> -->
+                                <div class="invalid-feedback" *ngIf="addhrForm.controls['password'].hasError('required') && addhrForm.controls['password'].touched">
+                                    Password is required !
+                                </div>
+                                <!-- <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div> -->
+                            </div>
+                         </div>
                       </div>
-                      <div class="ui-grid-row">
-                        <div class="ui-g-12 ui-md-4">
-                          <label for="password">password<span>*</span></label>
-                        </div>
-                        <div class="ui-g-12 ui-md-8">
-                          <input id="password" formControlName="password" pinputtext="" type="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required class="form-control ui-inputtext ui-corner-all ui-state-default ui-widget">
-                          <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
-                              <!-- <div *ngIf="f.password.errors.required">Password is required</div> -->
-                              <div class="invalid-feedback" *ngIf="addhrForm.controls['password'].hasError('required') && addhrForm.controls['password'].touched">
-                                  Password is required !
-                              </div>
-                              <!-- <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div> -->
-                          </div>
-                        </div>
-                      </div>
-                    <!--<div class="ui-grid-row">
-                      <div class="ui-g-12 ui-md-4">
-                        <label for="createdBy">Created By</label>
-                      </div>
-                      <div class="ui-g-12 ui-md-8">
-                        <input id="createdBy" formControlName="createdBy" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                      </div>
-                    </div>
-                       <div class="ui-grid-row">
-                        <div class="ui-g-12 ui-md-4">
-                          <label for="updatedAt">Updated At</label>
-                        </div>
-                        <div class="ui-g-12 ui-md-8">
-                          <input id="updatedAt" formControlName="updatedAt" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                        </div>
-                      </div> -->
+                    
+                   
 
                     <fieldset formArrayName="address">
                       <legend>Office Address</legend>
                       <ng-container *ngFor="let ctrl of addhrForm.get('address').controls; let i = index;" [formGroupName]="i" >
-                      <div class="ui-grid-row">
-                        <div class="ui-g-12 ui-md-4">
-                          <label for="address">Address</label>
+                      <div class="ui-grid-row">                       
+                        <div class="ui-g-6 ui-md-6">
+                          <label for="address">Address<span>*</span></label>
+                          <input id="address" formControlName="address" [ngClass]="{ 'is-invalid': submitted && ctrl.controls.address.errors }" required pinputtext type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                            <div class="invalid-feedback" *ngIf="ctrl.controls.address.hasError('required') && ctrl.controls.address.touched">Address is required</div>  
                         </div>
-                        <div class="ui-g-12 ui-md-8">
-                          <input id="address" formControlName="address" pinputtext type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                        </div>
-
-                        <div class="ui-g-12 ui-md-4">
+                        <div class="ui-g-6 ui-md-6">
                           <label for="city">City</label>
-                        </div>
-                        <div class="ui-g-12 ui-md-8">
                           <input id="city" formControlName="city" pinputtext type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                         </div>
-
-                        <div class="ui-g-12 ui-md-4">
+                      </div>    
+                      <div class="ui-grid-row"> 
+                        <div class="ui-g-6 ui-md-6">
                           <label for="country">Country</label>
-                        </div>
-                        <div class="ui-g-12 ui-md-8">
                           <input id="country" formControlName="country" pinputtext type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                         </div>
-
-                        <div class="ui-g-12 ui-md-4">
+                        <div class="ui-g-6 ui-md-6">
                           <label for="landmark">Landmark</label>
-                        </div>
-                        <div class="ui-g-12 ui-md-8">
                           <input id="landmark" formControlName="landmark" pinputtext type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                         </div>
-
-                        <div class="ui-g-12 ui-md-4">
+                      </div>  
+                      <div class="ui-grid-row">  
+                        <div class="ui-g-6 ui-md-6">
                           <label for="pincode">Pincode</label>
-                        </div>
-                        <div class="ui-g-12 ui-md-8">
                           <input id="pincode" formControlName="pincode" pinputtext type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                        </div>
-
-                        <div class="ui-g-12 ui-md-4">
+                        </div>                       
+                        <div class="ui-g-6 ui-md-6">
                           <label for="state">State</label>
-                        </div>
-                        <div class="ui-g-12 ui-md-8">
                           <input id="state" formControlName="state" pinputtext type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                         </div>
-                      </div>
+                      </div>  
+                    
                       </ng-container>
                     </fieldset>
 

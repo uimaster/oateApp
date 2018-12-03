@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import { POST_JOB_URL } from '../../apiurl/api.url';
+import { POST_JOB_URL } from '../../../utils/api.url';
 
 @Injectable()
 export class PostJobService{

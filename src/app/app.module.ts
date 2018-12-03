@@ -12,6 +12,7 @@ import { AccordionModule, CalendarModule } from 'primeng/primeng';
 import { PanelModule } from 'primeng/primeng';
 import { ButtonModule } from 'primeng/primeng';
 import { RadioButtonModule } from 'primeng/primeng';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 import { TokenInterceptor } from './auth/token.interceptor';
 import { AuthService } from './auth/auth.service';
 import { AuthHrService } from './authhr/auth.hrservice';
@@ -35,7 +36,8 @@ import { TokenHrInterceptor } from './authhr/token.interceptor';
     ButtonModule,
     RadioButtonModule,
     HttpClientModule,
-    CalendarModule
+    CalendarModule,
+    InputTextareaModule
   ],
   providers: [
     AuthService,

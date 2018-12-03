@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { HR_DETAILS } from '../../apiurl/api.url';
+import { HR_DETAILS } from '../../../utils/api.url';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
  
 @Injectable()
-export class HrdetailsService {
+export class HrlistService {
 
   constructor(private http: HttpClient) { }
 

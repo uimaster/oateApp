@@ -65,7 +65,7 @@ export class EditProfileComponent implements OnInit {
       alternateMobileNumber: [''],
       companyLogo:['https://manishoate.s3-us-west-2.amazonaws.com/5bed0f93d30de3303036fff9.jpg'],
       id: [''],
-      password:[''],
+      password:['', Validators.required],
       token: [''],
       updatedAt: [''],
       updatedBy: [''],

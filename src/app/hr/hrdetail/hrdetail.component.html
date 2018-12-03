@@ -59,7 +59,14 @@
                    <div class="heading">Education: <span>{{jdetail.postGraduationDegree}}, &nbsp; {{jdetail.postGraduationUniversity}}</span></div>
                  </div>
                  <div class="skills common">
-                  <div class="heading">Key skills: <span>{{skills}}</span></div>
+                  <div class="heading">Key skills:
+                   <span>
+                     <ul class="skills">
+                       <ng-container *ngIf="jdetail.skills && jdetail.skills.length>0">
+                         <li *ngFor="let skl of jdetail.skills">{{skl.skill}}</li>
+                      </ng-container>
+                     </ul> 
+                  </span></div>
                 </div>
                 <div class="matchingBox">
                    <div class="applied">

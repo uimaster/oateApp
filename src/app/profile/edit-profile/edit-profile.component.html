@@ -9,193 +9,147 @@
         <div class="card no-margin">
           <div class="ui-g form-group sssss">
             <div class="ui-g-12 ui-md-12">
-                <div class="ui-grid-row">
-                  <div class="ui-g-12 ui-md-4">&nbsp;</div>
-                  <div class="ui-g-12 ui-md-8">
-                    <div class="success alert alert-success" *ngIf="showSuccess">Profile has been updated successfully !</div>
+                <div class="ui-grid-row" *ngIf="showSuccess">                 
+                  <div class="ui-g-12 ui-md-12">
+                    <div class="success alert alert-success">Profile has been updated successfully !</div>
                   </div>
                 </div> 
               <form [formGroup]="editProfileForm" (submit)="submitEditProfile(editProfileForm.value);">
                 <div class="formWrapper">
-                  <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
-                      <label for="companyName">Company Name</label>
-                    </div>
-                    <div class="ui-g-12 ui-md-8">
+                  <div class="ui-grid-row">                   
+                    <div class="ui-g-6 ui-md-6">
+                      <label for="companyName">Company Name<span>*</span></label>
                       <input id="companyName" formControlName="companyName" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.companyName.errors }" required class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                       <div *ngIf="submitted && f.companyName.errors" class="invalid-feedback">
                           <div *ngIf="f.companyName.errors.required">Company Name is required</div>
                      </div> 
                     </div>
-                  </div>
-                  <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
-                      <label for="companyUrl">Company URL</label>
-                    </div>
-                    <div class="ui-g-12 ui-md-8">
-                      <input id="companyUrl" formControlName="companyUrl" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.companyUrl.errors }" required class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                      <div *ngIf="submitted && f.companyUrl.errors" class="invalid-feedback">
-                          <div *ngIf="f.companyUrl.errors.required">Company URL is required</div>
+                    <div class="ui-g-6 ui-md-6">
+                        <label for="companyUrl">Company URL<span>*</span></label> 
+                        <input id="companyUrl" formControlName="companyUrl" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.companyUrl.errors }" required class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        <div *ngIf="submitted && f.companyUrl.errors" class="invalid-feedback">
+                            <div *ngIf="f.companyUrl.errors.required">Company URL is required</div>
+                       </div>
                      </div>
-                    </div>
                   </div>
-                  <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
-                      <label for="emailId">Email Id</label>
-                    </div>
-                    <div class="ui-g-12 ui-md-8">
+           
+                  <div class="ui-grid-row">                  
+                    <div class="ui-g-6 ui-md-6">
+                      <label for="emailId">Email Id<span>*</span></label>
                       <input id="emailId" formControlName="emailId" pinputtext="" type="text" [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }" required email class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                       <div *ngIf="submitted && f.emailId.errors" class="invalid-feedback">
                           <div *ngIf="f.emailId.errors.required">Email is required</div>
                           <div *ngIf="f.emailId.errors.email">Email must be a valid email address</div>
                       </div>
                     </div>
+                    <div class="ui-g-6 ui-md-6">
+                      <label for="password">Password<span>*</span></label>
+                      <input id="password" formControlName="password" pinputtext="" type="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                      </div> 
+                    </div>    
                   </div>
-                  <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
-                      <label for="password">Password</label>
-                    </div>
-                    <div class="ui-g-12 ui-md-8">
-                      <input id="password" formControlName="password" pinputtext="" type="password" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                    </div>
-                  </div>                  
-                  <div class="ui-grid-row">
-                      <div class="ui-g-12 ui-md-4">
+                           
+                  <div class="ui-grid-row">                  
+                      <div class="ui-g-6 ui-md-6">
                         <label for="contactPersonName">Contact Person Name</label>
-                      </div>
-                      <div class="ui-g-12 ui-md-8">
                         <input id="contactPersonName" formControlName="contactPersonName" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                       </div>
-                    </div>
-                  <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
-                      <label for="mobileNumber">Mobile Number</label>
-                    </div>
-                    <div class="ui-g-12 ui-md-8">
-                      <input id="mobileNumber" formControlName="mobileNumber" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                    </div>
+                      <div class="ui-g-6 ui-md-6">
+                          <label for="mobileNumber">Mobile Number</label>
+                          <input id="mobileNumber" formControlName="mobileNumber" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      </div>
                   </div>
-                  <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
+             
+                  <div class="ui-grid-row">                    
+                    <div class="ui-g-6 ui-md-6">
                       <label for="designation">Designation</label>
-                    </div>
-                    <div class="ui-g-12 ui-md-8">
                       <input id="designation" formControlName="designation" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                     </div>
-                  </div>
-                  <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
-                      <label for="alternateEmailId">Alternate Email-id</label>
-                    </div>
-                    <div class="ui-g-12 ui-md-8">
+                    <div class="ui-g-6 ui-md-6">
+                       <label for="alternateEmailId">Alternate Email-id</label>
                       <input id="alternateEmailId" formControlName="alternateEmailId" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                     </div>
                   </div>
-                  <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
+
+                  <div class="ui-grid-row">                   
+                    <div class="ui-g-6 ui-md-6">
                       <label for="industryType">Industry Type</label>
-                    </div>
-                    <div class="ui-g-12 ui-md-8">
                       <input id="industryType" formControlName="industryType" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                     </div>
-                  </div>
-                  <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
-                      <label for="companyRegistrationNumber">Company Registration Number</label>
-                    </div>
-                    <div class="ui-g-12 ui-md-8">
-                      <input id="companyRegistrationNumber" formControlName="companyRegistrationNumber" pinputtext=""
-                        type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    <div class="ui-g-6 ui-md-6">
+                        <label for="companyRegistrationNumber">Company Registration Number</label>
+                        <input id="companyRegistrationNumber" formControlName="companyRegistrationNumber" pinputtext=""
+                          type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                     </div>
                   </div>
+            
                   <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
+                    <div class="ui-g-6 ui-md-6">
                       <label for="gstiNumber">GST Number</label>
-                    </div>
-                    <div class="ui-g-12 ui-md-8">
                       <input id="gstiNumber" formControlName="gstiNumber" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                     </div>
-                  </div>
-                  <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
-                      <label for="employerType">Employer Type</label>
-                    </div>
-                    <div class="ui-g-12 ui-md-8">
-                      <input id="employerType" formControlName="employerType" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                    <div class="ui-g-6 ui-md-6">
+                        <label for="employerType">Employer Type</label>
+                        <input id="employerType" formControlName="employerType" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                     </div>
                   </div>
+                
                   <fieldset formArrayName="officeAddress">
                     <legend>Office Address</legend>
                     <ng-container >
                     <div class="ui-grid-row" *ngFor="let item of editProfileForm.get('officeAddress').controls; let i = index;" [formGroupName]="i">
-                      <div class="ui-g-12 ui-md-4">
-                        <label for="c5ty">Address</label>
+                      <div class="ui-grid-row">                       
+                        <div class="ui-g-6 ui-md-6">
+                          <label for="c5ty">Address</label>
+                          <input id="address" formControlName="address" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        </div>
+                        <div class="ui-g-6 ui-md-6">
+                            <label for="city">City</label> 
+                            <input id="city" formControlName="city" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        </div>
                       </div>
-                      <div class="ui-g-12 ui-md-8">
-                        <input id="address" formControlName="address" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+
+                      <div class="ui-grid-row"> 
+                         <div class="ui-g-6 ui-md-6">
+                            <label for="country">Country</label>
+                          <input id="country" formControlName="country" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        </div>
+                        <div class="ui-g-6 ui-md-6">
+                            <label for="landmark">Landmark</label>
+                            <input id="landmark" formControlName="landmark" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                        </div> 
                       </div>
-                    
-                      <div class="ui-g-12 ui-md-4">
-                        <label for="city">City</label>
-                      </div>
-                      <div class="ui-g-12 ui-md-8">
-                        <input id="city" formControlName="city" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                      </div>
-                    
-                      <div class="ui-g-12 ui-md-4">
-                        <label for="country">Country</label>
-                      </div>
-                      <div class="ui-g-12 ui-md-8">
-                        <input id="country" formControlName="country" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                      </div>
-                    
-                      <div class="ui-g-12 ui-md-4">
-                        <label for="landmark">Landmark</label>
-                      </div>
-                      <div class="ui-g-12 ui-md-8">
-                        <input id="landmark" formControlName="landmark" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                      </div>
-                    
-                      <div class="ui-g-12 ui-md-4">
-                        <label for="pincode">Pincode</label>
-                      </div>
-                      <div class="ui-g-12 ui-md-8">
-                        <input id="pincode" formControlName="pincode" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                      </div>
-                    
-                      <div class="ui-g-12 ui-md-4">
-                        <label for="state">State</label>
-                      </div>
-                      <div class="ui-g-12 ui-md-8">
-                        <input id="state" formControlName="state" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                      </div>
+                      <div class="ui-grid-row"> 
+                          <div class="ui-g-6 ui-md-6">
+                            <label for="pincode">Pincode</label>
+                            <input id="pincode" formControlName="pincode" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                          </div>
+                          <div class="ui-g-6 ui-md-6">
+                              <label for="state">State</label>
+                              <input id="state" formControlName="state" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                          </div>
+                      </div>   
                     </div>
                     </ng-container>
                   </fieldset>
 
-                  <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
+                  <div class="ui-grid-row">  
+                    <div class="ui-g-6 ui-md-6">
                       <label for="createdBy">Created By</label>
-                    </div>
-                    <div class="ui-g-12 ui-md-8">
                       <input id="createdBy" formControlName="createdBy" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                     </div>
-                  </div>
-
-                  <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
-                      <label for="eventLocation">Event Location</label>
+                    <div class="ui-g-6 ui-md-6">
+                        <label for="eventLocation">Event Location</label>
+                        <input id="eventLocation" formControlName="eventLocation" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
                     </div>
-                    <div class="ui-g-12 ui-md-8">
-                      <input id="eventLocation" formControlName="eventLocation" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
-                    </div>
-                  </div>
-                  <div class="ui-grid-row">
-                    <div class="ui-g-12 ui-md-4">
+                  </div>               
+                  <div class="ui-grid-row">                    
+                    <div class="ui-g-12 ui-md-12">
                       <label for="aboutCompany">About Company</label>
-                    </div>
-                    <div class="ui-g-12 ui-md-8">
-                      <input id="aboutCompany" formControlName="aboutCompany" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget">
+                      <!-- <input id="aboutCompany" formControlName="aboutCompany" pinputtext="" type="text" class="ui-inputtext ui-corner-all ui-state-default ui-widget"> -->
+                      <textarea id="aboutCompany" pInputTextarea autoResize="autoResize" formControlName="aboutCompany"></textarea>
                     </div>
                   </div>
                   <div class="ui-grid-row">
