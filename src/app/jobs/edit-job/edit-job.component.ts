@@ -19,7 +19,7 @@ export class EditJobComponent implements OnInit {
   showSuccess = false;
   public jid: any;
   date3 = new Date();
-  date4 = new Date(); 
+  date4 = new Date();
 
   jobData: Observable<JobdetailResponse>;
   jobdetailsData: JobdetailsResponseData;
@@ -68,7 +68,7 @@ export class EditJobComponent implements OnInit {
           // localStorage.setItem('lastDateToApplyval', this.lastDateToApplyms);
           // this.eventdatems = new Date(this.jobdetailsData.eventDate).getTime();
           // localStorage.setItem('eventdateval', this.eventdatems);
-          
+
           this.editJobForm.controls['id'].setValue(this.jobdetailsData.id);
           this.editJobForm.controls['eventLocation'].setValue(this.jobdetailsData.eventLocation);
           this.editJobForm.controls['jobDescription'].setValue(this.jobdetailsData.jobDescription);
@@ -106,10 +106,10 @@ export class EditJobComponent implements OnInit {
       this.router.navigate(['/jobs/jobs-details']);
     }
 
-    // getMiliData(data) { 
-    //   let convetedData = new Date(data).getTime();
-    //   this.editJobForm.controls['eventDate'].setValue(convetedData);      
-    //   console.log(convetedData);
-    // }
+    convertDate(field, data) {
+      // console.log(field);
+      // const convetedData = new Date(data).getTime();
+      // this.editJobForm.controls[field].setValue(new Date(convetedData));
+    }
 
 }
